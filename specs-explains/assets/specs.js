@@ -212,6 +212,7 @@
     const s0 = { x: cfg.x || 960, y: cfg.y || 920, s: cfg.s || 1 };
     const ink = cfg.ink || INK;
     const talkGain = cfg.talk == null ? 1 : cfg.talk;
+    const shadowKeys = cfg.shadow || []; // [[t, opacity]] steps, e.g. to drop the contact shadow in space
 
     // blink schedule
     const rnd = mulberry32(seed);
@@ -487,7 +488,9 @@
       const rot = pose.rot;
       root.setAttribute("transform", `translate(${f1(mv.x)} ${f1(mv.y + hopY * s)}) rotate(${f1(rot)}) scale(${(s).toFixed(4)})`);
       shadow.setAttribute("rx", f1(74 * (1 - mv.hop * 0.4)));
-      shadow.setAttribute("opacity", rot ? 0 : 1);
+      let sh = 1;
+      for (const k of shadowKeys) if (t >= k[0]) sh = k[1];
+      shadow.setAttribute("opacity", rot ? 0 : sh);
 
       // scene-space points for props and cameras
       const toScene = (p) => {

@@ -1,0 +1,428 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Patrick Hand";
+      src: url("assets/fonts/PatrickHand-Regular.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Permanent Marker";
+      src: url("assets/fonts/PermanentMarker-Regular.woff2") format("woff2");
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #root svg {
+      position: absolute;
+      inset: 0;
+    }
+    #root .ink {
+      fill: none;
+      stroke: #1f1d1a;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #root .thin {
+      stroke-width: 4;
+    }
+    #root .draw {
+      stroke-dasharray: 1 1.1;
+    }
+    #root .hand {
+      font-family: "Patrick Hand";
+    }
+    #root .marker {
+      font-family: "Permanent Marker";
+    }
+  </style>
+  <div id="root" data-composition-id="taller" data-width="1920" data-height="1080">
+    <svg id="tal-svg" viewBox="0 0 1920 1080" width="1920" height="1080" fill="#1f1d1a">
+      <defs>
+        <g id="tal-star"><path d="M0 -14 L4 -4 L14 0 L4 4 L0 14 L-4 4 L-14 0 L-4 -4 Z" fill="#fffbe8" stroke="#1f1d1a" stroke-width="2.5" stroke-linejoin="round" /></g>
+      </defs>
+      <rect x="0" y="0" width="1920" height="1080" fill="#fbf7ee" />
+      <g id="tal-cam">
+        <!-- the room -->
+        <g id="tal-room">
+          <rect x="-3000" y="-2000" width="8000" height="5000" fill="#fbf7ee" />
+          <image href="assets/grid.png" x="0" y="0" width="1920" height="1080" />
+          <image href="assets/grid.png" x="-1920" y="0" width="1920" height="1080" />
+          <path class="ink thin" d="M-2000 906 C 400 902, 900 910, 2400 904" />
+          <path class="ink thin" opacity="0.45" d="M120 935 l46 0 M520 956 l70 0 M1380 944 l52 0 M1690 962 l90 0 M980 975 l40 0" />
+          <!-- window: sun by day, moon by night -->
+          <rect class="ink" data-marker="#dff0fb" x="180" y="200" width="240" height="190" />
+          <path class="ink thin" d="M300 200 L300 390 M180 295 L420 295" />
+          <g id="tal-winsun"><circle class="ink thin" data-marker="#ffc832" cx="362" cy="250" r="26" /></g>
+          <g id="tal-winmoon">
+            <rect x="183" y="203" width="234" height="184" fill="#3a4a8a" />
+            <path class="ink thin" data-marker="#fff1a8" d="M370 232 C 340 236, 330 270, 352 290 C 330 290, 316 266, 324 244 C 332 226, 352 222, 370 232 Z" />
+            <use href="#tal-star" transform="translate(230 250) scale(0.6)" />
+            <use href="#tal-star" transform="translate(250 340) scale(0.5)" />
+            <path class="ink thin" d="M300 200 L300 390 M180 295 L420 295" stroke="#1f1d1a" />
+          </g>
+          <!-- height chart -->
+          <rect class="ink" data-marker="#e8c58f" x="742" y="300" width="64" height="602" />
+          <path class="ink thin" d="M742 330 l22 0 M742 360 l14 0 M742 390 l22 0 M742 420 l14 0 M742 450 l22 0 M742 480 l14 0 M742 510 l22 0 M742 540 l14 0 M742 570 l22 0 M742 600 l14 0 M742 630 l22 0 M742 660 l14 0 M742 690 l22 0 M742 720 l14 0 M742 750 l22 0 M742 780 l14 0 M742 810 l22 0 M742 840 l14 0 M742 870 l22 0" />
+          <path id="tal-mark-hi" class="draw" pathLength="1" d="M734 451 L816 449" stroke="#e8453c" stroke-width="7" stroke-linecap="round" fill="none" />
+          <path id="tal-mark-lo" class="draw" pathLength="1" d="M734 469 L816 468" stroke="#2f80ed" stroke-width="7" stroke-linecap="round" fill="none" />
+          <g id="tal-onecm">
+            <path class="ink thin" d="M826 449 Q842 449 842 459 Q842 468 826 468" />
+            <text class="hand" x="852" y="472" font-size="40">+1 cm</text>
+          </g>
+          <g id="tal-daylabels">
+            <text class="hand" x="826" y="440" font-size="40" fill="#c62f3a">morning</text>
+            <text class="hand" x="826" y="508" font-size="40" fill="#1d63c4">dinner</text>
+          </g>
+          <!-- the bed -->
+          <g id="tal-bed">
+            <rect class="ink" data-marker="#b98b5a" x="140" y="690" width="34" height="212" rx="8" />
+            <rect class="ink" data-marker="#b98b5a" x="160" y="790" width="640" height="44" rx="6" />
+            <path class="ink" d="M200 834 L200 900 M770 834 L770 900" />
+            <rect class="ink" data-marker="#ffffff" x="160" y="760" width="630" height="40" rx="14" />
+            <path class="ink thin" data-marker="#ffffff" d="M190 760 C 200 724, 290 720, 320 750 C 316 766, 200 770, 190 760 Z" />
+            <path id="tal-blanket" class="ink" data-marker="#7fb3e8" d="M360 790 L360 752 C 480 728, 640 728, 790 752 L790 800 Z" />
+          </g>
+        </g>
+
+        <!-- space, coloured in -->
+        <g id="tal-space">
+          <rect x="-3000" y="-3000" width="8000" height="7000" fill="#c8d0f0" />
+          <g id="tal-stars">
+            <use href="#tal-star" transform="translate(220 180)" /><use href="#tal-star" transform="translate(520 320) scale(0.7)" /><use href="#tal-star" transform="translate(1180 140)" />
+            <use href="#tal-star" transform="translate(1500 300) scale(0.8)" /><use href="#tal-star" transform="translate(1760 160) scale(0.6)" /><use href="#tal-star" transform="translate(300 640) scale(0.7)" />
+            <use href="#tal-star" transform="translate(1660 700)" /><use href="#tal-star" transform="translate(1260 860) scale(0.7)" /><use href="#tal-star" transform="translate(140 940) scale(0.8)" />
+            <use href="#tal-star" transform="translate(900 -200)" /><use href="#tal-star" transform="translate(400 -420) scale(0.7)" /><use href="#tal-star" transform="translate(1400 -360)" />
+            <use href="#tal-star" transform="translate(700 -620) scale(0.8)" /><use href="#tal-star" transform="translate(1700 -560) scale(0.6)" />
+          </g>
+          <circle class="ink" data-marker="#7fc4e8" cx="1660" cy="1500" r="560" />
+          <path class="ink thin" data-marker="#8ccb6b" d="M1240 1140 C 1300 1080, 1400 1060, 1460 1100 C 1520 1140, 1600 1120, 1640 1060 C 1700 1000, 1800 1000, 1880 1040" />
+          <!-- tape measure -->
+          <g id="tal-tape">
+            <rect class="ink" data-marker="#ffd84a" x="1040" y="250" width="56" height="640" />
+            <path class="ink thin" d="M1040 290 l18 0 M1040 330 l12 0 M1040 370 l18 0 M1040 410 l12 0 M1040 450 l18 0 M1040 490 l12 0 M1040 530 l18 0 M1040 570 l12 0 M1040 610 l18 0 M1040 650 l12 0 M1040 690 l18 0 M1040 730 l12 0 M1040 770 l18 0 M1040 810 l12 0 M1040 850 l18 0" />
+            <path id="tal-tape-lo" class="draw" pathLength="1" d="M1030 380 L1106 380" stroke="#2f80ed" stroke-width="7" stroke-linecap="round" fill="none" />
+            <path id="tal-tape-hi" class="draw" pathLength="1" d="M1030 352 L1106 352" stroke="#e8453c" stroke-width="7" stroke-linecap="round" fill="none" />
+            <text id="tal-tape-label" class="marker" x="1124" y="372" font-size="58" fill="#c62f3a">+3%</text>
+          </g>
+        </g>
+
+        <!-- night falls over the room -->
+        <rect id="tal-night" x="-3000" y="-3000" width="8000" height="7000" fill="#2c3770" opacity="0" />
+        <!-- spine diagram -->
+        <g id="tal-spine">
+          <g id="tal-bones"></g>
+          <g id="tal-lab-bones">
+            <path class="ink thin draw" pathLength="1" d="M1590 330 C 1550 330, 1500 340, 1460 352" />
+            <text class="hand" x="1600" y="342" font-size="50">bones</text>
+          </g>
+          <g id="tal-lab-discs">
+            <path class="ink thin draw" pathLength="1" d="M1590 520 C 1550 520, 1480 530, 1440 540" />
+            <text class="hand" x="1600" y="532" font-size="50" fill="#d6456a">discs</text>
+          </g>
+          <g id="tal-gravity">
+            <path d="M1270 90 L1270 190 M1240 160 L1270 196 L1300 160 M1350 70 L1350 190 M1320 160 L1350 196 L1380 160 M1430 90 L1430 190 M1400 160 L1430 196 L1460 160" fill="none" stroke="#e8453c" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+            <text class="marker" x="1500" y="150" font-size="56" fill="#c62f3a">gravity</text>
+          </g>
+          <g id="tal-drops" fill="#7fc4e8" stroke="#1f1d1a" stroke-width="3">
+            <circle class="drop" r="10" /><circle class="drop" r="8" /><circle class="drop" r="10" /><circle class="drop" r="9" /><circle class="drop" r="8" /><circle class="drop" r="10" />
+          </g>
+        </g>
+
+
+        <g id="tal-stretch">
+          <g id="tal-specs"></g>
+          <g id="tal-helmet">
+            <circle cx="0" cy="-4" r="96" fill="rgba(200,235,255,0.28)" stroke="#1f1d1a" stroke-width="6" />
+            <path d="M-60 -50 C -50 -70, -30 -82, -10 -86" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" />
+            <path d="M-70 64 Q0 96 70 64" fill="none" stroke="#1f1d1a" stroke-width="6" />
+          </g>
+        </g>
+        <g id="tal-zzz">
+          <text class="marker z" x="0" y="0" font-size="50">z</text>
+          <text class="marker z" x="0" y="0" font-size="62">z</text>
+          <text class="marker z" x="0" y="0" font-size="76">Z</text>
+        </g>
+        <!-- the pencil that draws him -->
+        <g transform="translate(800 768) rotate(-40)">
+          <g id="tal-pencil">
+            <path d="M0 0 L60 -22 L60 22 Z" fill="#f2d3a1" stroke="#1f1d1a" stroke-width="5" stroke-linejoin="round" />
+            <path d="M0 0 L20 -7 L20 7 Z" fill="#1f1d1a" />
+            <rect x="60" y="-22" width="380" height="44" fill="#ffc832" stroke="#1f1d1a" stroke-width="5" />
+            <path d="M60 -7 L440 -7 M60 7 L440 7" stroke="#1f1d1a" stroke-width="2.5" opacity="0.5" />
+            <rect x="440" y="-24" width="34" height="48" fill="#b8b8b8" stroke="#1f1d1a" stroke-width="5" />
+            <path d="M474 -22 L520 -22 Q540 -22 540 0 Q540 22 520 22 L474 22 Z" fill="#ff8fb1" stroke="#1f1d1a" stroke-width="5" />
+          </g>
+        </g>
+        <path id="tal-scribble" class="draw" pathLength="1" d="M680 778 l30 -20 l20 24 l30 -22 l20 24 l30 -20" fill="none" stroke="#1f1d1a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+
+      <!-- the question -->
+      <g id="tal-card">
+        <path class="ink" data-marker="#FFF1A8" d="M-500 -110 L500 -120 L508 114 L-508 120 Z" />
+        <text class="marker" x="0" y="28" font-size="74" text-anchor="middle">Are you <tspan fill="#d6456a">taller</tspan> in the morning?</text>
+      </g>
+      <g id="tal-whip" stroke="#1f1d1a" stroke-width="6" stroke-linecap="round">
+        <path d="M200 260 L900 260 M600 420 L1700 420 M100 600 L1100 600 M800 760 L1800 760 M300 900 L1200 900" />
+      </g>
+      <image href="assets/grain.png" x="0" y="0" width="1920" height="1080" />
+    </svg>
+  </div>
+  <script src="assets/data/timing.js"></script>
+  <script src="assets/data/lipsync.js"></script>
+  <script src="assets/specs.js"></script>
+  <script src="assets/kit.js"></script>
+  <script>
+    (function () {
+      const S = "taller";
+      const c = Kit.cues(S);
+      const w = c.w;
+      const $ = (q) => document.querySelector(q);
+      const $$ = (q) => Array.from(document.querySelectorAll(q));
+      const tl = gsap.timeline({ paused: true });
+      const NS = "http://www.w3.org/2000/svg";
+      Kit.markers($("#tal-svg"));
+
+      const tGrow = w("yes", "centimetre") - 0.6;
+      const tBed = w("night", "lie") - 0.45;
+      const tWake = c.s.wake - 0.25;
+      const tSpace = c.s.astro + 0.2;
+      const tStretch = w("me", "whoever") - 0.2;
+      const tUp = c.e.me + 0.35;
+      const you = { uR: 24, fR: -56, hR: 2, uL: -14, fL: -6, swing: 0, talk: 0.4 };
+
+      // float bob while in space
+      const tPct = w("space", "three percent") - 0.2;
+      const bob = [];
+      for (let t = c.s.space; t < tUp; t += 1.3) bob.push([t, 760 + (bob.length % 2 ? 10 : -10)]);
+      const rig = Specs.create($("#tal-specs"), {
+        scene: S,
+        x: 600,
+        y: 900,
+        s: 0.9,
+        poses: [
+          [0, "relaxed", 0],
+          [c.s.q - 0.1, "explain", 0.4],
+          [w("q", "Are you") - 0.2, you, 0.35, "back"],
+          [c.s.yes - 0.1, "fist-up", 0.3, "back"],
+          [tGrow + 0.9, "point-ur", 0.35, "back"],
+          [w("yes", "Sometimes") - 0.2, "shrug", 0.35],
+          [c.s.spine - 0.1, "present-r", 0.45],
+          [c.s.gravity - 0.1, "tired", 0.5],
+          [w("squeeze", "sitting") - 0.15, "crouch", 0.3],
+          [w("squeeze", "standing") - 0.1, "relaxed", 0.3],
+          [w("squeeze", "squeezed") - 0.2, "explain-r", 0.4],
+          [tBed, "lie", 0.5],
+          [c.s.sponge - 0.2, "sleep", 0.4],
+          [tWake, "arms-up", 0.4, "back"],
+          [tWake + 0.8, "point-ur", 0.35, "back"],
+          [w("wake", "shrink") - 0.2, "tired", 0.5],
+          [c.s.astro - 0.1, "arms-up", 0.4, "back"],
+          [c.s.space - 0.1, "float", 0.6],
+          [w("space", "three percent") - 0.2, "cheer", 0.35, "back"],
+          [c.s.me - 0.1, "hand-chest", 0.4],
+          [tStretch + 0.4, "arms-up", 0.35, "back"],
+          [tUp, "float", 0.4],
+        ],
+        faces: [
+          [0, "happy", 0],
+          [w("q", "Are you"), "smug", 0.3],
+          [c.s.yes, "excited", 0.25],
+          [w("yes", "Sometimes"), "thinking", 0.3],
+          [c.s.spine, "happy", 0.3],
+          [c.s.gravity, "worried", 0.3],
+          [c.s.squeeze, "wince", 0.3],
+          [w("squeeze", "squeezed"), "worried", 0.3],
+          [tBed, "sleepy", 0.4],
+          [c.s.sponge - 0.2, "asleep", 0.4],
+          [tWake, "excited", 0.25],
+          [w("wake", "shrink"), "sleepy", 0.4],
+          [c.s.astro, "excited", 0.3],
+          [c.s.space, "amazed", 0.3],
+          [c.s.me, "smug", 0.3],
+          [tStretch, "shocked", 0.2],
+          [tStretch + 1.2, "proud", 0.3],
+        ],
+        shadow: [[c.s.space - 0.3, 0]],
+        looks: [
+          [0, 0, 0.05, 0],
+          [tGrow + 0.9, 0.7, -0.8, 0.3],
+          [c.s.spine, 0.9, -0.3, 0.3],
+          [c.s.gravity, 0.6, -0.9, 0.3],
+          [c.s.squeeze, 0, 0.05, 0.3],
+          [tWake + 0.8, 0.7, -0.8, 0.3],
+          [c.s.astro, 0, 0.05, 0.3],
+          [w("space", "three percent"), 0.9, -0.4, 0.3],
+          [tStretch, 0, 1, 0.2],
+          [tStretch + 1.2, 0, 0.05, 0.3],
+          [tUp, 0, -1, 0.3],
+        ],
+        moves: [
+          [tGrow, 600, 900, 0.936, 0.3, "back"],
+          [tGrow + 0.9, 600, 900, 0.9, 0.4],
+          [w("squeeze", "Walking") - 0.25, 470, 900, 0.9, 0.8, "walk"],
+          [w("squeeze", "standing") - 0.2, 600, 900, 0.9, 0.6, "walk"],
+          [tBed, 700, 738, 0.9, 0.55, "hop"],
+          [tWake, 600, 900, 0.936, 0.6, "hop"],
+          [w("wake", "shrink"), 600, 900, 0.9, 0.9],
+          [c.s.space - 0.3, 760, 760, 0.9, 1.2],
+          ...bob.map((b) => [b[0] + 1.0, 760, b[1], b[0] + 1.0 >= tPct ? 0.94 : 0.9, 1.3, "inOut"]),
+          [tUp, 900, -1050, 0.94, 1.4, "in"],
+        ],
+      });
+
+      // spine: seven bones with discs between, squashed by day and plumped by night
+      const bones = [];
+      const discs = [];
+      const root = $("#tal-bones");
+      for (let i = 0; i < 7; i++) {
+        const b = document.createElementNS(NS, "g");
+        b.innerHTML =
+          '<path d="M-92 -10 L-60 -16 L60 -16 L92 -10 L92 10 L60 16 L-60 16 L-92 10 Z" fill="#efe6d0" stroke="#1f1d1a" stroke-width="5" stroke-linejoin="round"/>' +
+          '<rect x="-58" y="-24" width="116" height="48" rx="16" fill="#efe6d0" stroke="#1f1d1a" stroke-width="5"/>';
+        root.appendChild(b);
+        bones.push(b);
+        if (i < 6) {
+          const d = document.createElementNS(NS, "ellipse");
+          d.setAttribute("rx", "62");
+          d.setAttribute("fill", "#ff8fa3");
+          d.setAttribute("stroke", "#1f1d1a");
+          d.setAttribute("stroke-width", "4");
+          root.appendChild(d);
+          discs.push(d);
+        }
+      }
+      const SPX = 1350;
+      const BASE = 820;
+      const squash = Kit.track(
+        [
+          [c.s.gravity + 0.3, 0.45, 0.8],
+          [w("squeeze", "squeezed"), 0.7, 0.8],
+          [c.s.sponge + 0.4, -0.25, 2.2],
+        ],
+        0,
+      );
+      function drawSpine(t) {
+        const dh = 30 * (1 - squash(t));
+        for (let i = 0; i < 7; i++) {
+          const y = BASE - 24 - i * (48 + dh);
+          bones[i].setAttribute("transform", `translate(${SPX} ${y.toFixed(1)})`);
+          if (i < 6) {
+            discs[i].setAttribute("cx", SPX);
+            discs[i].setAttribute("cy", (y - 24 - dh / 2).toFixed(1));
+            discs[i].setAttribute("ry", Math.max(3, dh / 2).toFixed(1));
+          }
+        }
+      }
+
+      const cam = Kit.camera(
+        $("#tal-cam"),
+        [
+          [0, 960, 540, 1, 0.45, "out"],
+          [tGrow - 0.4, 760, 480, 2.0, 0.6],
+          [c.s.spine - 0.4, 960, 540, 1, 0.8],
+          [tWake + 0.6, 760, 480, 1.9, 0.6],
+          [w("wake", "dinner") + 0.6, 960, 540, 1, 0.8],
+          [tUp + 0.3, 960, -200, 1, 1.4, "inOut"],
+        ],
+        { cx: -1600, cy: 540, z: 1 },
+      );
+      const helmet = $("#tal-helmet");
+      const zz = $$("#tal-zzz .z");
+      Kit.driver(tl, c.dur, (t) => {
+        const p = rig.render(t);
+        drawSpine(t);
+        cam.render(t);
+        helmet.setAttribute("transform", `translate(${p.head[0].toFixed(1)} ${p.head[1].toFixed(1)}) rotate(${p.tilt.toFixed(1)}) scale(${p.scale})`);
+        helmet.setAttribute("opacity", t >= c.s.astro ? 1 : 0);
+        zz.forEach((z, i) => {
+          const k = (t - c.s.sponge - i * 0.5) % 1.8;
+          const on = t > c.s.sponge + i * 0.5 && t < tWake - 0.1;
+          z.setAttribute("opacity", on ? Math.max(0, 1 - k / 1.8).toFixed(2) : 0);
+          z.setAttribute("x", (p.head[0] + 40 + i * 26 + k * 20).toFixed(1));
+          z.setAttribute("y", (p.head[1] - 70 - k * 60 - i * 10).toFixed(1));
+        });
+      });
+
+      // whip in
+      tl.fromTo("#tal-whip", { opacity: 0.6, x: 300 }, { opacity: 0, x: -400, duration: 0.45, ease: "power2.out" }, 0);
+
+      // the question
+      tl.fromTo("#tal-card", { x: 600, y: 520, scale: 0.08, rotation: 8, opacity: 0 }, { x: 1180, y: 200, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, w("q", "Are you") - 0.3);
+      tl.to("#tal-card", { y: -260, rotation: 6, scale: 0.8, duration: 0.4, ease: "power3.in" }, c.s.yes + 0.2);
+
+      // grow, mark, shrink, mark: one centimetre
+      gsap.set(["#tal-onecm", "#tal-daylabels", "#tal-winmoon", "#tal-night"], { opacity: 0 });
+      Kit.draw(tl, "#tal-mark-hi", tGrow + 0.35, 0.3);
+      Kit.draw(tl, "#tal-mark-lo", tGrow + 1.0, 0.3);
+      Kit.show(tl, "#tal-onecm", w("yes", "centimetre") - 0.1, 0.25);
+      Kit.hide(tl, "#tal-onecm", c.s.spine, 0.25);
+
+      // spine
+      gsap.set("#tal-spine", { opacity: 0 });
+      Kit.show(tl, "#tal-spine", c.s.spine - 0.2, 0.2);
+      tl.fromTo(bones, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out", stagger: 0.12 }, w("spine", "stack") - 0.3);
+      Kit.pop(tl, discs, w("spine", "squishy") - 0.1, { stagger: 0.08, dur: 0.35 });
+      Kit.draw(tl, "#tal-lab-bones path", w("spine", "bones") - 0.1, 0.35);
+      Kit.show(tl, "#tal-lab-bones text", w("spine", "bones"), 0.25);
+      Kit.draw(tl, "#tal-lab-discs path", w("spine", "discs") - 0.2, 0.35);
+      Kit.show(tl, "#tal-lab-discs text", w("spine", "discs") - 0.1, 0.25);
+      gsap.set(["#tal-gravity", "#tal-drops"], { opacity: 0 });
+      tl.fromTo("#tal-gravity", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, c.s.gravity - 0.1);
+      tl.to("#tal-gravity", { y: 40, duration: 0.8, ease: "power2.in" }, c.s.gravity + 0.3);
+      tl.to("#tal-gravity", { opacity: 0, duration: 0.3 }, c.s.night);
+
+      // water squeezed out of the discs, and back in at night
+      const dropOut = [[-160, -40], [170, -60], [-180, 60], [160, 40], [-150, 120], [180, 140]];
+      const dropsEl = $$("#tal-drops .drop");
+      dropsEl.forEach((d, i) => {
+        d.setAttribute("cx", SPX);
+        d.setAttribute("cy", 520 + (i - 2.5) * 60);
+      });
+      tl.set("#tal-drops", { opacity: 1 }, w("squeeze", "lose") - 0.2);
+      dropsEl.forEach((d, i) => {
+        tl.fromTo(d, { x: 0, y: 0, opacity: 1 }, { x: dropOut[i][0], y: dropOut[i][1], duration: 0.6, ease: "power2.out", immediateRender: false }, w("squeeze", "lose") - 0.2 + i * 0.07);
+        tl.to(d, { x: 0, y: 0, duration: 0.6, ease: "power2.in" }, w("sponge", "soak") - 0.2 + i * 0.08);
+      });
+      tl.to("#tal-drops", { opacity: 0, duration: 0.2 }, w("sponge", "soak") + 0.9);
+
+      // night: bed, moon, dim room
+      gsap.set("#tal-bed", { opacity: 0 });
+      tl.set("#tal-bed", { opacity: 1 }, c.s.night - 0.3);
+      tl.fromTo("#tal-bed", { x: -900 }, { x: 0, duration: 0.6, ease: "power3.out", immediateRender: false }, c.s.night - 0.3);
+      tl.to("#tal-night", { opacity: 0.38, duration: 0.6 }, c.s.night);
+      Kit.show(tl, "#tal-winmoon", c.s.night, 0.4);
+      tl.to("#tal-night", { opacity: 0, duration: 0.5 }, tWake - 0.2);
+      Kit.hide(tl, "#tal-winmoon", tWake - 0.2, 0.4);
+      tl.to("#tal-bed", { x: -900, duration: 0.5, ease: "power3.in" }, tWake + 0.3);
+      Kit.show(tl, "#tal-daylabels", tWake + 0.9, 0.3);
+      Kit.hide(tl, "#tal-spine", tWake + 0.4, 0.3);
+      Kit.hide(tl, "#tal-daylabels", c.s.astro - 0.3, 0.3);
+
+      // astronauts: space floods in
+      gsap.set(["#tal-space", "#tal-tape"], { opacity: 0 });
+      tl.to("#tal-space", { opacity: 1, duration: 0.6 }, tSpace);
+      Kit.pop(tl, "#tal-stars use", tSpace + 0.2, { stagger: 0.04, dur: 0.35 });
+      Kit.show(tl, "#tal-tape", c.s.space + 0.6, 0.3);
+      Kit.draw(tl, "#tal-tape-lo", c.s.space + 1.0, 0.3);
+      Kit.draw(tl, "#tal-tape-hi", w("space", "three percent") - 0.2, 0.3);
+      gsap.set("#tal-tape-label", { opacity: 0 });
+      Kit.pop(tl, "#tal-tape-label", w("space", "three percent"), { dur: 0.35 });
+      Kit.hide(tl, "#tal-tape", c.s.me - 0.2, 0.3);
+
+      // "as tall as whoever draws me"
+      gsap.set(["#tal-pencil", "#tal-scribble"], { opacity: 0 });
+      tl.fromTo("#tal-pencil", { opacity: 1, x: 700, y: -500 }, { x: 0, y: 0, duration: 0.5, ease: "power2.out", immediateRender: false }, tStretch - 0.6);
+      tl.set("#tal-pencil", { opacity: 1 }, tStretch - 0.6);
+      tl.to("#tal-pencil", { x: 18, y: -10, duration: 0.08, yoyo: true, repeat: 7, ease: "none" }, tStretch - 0.1);
+      tl.set("#tal-scribble", { opacity: 1 }, tStretch - 0.1);
+      Kit.draw(tl, "#tal-scribble", tStretch - 0.1, 0.6, "none");
+      tl.to("#tal-stretch", { scaleY: 1.3, duration: 0.6, ease: "elastic.out(1, 0.5)", transformOrigin: "50% 100%" }, tStretch + 0.2);
+      tl.to("#tal-pencil", { x: 1700, y: -100, opacity: 0, duration: 0.6, ease: "power2.in" }, tStretch + 1.0);
+      tl.to("#tal-scribble", { opacity: 0, duration: 0.3 }, tStretch + 1.0);
+
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

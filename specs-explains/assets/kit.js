@@ -55,6 +55,19 @@
     return { at, render };
   };
 
+  // A keyed number over time: [[t, value, dur, ease]] -> value at t (pure, so any frame renders alone).
+  K.track = function (keys, init) {
+    return function (t) {
+      let cur = init;
+      for (const k of keys) {
+        if (t < k[0]) break;
+        const p = clamp((t - k[0]) / (k[2] || 0.5), 0, 1);
+        cur = lerp(cur, k[1], E()[k[3] || "inOut"](p));
+      }
+      return cur;
+    };
+  };
+
   // Marker look: every [data-marker] shape gets a flat colour underlay printed 6px off register.
   K.markers = function (root) {
     root.querySelectorAll("[data-marker]").forEach((n) => {

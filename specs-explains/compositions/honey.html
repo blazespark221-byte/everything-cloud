@@ -1,0 +1,564 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Patrick Hand";
+      src: url("assets/fonts/PatrickHand-Regular.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Permanent Marker";
+      src: url("assets/fonts/PermanentMarker-Regular.woff2") format("woff2");
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #root svg {
+      position: absolute;
+      inset: 0;
+    }
+    #root .ink {
+      fill: none;
+      stroke: #1f1d1a;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #root .thin {
+      stroke-width: 4;
+    }
+    #root .draw {
+      stroke-dasharray: 1 1.1;
+    }
+    #root .hand {
+      font-family: "Patrick Hand";
+    }
+    #root .marker {
+      font-family: "Permanent Marker";
+    }
+    #root .glyph {
+      fill: none;
+      stroke: #8a5a2b;
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+  <div id="root" data-composition-id="honey" data-width="1920" data-height="1080">
+    <svg id="hon-svg" viewBox="0 0 1920 1080" width="1920" height="1080" fill="#1f1d1a">
+      <defs>
+        <linearGradient id="hon-ph-grad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#e8453c" />
+          <stop offset="0.25" stop-color="#f5902e" />
+          <stop offset="0.4" stop-color="#f7cb2d" />
+          <stop offset="0.5" stop-color="#43b05c" />
+          <stop offset="0.75" stop-color="#2f80ed" />
+          <stop offset="1" stop-color="#7a4bb0" />
+        </linearGradient>
+        <clipPath id="hon-lens-clip">
+          <circle cx="1060" cy="520" r="316" />
+        </clipPath>
+        <g id="hon-germ-body">
+          <path d="M0 -50 L0 -62 M35 -35 L44 -44 M50 0 L62 0 M35 35 L44 44 M0 50 L0 62 M-35 35 L-44 44 M-50 0 L-62 0 M-35 -35 L-44 -44" stroke="#1f1d1a" stroke-width="5" stroke-linecap="round" />
+          <path d="M0 -44 C 26 -46, 46 -26, 44 0 C 46 26, 24 46, 0 44 C -26 46, -46 24, -44 0 C -46 -26, -24 -42, 0 -44 Z" stroke="#1f1d1a" stroke-width="5" />
+        </g>
+        <g id="hon-eyes-open">
+          <circle cx="-15" cy="-8" r="11" fill="#ffffff" stroke="#1f1d1a" stroke-width="3.5" />
+          <circle cx="15" cy="-8" r="11" fill="#ffffff" stroke="#1f1d1a" stroke-width="3.5" />
+          <circle cx="-13" cy="-6" r="5" fill="#1f1d1a" />
+          <circle cx="17" cy="-6" r="5" fill="#1f1d1a" />
+        </g>
+      </defs>
+      <rect x="0" y="0" width="1920" height="1080" fill="#e8c78c" />
+      <g id="hon-cam">
+        <!-- the tomb -->
+        <rect x="-3000" y="-1000" width="8000" height="3000" fill="#e8c78c" />
+        <path class="ink thin" opacity="0.28" d="M-400 120 L2400 120 M-400 420 L2400 420 M-400 660 L2400 660 M120 120 L120 420 M520 120 L520 420 M960 120 L960 420 M1400 120 L1400 420 M1820 120 L1820 420 M330 420 L330 660 M760 420 L760 660 M1180 420 L1180 660 M1620 420 L1620 660 M2100 420 L2100 660 M2100 120 L2100 420" />
+        <g id="hon-glyphs">
+          <path class="glyph" d="M150 260 Q190 220 230 260 Q190 300 150 260 Z M190 260 m-8 0 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0 M200 290 L200 330 Q200 345 186 345" />
+          <path class="glyph" d="M300 340 L300 230 Q300 200 330 200 Q360 200 360 230 L360 250 L330 250 M300 290 L360 290" />
+          <path class="glyph" d="M440 240 l20 -20 l20 20 l20 -20 l20 20 l20 -20 M440 280 l20 -20 l20 20 l20 -20 l20 20 l20 -20" />
+          <path class="glyph" d="M640 340 Q610 300 640 260 Q680 230 700 260 L720 250 L708 274 Q700 330 640 340 Z M640 340 L630 360 M660 340 L660 362" />
+          <path class="glyph" d="M800 290 m-40 0 a40 40 0 1 0 80 0 a40 40 0 1 0 -80 0 M760 340 L840 340" stroke="#c0532c" />
+          <path class="glyph" d="M1000 200 L1000 340 M1000 200 Q1040 220 1000 250 M980 340 L1020 340" />
+          <path class="glyph" d="M1120 330 L1120 230 L1220 230 L1220 330 Z M1145 255 L1195 255 L1195 305 L1145 305 Z" stroke="#2d6ea8" />
+          <path class="glyph" d="M1320 240 l20 -20 l20 20 l20 -20 l20 20 l20 -20 M1320 280 l20 -20 l20 20 l20 -20 l20 20 l20 -20" stroke="#2d6ea8" />
+          <path class="glyph" d="M1540 260 Q1580 220 1620 260 Q1580 300 1540 260 Z M1580 260 m-8 0 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0 M1590 290 L1590 330 Q1590 345 1576 345" />
+          <path class="glyph" d="M1700 340 Q1670 300 1700 260 Q1740 230 1760 260 L1780 250 L1768 274 Q1760 330 1700 340 Z" />
+        </g>
+        <rect x="-3000" y="900" width="8000" height="1200" fill="#d4a867" />
+        <path class="ink thin" d="M-400 902 C 300 898, 900 906, 2400 900" />
+        <path class="ink thin" opacity="0.4" d="M100 950 l60 0 M600 980 l50 0 M1300 960 l70 0 M1700 990 l40 0" />
+
+        <!-- pedestal and the ancient pot -->
+        <rect class="ink" data-marker="#c9a468" x="1030" y="742" width="240" height="160" />
+        <path class="ink thin" opacity="0.5" d="M1030 790 L1270 790" />
+        <g id="hon-pot">
+          <path class="ink" data-marker="#c8763c" d="M1105 560 L1195 560 C 1200 590, 1260 600, 1262 660 C 1264 710, 1220 742, 1150 742 C 1080 742, 1036 710, 1038 660 C 1040 600, 1100 590, 1105 560 Z" />
+          <path class="ink thin" opacity="0.6" d="M1060 660 C 1100 676, 1200 676, 1240 660 M1070 690 C 1110 704, 1190 704, 1230 690" />
+          <ellipse id="hon-pot-honey" cx="1150" cy="562" rx="44" ry="10" fill="#f2a007" stroke="#1f1d1a" stroke-width="4" />
+          <g id="hon-cobweb">
+            <path class="ink thin" opacity="0.6" d="M1196 562 L1250 520 M1196 562 L1262 572 M1196 562 L1230 600 M1214 548 Q1222 566 1214 582 M1232 534 Q1246 566 1226 594" />
+          </g>
+        </g>
+        <g id="hon-lid" transform="translate(1150 548)">
+          <ellipse class="ink" data-marker="#b5652f" cx="0" cy="0" rx="56" ry="14" />
+          <path class="ink thin" d="M-10 -12 Q0 -26 10 -12" />
+        </g>
+        <g id="hon-dust">
+          <circle cx="1110" cy="520" r="18" fill="#efe1c0" />
+          <circle cx="1150" cy="505" r="22" fill="#efe1c0" />
+          <circle cx="1195" cy="520" r="16" fill="#efe1c0" />
+        </g>
+        <g id="hon-sparkle">
+          <path d="M1150 470 l8 -26 l8 26 l26 8 l-26 8 l-8 26 l-8 -26 l-26 -8 Z" fill="#fff4b8" stroke="#1f1d1a" stroke-width="3" />
+          <path d="M1095 510 l5 -15 l5 15 l15 5 l-15 5 l-5 15 l-5 -15 l-15 -5 Z" fill="#fff4b8" stroke="#1f1d1a" stroke-width="3" />
+          <path d="M1215 500 l5 -15 l5 15 l15 5 l-15 5 l-5 15 l-5 -15 l-15 -5 Z" fill="#fff4b8" stroke="#1f1d1a" stroke-width="3" />
+        </g>
+
+        <!-- your honey, in a glass jar -->
+        <g id="hon-kitchen" transform="translate(180 0)">
+          <path class="ink" data-marker="#a0784a" d="M1470 900 L1490 770 L1650 770 L1670 900 M1490 770 L1650 770" />
+          <rect class="ink" data-marker="#b58a58" x="1460" y="752" width="220" height="26" rx="6" />
+          <g id="hon-glass">
+            <rect id="hon-glass-honey" x="1506" y="610" width="128" height="138" rx="14" style="fill: #f2a007" />
+            <g id="hon-crystal" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round">
+              <path d="M1520 640 l14 -10 l12 12 l14 -10 M1580 660 l14 -10 l12 12 l10 -8 M1522 690 l14 -10 l12 12 l14 -10 M1580 720 l12 -10 l12 12 l12 -10 M1540 730 l10 -8" />
+            </g>
+            <path class="ink" d="M1500 600 L1500 736 Q1500 754 1518 754 L1622 754 Q1640 754 1640 736 L1640 600" />
+            <rect class="ink" data-marker="#ffc832" x="1490" y="572" width="160" height="32" rx="8" />
+            <path d="M1516 620 L1516 720" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.8" />
+          </g>
+          <g id="hon-crys-label">
+            <path class="ink thin draw" pathLength="1" d="M1760 560 C 1720 590, 1680 620, 1648 650 M1648 650 L1672 646 M1648 650 L1656 628" />
+            <text class="hand" x="1700" y="540" font-size="50">crystals</text>
+          </g>
+          <g id="hon-bowl">
+            <path class="ink" data-marker="#7fc4e8" d="M1440 700 L1700 700 C 1700 800, 1640 850, 1570 850 C 1500 850, 1440 800, 1440 700 Z" />
+            <path class="ink thin" d="M1450 712 C 1520 724, 1620 724, 1690 712" stroke="#2f80ed" />
+            <path id="hon-steam" class="ink thin" opacity="0.7" d="M1500 680 C 1490 650, 1514 630, 1500 600 M1570 680 C 1560 650, 1584 630, 1570 600 M1640 680 C 1630 650, 1654 630, 1640 600" />
+          </g>
+        </g>
+
+        <!-- what happens if the lid stays off -->
+        <g id="hon-think">
+          <circle class="ink thin" data-marker="#ffffff" data-off="4 4" cx="760" cy="480" r="12" />
+          <circle class="ink thin" data-marker="#ffffff" data-off="4 4" cx="720" cy="430" r="18" />
+          <path class="ink" data-marker="#ffffff" data-off="5 5" d="M500 380 C 440 380, 420 300, 480 280 C 470 210, 560 190, 600 230 C 630 180, 730 180, 750 240 C 820 230, 850 320, 790 350 C 800 400, 720 420, 690 390 C 650 420, 560 420, 500 380 Z" />
+          <g id="hon-rain" stroke="#2f80ed" stroke-width="5" stroke-linecap="round">
+            <path d="M560 230 l-6 18 M600 222 l-6 18 M640 230 l-6 18 M680 224 l-6 18" />
+          </g>
+          <path class="ink thin" data-marker="#f2a007" d="M570 270 L570 350 Q570 362 582 362 L668 362 Q680 362 680 350 L680 270" />
+          <g id="hon-fizz" fill="#ffffff" stroke="#1f1d1a" stroke-width="2.5">
+            <circle cx="595" cy="320" r="7" /><circle cx="625" cy="300" r="5" /><circle cx="650" cy="330" r="8" /><circle cx="612" cy="345" r="5" /><circle cx="640" cy="285" r="4" />
+          </g>
+          <path d="M600 314 L610 310 M640 314 L650 310 M602 340 Q612 332 622 340 Q632 348 642 340" stroke="#1f1d1a" stroke-width="3" fill="none" stroke-linecap="round" />
+        </g>
+
+        <g id="hon-specs"></g>
+        <g id="hon-helmet">
+          <path d="M-74 -40 C -74 -110, 74 -110, 74 -40 Z" fill="#d8c38a" stroke="#1f1d1a" stroke-width="6" stroke-linejoin="round" />
+          <path d="M-70 -54 C -30 -46, 30 -46, 70 -54" fill="none" stroke="#8a6a3e" stroke-width="7" />
+          <ellipse cx="0" cy="-40" rx="96" ry="15" fill="#d8c38a" stroke="#1f1d1a" stroke-width="6" />
+        </g>
+      </g>
+
+      <!-- a closer look inside the honey -->
+      <g id="hon-lens">
+        <circle cx="1066" cy="526" r="326" fill="#1f1d1a" opacity="0.18" />
+        <g clip-path="url(#hon-lens-clip)">
+          <circle cx="1060" cy="520" r="320" fill="#f2a007" />
+          <circle cx="980" cy="400" r="120" fill="#f6b52d" opacity="0.6" />
+          <g id="hon-sugar" fill="#fff6dc" stroke="#1f1d1a" stroke-width="3.5">
+            <path d="M852 330 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M960 270 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M1100 300 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M1230 380 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M800 470 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M1290 520 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M860 610 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M1200 650 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M980 720 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M1100 760 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M930 420 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M1160 470 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M1090 590 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+            <path d="M780 560 l20 -12 l20 12 l0 22 l-20 12 l-20 -12 Z" />
+          </g>
+          <g id="hon-water" fill="#7fc4e8" stroke="#1f1d1a" stroke-width="3">
+            <path d="M1020 380 C 1030 396, 1036 404, 1036 412 C 1036 422, 1028 428, 1020 428 C 1012 428, 1004 422, 1004 412 C 1004 404, 1010 396, 1020 380 Z" />
+            <path d="M1250 590 C 1260 606, 1266 614, 1266 622 C 1266 632, 1258 638, 1250 638 C 1242 638, 1234 632, 1234 622 C 1234 614, 1240 606, 1250 590 Z" />
+          </g>
+          <!-- germ one: dries out and gives up -->
+          <g transform="translate(1060 540)">
+            <g id="hon-germ1">
+              <g id="hon-germ1-body"><use href="#hon-germ-body" style="fill: #7cc576" /></g>
+              <use id="hon-germ1-eyes" href="#hon-eyes-open" />
+              <path id="hon-germ1-x" d="M-24 -16 L-6 0 M-6 -16 L-24 0 M6 -16 L24 0 M24 -16 L6 0" stroke="#1f1d1a" stroke-width="4" stroke-linecap="round" />
+              <path d="M-10 18 Q0 12 10 18" stroke="#1f1d1a" stroke-width="3.5" fill="none" stroke-linecap="round" />
+              <g id="hon-flag"><path d="M30 -40 L30 -120" stroke="#1f1d1a" stroke-width="5" stroke-linecap="round" /><path d="M30 -120 L84 -110 L30 -96 Z" fill="#ffffff" stroke="#1f1d1a" stroke-width="4" stroke-linejoin="round" /></g>
+            </g>
+          </g>
+          <g id="hon-drops-out" fill="#7fc4e8" stroke="#1f1d1a" stroke-width="3">
+            <circle cx="1060" cy="540" r="9" /><circle cx="1060" cy="540" r="8" /><circle cx="1060" cy="540" r="10" /><circle cx="1060" cy="540" r="7" />
+          </g>
+          <!-- germ two: hates the sour -->
+          <g transform="translate(1060 520)">
+            <g id="hon-germ2">
+              <use href="#hon-germ-body" style="fill: #9ad06a" />
+              <path d="M-24 -10 L-8 -6 M8 -6 L24 -10" stroke="#1f1d1a" stroke-width="4" stroke-linecap="round" />
+              <path d="M-14 20 Q-7 12 0 20 Q7 28 14 20" stroke="#1f1d1a" stroke-width="3.5" fill="none" stroke-linecap="round" />
+            </g>
+          </g>
+          <!-- the bee and its enzyme -->
+          <g id="hon-enzyme" fill="#fff4b8" stroke="#1f1d1a" stroke-width="2.5">
+            <path d="M960 460 l5 -14 l5 14 l14 5 l-14 5 l-5 14 l-5 -14 l-14 -5 Z" />
+            <path d="M1060 420 l5 -14 l5 14 l14 5 l-14 5 l-5 14 l-5 -14 l-14 -5 Z" />
+            <path d="M1150 480 l5 -14 l5 14 l14 5 l-14 5 l-5 14 l-5 -14 l-14 -5 Z" />
+            <path d="M1010 540 l5 -14 l5 14 l14 5 l-14 5 l-5 14 l-5 -14 l-14 -5 Z" />
+          </g>
+          <!-- a drop of water, hydrogen peroxide, zap -->
+          <g transform="translate(1060 300)">
+            <path id="hon-wetdrop" d="M0 -40 C 16 -14, 26 -2, 26 12 C 26 28, 14 38, 0 38 C -14 38, -26 28, -26 12 C -26 -2, -16 -14, 0 -40 Z" fill="#7fc4e8" stroke="#1f1d1a" stroke-width="4" />
+          </g>
+          <g id="hon-h2o2">
+            <g transform="translate(900 560)"><circle r="44" fill="#fffdf6" stroke="#1f1d1a" stroke-width="4" /><text class="hand" x="0" y="10" font-size="30" text-anchor="middle">H<tspan font-size="20" dy="6">2</tspan><tspan dy="-6">O</tspan><tspan font-size="20" dy="6">2</tspan></text></g>
+            <g transform="translate(1010 650)"><circle r="44" fill="#fffdf6" stroke="#1f1d1a" stroke-width="4" /><text class="hand" x="0" y="10" font-size="30" text-anchor="middle">H<tspan font-size="20" dy="6">2</tspan><tspan dy="-6">O</tspan><tspan font-size="20" dy="6">2</tspan></text></g>
+            <g transform="translate(1130 600)"><circle r="44" fill="#fffdf6" stroke="#1f1d1a" stroke-width="4" /><text class="hand" x="0" y="10" font-size="30" text-anchor="middle">H<tspan font-size="20" dy="6">2</tspan><tspan dy="-6">O</tspan><tspan font-size="20" dy="6">2</tspan></text></g>
+          </g>
+          <g transform="translate(1230 470)">
+            <g id="hon-germ3">
+              <use href="#hon-germ-body" style="fill: #7cc576" />
+              <use href="#hon-eyes-open" />
+              <path d="M-10 16 Q0 24 10 16" stroke="#1f1d1a" stroke-width="3.5" fill="none" stroke-linecap="round" />
+            </g>
+          </g>
+          <path id="hon-zap" d="M1130 560 L1170 520 L1160 510 L1210 470 L1196 466 L1240 420" fill="none" stroke="#ffe14d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+          <g id="hon-poof" fill="#fffdf6" stroke="#1f1d1a" stroke-width="3">
+            <circle cx="1214" cy="470" r="30" /><circle cx="1250" cy="450" r="26" /><circle cx="1246" cy="492" r="24" />
+          </g>
+        </g>
+        <circle class="ink" cx="1060" cy="520" r="320" stroke-width="12" />
+      </g>
+      <g id="hon-bee" transform="translate(0 0)">
+        <g id="hon-bee-in">
+          <ellipse id="hon-wing1" cx="-6" cy="-36" rx="22" ry="30" fill="#ffffff" stroke="#1f1d1a" stroke-width="4" opacity="0.92" />
+          <ellipse id="hon-wing2" cx="18" cy="-32" rx="18" ry="26" fill="#ffffff" stroke="#1f1d1a" stroke-width="4" opacity="0.92" />
+          <path d="M44 0 L64 4 L44 10 Z" fill="#1f1d1a" />
+          <ellipse cx="4" cy="2" rx="46" ry="32" fill="#ffc832" stroke="#1f1d1a" stroke-width="5" />
+          <path d="M-10 -28 C -16 -10, -16 14, -10 32 M14 -30 C 8 -10, 8 14, 14 32" stroke="#1f1d1a" stroke-width="11" fill="none" />
+          <circle cx="-48" cy="-4" r="22" fill="#ffc832" stroke="#1f1d1a" stroke-width="5" />
+          <circle cx="-56" cy="-8" r="5" fill="#1f1d1a" />
+          <path d="M-58 8 Q-52 12 -46 8" stroke="#1f1d1a" stroke-width="3" fill="none" stroke-linecap="round" />
+          <path d="M-52 -24 Q-60 -44 -72 -48 M-42 -24 Q-44 -44 -52 -54" stroke="#1f1d1a" stroke-width="3.5" fill="none" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- right-hand notes for each trick -->
+      <rect id="hon-panel" x="1410" y="168" width="484" height="584" rx="16" fill="#fffdf6" stroke="#1f1d1a" stroke-width="6" />
+      <g id="hon-t1">
+        <text class="marker" x="1440" y="250" font-size="64">Trick 1</text>
+        <text class="hand" x="1442" y="318" font-size="56">mostly sugar</text>
+        <g transform="translate(1610 530)">
+          <circle r="104" fill="#fff6dc" stroke="#1f1d1a" stroke-width="5" />
+          <path d="M0 0 L0 -104 A104 104 0 0 0 -91 -50 Z" fill="#7fc4e8" stroke="#1f1d1a" stroke-width="5" stroke-linejoin="round" />
+          <text class="hand" x="22" y="40" font-size="44" text-anchor="middle">sugar</text>
+          <text class="hand" x="-150" y="-90" font-size="40" text-anchor="end">water</text>
+          <path class="ink thin" d="M-146 -84 C -110 -80, -80 -76, -56 -66" />
+        </g>
+      </g>
+      <g id="hon-t2">
+        <text class="marker" x="1440" y="250" font-size="64">Trick 2</text>
+        <text class="hand" x="1442" y="318" font-size="56">acidic</text>
+        <rect x="1440" y="520" width="430" height="52" rx="8" fill="url(#hon-ph-grad)" stroke="#1f1d1a" stroke-width="5" />
+        <text class="hand" x="1444" y="616" font-size="40">0</text>
+        <text class="hand" x="1655" y="616" font-size="40" text-anchor="middle">7</text>
+        <text class="hand" x="1866" y="616" font-size="40" text-anchor="end">14</text>
+        <text class="hand" x="1700" y="660" font-size="40" text-anchor="middle">sour ← → not sour</text>
+        <g id="hon-ph-honey">
+          <path d="M1560 506 L1546 476 L1574 476 Z" fill="#f2a007" stroke="#1f1d1a" stroke-width="4" stroke-linejoin="round" />
+          <text class="hand" x="1560" y="462" font-size="44" text-anchor="middle">honey</text>
+        </g>
+        <g id="hon-ph-oj">
+          <path d="M1547 586 L1533 616 L1561 616 Z" fill="#f5902e" stroke="#1f1d1a" stroke-width="4" stroke-linejoin="round" />
+          <text class="hand" x="1546" y="710" font-size="44" text-anchor="middle">orange juice</text>
+        </g>
+      </g>
+      <g id="hon-t3">
+        <text class="marker" x="1440" y="250" font-size="64">Trick 3</text>
+        <text class="hand" x="1442" y="318" font-size="56">bee enzyme</text>
+        <text id="hon-zapper" class="marker" x="1440" y="660" font-size="60" fill="#c0532c">Germ zapper!</text>
+      </g>
+
+      <!-- the question -->
+      <g id="hon-card">
+        <path class="ink" data-marker="#FFF1A8" d="M-480 -110 L480 -120 L488 114 L-488 120 Z" />
+        <text class="marker" x="0" y="28" font-size="78" text-anchor="middle">Does <tspan fill="#d98a00">honey</tspan> ever go bad?</text>
+      </g>
+      <!-- whip lines -->
+      <g id="hon-whip" stroke="#1f1d1a" stroke-width="6" stroke-linecap="round" opacity="0">
+        <path d="M200 260 L900 260 M600 420 L1700 420 M100 600 L1100 600 M800 760 L1800 760 M300 900 L1200 900" />
+      </g>
+      <!-- the honey drains away at the start -->
+      <path id="hon-drain" d="M-20 0 C 120 -26, 200 30, 340 4 C 470 -20, 560 34, 700 6 C 840 -22, 960 30, 1100 2 C 1240 -24, 1340 30, 1480 4 C 1620 -20, 1720 30, 1940 0 L1940 1120 L-20 1120 Z" fill="#f2a007" stroke="#1f1d1a" stroke-width="6" />
+      <image href="assets/grain.png" x="0" y="0" width="1920" height="1080" />
+    </svg>
+  </div>
+  <script src="assets/data/timing.js"></script>
+  <script src="assets/data/lipsync.js"></script>
+  <script src="assets/specs.js"></script>
+  <script src="assets/kit.js"></script>
+  <script>
+    (function () {
+      const S = "honey";
+      const c = Kit.cues(S);
+      const w = c.w;
+      const $ = (q) => document.querySelector(q);
+      const $$ = (q) => Array.from(document.querySelectorAll(q));
+      const tl = gsap.timeline({ paused: true });
+      Kit.markers($("#hon-svg"));
+
+      // the honey drains off the page
+      tl.fromTo("#hon-drain", { y: -60 }, { y: 1150, duration: 1.2, ease: "power2.in" }, 0.05);
+
+      const tWalk1 = c.s.tombs + 0.3;
+      const tLift = c.s.spoiled - 0.35;
+      const tBack = c.s.how - 0.1;
+      const tLens = c.s.sugar - 0.3;
+      const tLensOut = c.s.lid - 0.5;
+      const tWalk2 = c.s.lid - 0.35;
+      const tLidOn = w("lid", "If honey") - 0.45;
+      const tWhip = c.e.warm + 0.9;
+      const lidReach = Specs.reach("reach-r", "R", (1150 - 890) / 0.9, (548 - 900) / 0.9, 1);
+
+      const rig = Specs.create($("#hon-specs"), {
+        scene: S,
+        x: 560,
+        y: 900,
+        s: 0.9,
+        poses: [
+          [0, "relaxed", 0],
+          [c.s.q - 0.1, "explain", 0.4],
+          [w("q", "Does") - 0.2, "think", 0.4],
+          [c.s.tombs - 0.1, "relaxed", 0.4],
+          [w("tombs", "found") - 0.2, "point-r", 0.4, "back"],
+          [tLift - 0.3, lidReach, 0.35],
+          [tLift + 0.25, "hold-up-r", 0.3, "back"],
+          [w("spoiled", "spoiled") - 0.2, "arms-up", 0.35, "back"],
+          [tBack, "relaxed", 0.3],
+          [w("how", "Three") - 0.2, "fist-up", 0.35, "back"],
+          [c.s.sugar - 0.1, "present-r", 0.45],
+          [c.s.germs - 0.1, "explain-r", 0.4],
+          [w("germs", "shrivels") - 0.2, "shrug", 0.35, "back"],
+          [c.s.acid - 0.1, "present-r", 0.45],
+          [w("acid", "Germs hate") - 0.2, "hand-mouth", 0.35],
+          [c.s.enzyme - 0.1, "point-ur", 0.4, "back"],
+          [c.s.peroxide - 0.1, "explain-r", 0.4],
+          [w("peroxide", "zapper") - 0.25, "fist-up", 0.3, "back"],
+          [tWalk2, "relaxed", 0.3],
+          [tLidOn - 0.3, lidReach, 0.35],
+          [tLidOn + 0.4, "think", 0.4],
+          [c.s.crystals - 0.1, "explain-r", 0.4],
+          [w("crystals", "hasn't") - 0.2, "shrug", 0.35],
+          [w("crystals", "crystals") - 0.2, "present-r", 0.4, "back"],
+          [c.s.warm - 0.1, "explain-r", 0.4],
+          [w("warm", "melts") - 0.2, "cheer", 0.35, "back"],
+          [tWhip - 0.4, "point-r", 0.3, "back"],
+        ],
+        faces: [
+          [0, "happy", 0],
+          [w("q", "Does"), "thinking", 0.3],
+          [c.s.tombs, "smug", 0.3],
+          [tLift, "thinking", 0.3],
+          [c.s.spoiled, "amazed", 0.25],
+          [c.s.how, "happy", 0.3],
+          [w("how", "Three"), "excited", 0.25],
+          [c.s.sugar, "happy", 0.3],
+          [w("germs", "shrivels"), "grin", 0.3],
+          [c.s.acid, "happy", 0.3],
+          [w("acid", "Germs hate"), "wince", 0.25],
+          [c.s.enzyme, "excited", 0.3],
+          [w("peroxide", "zapper"), "grin", 0.25],
+          [c.s.lid, "happy", 0.3],
+          [w("lid", "ferment"), "worried", 0.3],
+          [c.s.crystals, "worried", 0.3],
+          [w("crystals", "hasn't"), "happy", 0.3],
+          [c.s.warm, "smug", 0.3],
+          [w("warm", "melts"), "excited", 0.25],
+        ],
+        looks: [
+          [0, 0, 0.05, 0],
+          [c.s.tombs, 0.8, -0.6, 0.3],
+          [tLift, 0.9, 0, 0.3],
+          [c.s.spoiled, 0, 0.05, 0.3],
+          [c.s.sugar, 0.9, -0.3, 0.3],
+          [c.s.how, 0, 0.05, 0.3],
+          [c.s.sugar + 0.4, 0.9, -0.2, 0.3],
+          [c.s.lid, 0.8, 0.2, 0.3],
+          [w("lid", "If honey"), -0.6, -0.8, 0.3],
+          [c.s.crystals, 0.9, -0.1, 0.3],
+        ],
+        moves: [
+          [tWalk1, 890, 900, 0.9, 1.6, "walk"],
+          [tBack, 300, 900, 0.9, 1.4, "walk"],
+          [tWalk2, 890, 900, 0.9, 1.1, "walk"],
+          [c.s.crystals - 0.4, 1440, 900, 0.9, 1.1, "walk"],
+        ],
+      });
+
+      const cam = Kit.camera($("#hon-cam"), [
+        [c.s.tombs - 0.2, 1100, 520, 1.12, 3.5],
+        [w("spoiled", "still") - 0.6, 1080, 600, 1.35, 0.9],
+        [tBack, 960, 540, 1, 1.0],
+        [c.s.crystals - 0.4, 1440, 560, 1.08, 1.0],
+        [tWhip, 3600, 560, 1.08, 0.4, "in"],
+      ]);
+      const helmet = $("#hon-helmet");
+      const lid = $("#hon-lid");
+      const POT = [1150, 548];
+      const FLOOR = [1300, 892];
+      const mix = (a, b, k) => [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k];
+      const ez = Specs.EASE.inOut;
+      function lidAt(t, hand) {
+        // pot -> his hand -> dropped by the pedestal -> back on the pot
+        if (t < tLift) return [POT, 0];
+        if (t < tLift + 0.25) return [mix(POT, hand, ez((t - tLift) / 0.25)), -20 * ez((t - tLift) / 0.25)];
+        if (t < tBack) return [[hand[0], hand[1] - 10], -20];
+        if (t < tBack + 0.45) {
+          const k = (t - tBack) / 0.45;
+          return [mix([hand[0], hand[1] - 10], FLOOR, k * k), -20 + 20 * k];
+        }
+        if (t < tLidOn - 0.25) return [FLOOR, 0];
+        if (t < tLidOn + 0.3) {
+          const k = ez((t - tLidOn + 0.25) / 0.55);
+          const p = mix(FLOOR, POT, k);
+          return [[p[0], p[1] - Math.sin(k * Math.PI) * 120], 0];
+        }
+        return [POT, 0];
+      }
+      Kit.driver(tl, c.dur, (t) => {
+        const p = rig.render(t);
+        cam.render(t);
+        const [lp, lr] = lidAt(t, p.handR);
+        lid.setAttribute("transform", `translate(${lp[0].toFixed(1)} ${lp[1].toFixed(1)}) rotate(${lr.toFixed(1)})`);
+        helmet.setAttribute("transform", `translate(${p.head[0].toFixed(1)} ${p.head[1].toFixed(1)}) rotate(${p.tilt.toFixed(1)}) scale(${p.scale})`);
+      });
+
+      // the question
+      tl.fromTo("#hon-card", { x: 560, y: 520, scale: 0.08, rotation: 8, opacity: 0 }, { x: 1040, y: 200, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, w("q", "Does") - 0.3);
+      tl.to("#hon-card", { y: -260, rotation: 6, scale: 0.8, duration: 0.4, ease: "power3.in" }, c.s.tombs + 0.3);
+
+      // the lid comes off: dust, then gold
+      gsap.set(["#hon-dust", "#hon-sparkle"], { opacity: 0 });
+      tl.fromTo("#hon-dust circle", { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1.3, duration: 0.4, ease: "power2.out", stagger: 0.05 }, tLift + 0.05);
+      gsap.set("#hon-dust", { opacity: 1 });
+      tl.to("#hon-dust circle", { opacity: 0, y: -40, duration: 0.6 }, tLift + 0.5);
+      Kit.hide(tl, "#hon-cobweb", tLift + 0.1, 0.3);
+      Kit.pop(tl, "#hon-sparkle path", w("spoiled", "spoiled") - 0.3, { stagger: 0.1, dur: 0.4 });
+      gsap.set("#hon-sparkle", { opacity: 1 });
+      tl.to("#hon-sparkle path", { rotation: 45, duration: 1.5, ease: "none", transformOrigin: "50% 50%" }, w("spoiled", "spoiled"));
+      Kit.out(tl, "#hon-sparkle", c.s.how + 0.4, { dur: 0.3 });
+
+      // a closer look: the lens grows out of the pot
+      gsap.set(["#hon-lens", "#hon-t1", "#hon-t2", "#hon-t3", "#hon-panel"], { opacity: 0 });
+      tl.fromTo("#hon-panel", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out", immediateRender: false }, tLens + 0.3);
+      tl.to("#hon-panel", { opacity: 0, x: 40, duration: 0.3, ease: "power2.in" }, tLensOut);
+      tl.fromTo("#hon-lens", { opacity: 1, scale: 0.12, x: 90, y: 30, transformOrigin: "50% 50%" }, { scale: 1, x: 0, y: 0, duration: 0.7, ease: "back.out(1.3)" }, tLens);
+      tl.set("#hon-lens", { opacity: 0 }, 0);
+      tl.set("#hon-lens", { opacity: 1 }, tLens);
+      $$("#hon-sugar path").forEach((h, i) => {
+        tl.fromTo(h, { rotation: -10 }, { rotation: 10, duration: 0.9 + (i % 3) * 0.2, ease: "sine.inOut", repeat: 14, yoyo: true, transformOrigin: "50% 50%" }, tLens);
+      });
+
+      // trick 1
+      Kit.show(tl, "#hon-t1", w("sugar", "Trick one") - 0.1, 0.3);
+      gsap.set(["#hon-germ1", "#hon-germ1-x", "#hon-flag", "#hon-drops-out"], { opacity: 0 });
+      tl.set("#hon-germ1", { opacity: 1 }, w("germs", "germ") - 0.3);
+      tl.fromTo("#hon-germ1", { y: -340 }, { y: 0, duration: 0.6, ease: "bounce.out", immediateRender: false }, w("germs", "germ") - 0.3);
+      const tSuck = w("germs", "water sucked") - 0.1;
+      tl.set("#hon-drops-out", { opacity: 1 }, tSuck);
+      const outs = [[-170, -150], [170, -120], [-140, 160], [160, 150]];
+      $$("#hon-drops-out circle").forEach((d, i) => {
+        tl.fromTo(d, { x: 0, y: 0 }, { x: outs[i][0], y: outs[i][1], duration: 0.7, ease: "power2.out" }, tSuck + i * 0.12);
+      });
+      tl.to("#hon-drops-out", { opacity: 0, duration: 0.3 }, tSuck + 1.2);
+      const tShrivel = w("germs", "shrivels") - 0.1;
+      tl.to("#hon-germ1-body", { scale: 0.62, duration: 0.6, ease: "power2.inOut", transformOrigin: "50% 50%" }, tShrivel);
+      tl.to("#hon-germ1-body use", { fill: "#a8b59a", duration: 0.6 }, tShrivel);
+      tl.set("#hon-germ1-eyes", { opacity: 0 }, tShrivel + 0.3);
+      tl.set("#hon-germ1-x", { opacity: 1 }, tShrivel + 0.3);
+      tl.fromTo("#hon-flag", { opacity: 0, scaleY: 0, transformOrigin: "50% 100%" }, { opacity: 1, scaleY: 1, duration: 0.35, ease: "back.out(2)" }, w("germs", "gives up") - 0.1);
+      tl.to("#hon-flag", { rotation: 8, duration: 0.25, yoyo: true, repeat: 5, ease: "sine.inOut", transformOrigin: "50% 100%" }, w("germs", "gives up") + 0.3);
+      Kit.out(tl, "#hon-germ1", c.s.acid - 0.3, { dur: 0.3 });
+      Kit.hide(tl, "#hon-t1", c.s.acid - 0.3, 0.25);
+
+      // trick 2
+      Kit.show(tl, "#hon-t2", w("acid", "Trick two") - 0.1, 0.3);
+      gsap.set(["#hon-ph-honey", "#hon-ph-oj", "#hon-germ2"], { opacity: 0 });
+      tl.fromTo("#hon-ph-honey", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, w("acid", "acidic") - 0.1);
+      tl.fromTo("#hon-ph-oj", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, w("acid", "orange juice") - 0.15);
+      tl.set("#hon-germ2", { opacity: 1 }, w("acid", "about") - 0.2);
+      tl.fromTo("#hon-germ2", { x: -420 }, { x: 0, duration: 0.7, ease: "power2.out", immediateRender: false }, w("acid", "about") - 0.2);
+      tl.to("#hon-germ2", { x: 460, rotation: 30, duration: 0.6, ease: "power3.in" }, w("acid", "hate") + 0.1);
+      Kit.hide(tl, "#hon-t2", c.s.enzyme - 0.3, 0.25);
+
+      // trick 3
+      Kit.show(tl, "#hon-t3", w("enzyme", "Trick three") - 0.1, 0.3);
+      gsap.set(["#hon-zapper", "#hon-enzyme", "#hon-bee"], { opacity: 0 });
+      const tBee = w("enzyme", "Bees") - 0.4;
+      tl.set("#hon-bee", { opacity: 1 }, tBee);
+      tl.fromTo("#hon-bee-in", { x: 2050, y: 260 }, { x: 1060, y: 380, duration: 1.0, ease: "power2.out" }, tBee);
+      tl.fromTo("#hon-bee-in", { rotation: 0 }, { keyframes: [{ rotation: -8, duration: 0.25 }, { rotation: 6, duration: 0.25 }, { rotation: -4, duration: 0.25 }, { rotation: 0, duration: 0.25 }], transformOrigin: "50% 50%" }, tBee);
+      tl.to(["#hon-wing1", "#hon-wing2"], { scaleY: 0.45, duration: 0.06, yoyo: true, repeat: 41, ease: "none", transformOrigin: "50% 100%" }, tBee);
+      tl.set("#hon-enzyme", { opacity: 1 }, w("enzyme", "enzyme") - 0.3);
+      Kit.pop(tl, "#hon-enzyme path", w("enzyme", "enzyme") - 0.3, { stagger: 0.12, dur: 0.35 });
+      tl.to("#hon-bee-in", { x: 2100, y: 120, duration: 0.9, ease: "power2.in" }, c.e.enzyme + 0.1);
+      Kit.hide(tl, "#hon-enzyme", c.s.peroxide + 0.5, 0.3);
+
+      // a little water, hydrogen peroxide, germ zapped
+      gsap.set(["#hon-wetdrop", "#hon-h2o2", "#hon-germ3", "#hon-zap", "#hon-poof"], { opacity: 0 });
+      tl.set("#hon-wetdrop", { opacity: 1 }, w("peroxide", "wet") - 0.4);
+      tl.fromTo("#hon-wetdrop", { y: -260 }, { y: 200, duration: 0.6, ease: "power2.in", immediateRender: false }, w("peroxide", "wet") - 0.4);
+      tl.to("#hon-wetdrop", { opacity: 0, scale: 1.6, duration: 0.15, transformOrigin: "50% 50%" }, w("peroxide", "wet") + 0.2);
+      tl.set("#hon-h2o2", { opacity: 1 }, w("peroxide", "hydrogen") - 0.3);
+      Kit.pop(tl, "#hon-h2o2 > g", w("peroxide", "hydrogen") - 0.3, { stagger: 0.18, dur: 0.4 });
+      tl.set("#hon-germ3", { opacity: 1 }, w("peroxide", "Germ") - 0.9);
+      tl.fromTo("#hon-germ3", { x: 300 }, { x: 0, duration: 0.5, ease: "power2.out", immediateRender: false }, w("peroxide", "Germ") - 0.9);
+      tl.set("#hon-zap", { opacity: 1 }, w("peroxide", "zapper") - 0.25);
+      tl.set("#hon-zap", { opacity: 0 }, w("peroxide", "zapper") + 0.1);
+      tl.set("#hon-germ3", { opacity: 0 }, w("peroxide", "zapper"));
+      tl.set("#hon-poof", { opacity: 1, scale: 0.5, transformOrigin: "50% 50%" }, w("peroxide", "zapper"));
+      tl.to("#hon-poof", { scale: 1.3, opacity: 0, duration: 0.6, ease: "power2.out" }, w("peroxide", "zapper"));
+      Kit.show(tl, "#hon-zapper", w("peroxide", "zapper") - 0.1, 0.2);
+      Kit.hide(tl, "#hon-t3", tLensOut, 0.25);
+
+      // lens closes back into the pot
+      tl.to("#hon-lens", { scale: 0.1, x: 90, y: 30, opacity: 0, duration: 0.5, ease: "power3.in", transformOrigin: "50% 50%" }, tLensOut);
+
+      // keep the lid on
+      gsap.set("#hon-think", { opacity: 0 });
+      tl.fromTo("#hon-think", { opacity: 0, scale: 0.6, transformOrigin: "80% 100%" }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, w("lid", "If honey") - 0.1);
+      tl.fromTo("#hon-rain path", { y: -10 }, { y: 30, duration: 0.5, repeat: 5, ease: "none" }, w("lid", "If honey"));
+      Kit.pop(tl, "#hon-fizz circle", w("lid", "ferment") - 0.2, { stagger: 0.08, dur: 0.3 });
+      Kit.out(tl, "#hon-think", c.s.crystals - 0.2, { dur: 0.3 });
+
+      // your jar goes cloudy, then a warm bath clears it
+      gsap.set(["#hon-kitchen", "#hon-crystal", "#hon-bowl", "#hon-crys-label"], { opacity: 0 });
+      Kit.show(tl, "#hon-kitchen", c.s.crystals - 0.4, 0.4);
+      tl.to("#hon-glass-honey", { fill: "#f4dba6", duration: 0.8 }, w("crystals", "cloudy") - 0.1);
+      Kit.show(tl, "#hon-crystal", w("crystals", "crunchy") - 0.2, 0.4);
+      Kit.show(tl, "#hon-crys-label", w("crystals", "crystals") - 0.15, 0.2);
+      Kit.draw(tl, "#hon-crys-label path", w("crystals", "crystals") - 0.2, 0.35);
+      Kit.hide(tl, "#hon-crys-label", c.s.warm - 0.1, 0.25);
+      tl.fromTo("#hon-bowl", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.5)" }, w("warm", "Warm") - 0.1);
+      tl.fromTo("#hon-steam", { y: 0, opacity: 0.7 }, { y: -20, opacity: 0.2, duration: 0.8, repeat: 4, ease: "none" }, w("warm", "Warm") + 0.3);
+      tl.to("#hon-glass-honey", { fill: "#f2a007", duration: 1.2 }, w("warm", "melts") - 0.3);
+      Kit.hide(tl, "#hon-crystal", w("warm", "melts") - 0.2, 0.9);
+
+      // whip to the next page
+      tl.fromTo("#hon-whip", { opacity: 0, x: 300 }, { opacity: 0.6, x: -300, duration: 0.4, ease: "power2.in" }, tWhip + 0.05);
+
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>
