@@ -1,0 +1,436 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Patrick Hand";
+      src: url("assets/fonts/PatrickHand-Regular.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Permanent Marker";
+      src: url("assets/fonts/PermanentMarker-Regular.woff2") format("woff2");
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #root svg {
+      position: absolute;
+      inset: 0;
+    }
+    #root .ink {
+      fill: none;
+      stroke: #1f1d1a;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #root .thin {
+      stroke-width: 4;
+    }
+    #root .draw {
+      stroke-dasharray: 1 1.1;
+    }
+    #root .hand {
+      font-family: "Patrick Hand";
+    }
+    #root .marker {
+      font-family: "Permanent Marker";
+    }
+  </style>
+  <div id="root" data-composition-id="venus" data-width="1920" data-height="1080">
+    <svg id="ven-svg" viewBox="0 0 1920 1080" width="1920" height="1080" fill="#1f1d1a">
+      <defs>
+        <g id="ven-star"><path d="M0 -14 L4 -4 L14 0 L4 4 L0 14 L-4 4 L-14 0 L-4 -4 Z" fill="#fffbe8" stroke="#1f1d1a" stroke-width="2.5" stroke-linejoin="round" /></g>
+        <clipPath id="ven-earth-clip"><circle cx="0" cy="0" r="52" /></clipPath>
+        <clipPath id="ven-rise-clip"><rect x="-360" y="-200" width="720" height="400" rx="12" /></clipPath>
+      </defs>
+      <rect x="0" y="0" width="1920" height="1080" fill="#c8d0f0" />
+      <g id="ven-cam">
+        <rect x="-4000" y="-4000" width="10000" height="10000" fill="#c8d0f0" />
+        <g id="ven-stars">
+          <use href="#ven-star" transform="translate(220 180)" /><use href="#ven-star" transform="translate(520 320) scale(0.7)" /><use href="#ven-star" transform="translate(1180 140)" />
+          <use href="#ven-star" transform="translate(1500 300) scale(0.8)" /><use href="#ven-star" transform="translate(1760 160) scale(0.6)" /><use href="#ven-star" transform="translate(300 640) scale(0.7)" />
+          <use href="#ven-star" transform="translate(1660 700)" /><use href="#ven-star" transform="translate(1260 860) scale(0.7)" /><use href="#ven-star" transform="translate(140 940) scale(0.8)" />
+          <use href="#ven-star" transform="translate(-300 200)" /><use href="#ven-star" transform="translate(-500 800) scale(0.8)" /><use href="#ven-star" transform="translate(-200 1300)" />
+          <use href="#ven-star" transform="translate(2100 400)" /><use href="#ven-star" transform="translate(2300 1000) scale(0.7)" /><use href="#ven-star" transform="translate(1900 1400)" />
+          <use href="#ven-star" transform="translate(600 -300) scale(0.8)" /><use href="#ven-star" transform="translate(1300 -400)" /><use href="#ven-star" transform="translate(900 1500) scale(0.7)" />
+          <use href="#ven-star" transform="translate(400 1300) scale(0.6)" /><use href="#ven-star" transform="translate(1600 1250) scale(0.8)" />
+        </g>
+        <!-- the solar system, top down -->
+        <g id="ven-system">
+          <circle id="ven-orbit-v" class="ink thin draw" pathLength="1" cx="700" cy="540" r="300" opacity="0.55" />
+          <circle id="ven-orbit-e" class="ink thin draw" pathLength="1" cx="700" cy="540" r="470" opacity="0.55" />
+          <g transform="translate(700 540)">
+            <g id="ven-sun">
+              <path class="ink" d="M0 -128 L0 -160 M0 128 L0 160 M-128 0 L-160 0 M128 0 L160 0 M90 -90 L113 -113 M-90 90 L-113 113 M90 90 L113 113 M-90 -90 L-113 -113" />
+              <circle cx="6" cy="5" r="104" fill="#ffc832" />
+              <circle class="ink" cx="0" cy="0" r="104" />
+              <path class="ink thin" d="M-34 -10 Q-28 -18 -20 -10 M20 -10 Q28 -18 34 -10 M-24 24 Q0 44 24 24" />
+            </g>
+          </g>
+          <g id="ven-earth">
+            <g id="ven-earth-pop">
+            <g id="ven-earth-spin">
+              <circle cx="0" cy="0" r="52" fill="#4aa3e0" stroke="#1f1d1a" stroke-width="5" />
+              <g clip-path="url(#ven-earth-clip)">
+                <path d="M-40 -30 C -20 -46, 10 -40, 6 -18 C 2 0, -20 4, -30 -6 C -40 -14, -50 -20, -40 -30 Z M10 14 C 30 6, 50 20, 40 40 C 30 54, 6 50, 6 34 C 6 24, 4 18, 10 14 Z" fill="#7bc96f" stroke="#1f1d1a" stroke-width="3" />
+              </g>
+              <circle cx="0" cy="0" r="52" fill="none" stroke="#1f1d1a" stroke-width="5" />
+              <path d="M0 -52 L0 -78" stroke="#1f1d1a" stroke-width="4" stroke-linecap="round" />
+              <path d="M0 -78 L22 -72 L0 -64 Z" fill="#ff5a4e" stroke="#1f1d1a" stroke-width="3" stroke-linejoin="round" />
+            </g>
+            </g>
+            <path id="ven-earth-arrow" d="M-72 -20 A75 75 0 1 0 -20 -72 M-20 -72 L-44 -74 M-20 -72 L-30 -50" fill="none" stroke="#1f1d1a" stroke-width="5" stroke-linecap="round" />
+            <text id="ven-earth-label" class="hand" x="0" y="122" font-size="50" text-anchor="middle">Earth</text>
+          </g>
+          <g id="ven-venus">
+            <g id="ven-venus-pop">
+            <g id="ven-venus-spin">
+              <circle cx="0" cy="0" r="46" fill="#f08a3c" stroke="#1f1d1a" stroke-width="5" />
+              <path d="M-38 -14 C -14 -24, 14 -6, 40 -16 M-42 10 C -16 0, 16 20, 42 8 M-30 30 C -10 22, 10 38, 30 30" fill="none" stroke="#c45f1f" stroke-width="4" stroke-linecap="round" />
+              <path d="M0 -46 L0 -72" stroke="#1f1d1a" stroke-width="4" stroke-linecap="round" />
+              <path d="M0 -72 L22 -66 L0 -58 Z" fill="#ffc832" stroke="#1f1d1a" stroke-width="3" stroke-linejoin="round" />
+            </g>
+            </g>
+            <path id="ven-venus-arrow" d="M66 -18 A68 68 0 1 1 18 -66 M18 -66 L40 -70 M18 -66 L28 -44" fill="none" stroke="#c62f3a" stroke-width="5" stroke-linecap="round" />
+            <text id="ven-venus-label" class="hand" x="0" y="114" font-size="50" text-anchor="middle">Venus</text>
+            <g id="ven-snail" transform="translate(-150 -50)">
+              <path d="M-40 20 L40 20 Q50 20 50 10 L50 0" fill="none" stroke="#1f1d1a" stroke-width="5" stroke-linecap="round" />
+              <circle cx="0" cy="-4" r="26" fill="#f6c58b" stroke="#1f1d1a" stroke-width="5" />
+              <path d="M0 -4 m-8 0 a8 8 0 1 0 16 0 a12 12 0 1 0 -22 -2" fill="none" stroke="#1f1d1a" stroke-width="3.5" />
+              <path d="M44 0 L50 -22 M50 0 L60 -20" stroke="#1f1d1a" stroke-width="4" stroke-linecap="round" />
+              <text class="hand" x="0" y="66" font-size="40" text-anchor="middle">sloooow</text>
+            </g>
+            <g id="ven-zoom" stroke="#1f1d1a" stroke-width="5" stroke-linecap="round">
+              <path d="M60 -30 L130 -40 M66 0 L150 0 M60 30 L130 40" />
+            </g>
+          </g>
+        </g>
+        <!-- the question jar floats along too -->
+        <g transform="translate(1810 640) scale(0.7)">
+          <g id="ven-jar">
+            <path d="M-100 -235 C-112 -170 -108 -60 -100 -22 Q-96 0 -70 0 L70 0 Q96 0 100 -22 C108 -60 112 -170 100 -235 Z" fill="rgba(170,215,245,0.42)" />
+            <g transform="translate(-30 -40) rotate(-12)"><rect x="-34" y="-18" width="68" height="36" fill="#FFF1A8" stroke="#1f1d1a" stroke-width="3.5" /></g>
+            <path class="ink" d="M-100 -235 C-112 -170 -108 -60 -100 -22 Q-96 0 -70 0 L70 0 Q96 0 100 -22 C108 -60 112 -170 100 -235" />
+            <path class="ink" data-marker="#FF5A4E" d="M-114 -264 L114 -264 L106 -234 L-106 -234 Z" />
+            <rect class="ink thin" data-marker="#ffffff" data-off="4 4" x="-88" y="-212" width="176" height="56" />
+            <text class="hand" x="0" y="-170" font-size="40" text-anchor="middle" data-layout-ignore>QUESTIONS</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- the comparison panel -->
+      <g id="ven-panel">
+        <rect x="1330" y="96" width="560" height="560" rx="16" fill="#fffdf6" stroke="#1f1d1a" stroke-width="6" />
+        <g id="ven-table">
+          <text class="marker" x="1610" y="160" font-size="46" text-anchor="middle">Earth</text>
+          <text class="marker" x="1790" y="160" font-size="46" text-anchor="middle" fill="#c45f1f">Venus</text>
+          <path class="ink thin" d="M1350 182 L1870 182 M1520 120 L1520 380 M1700 120 L1700 380" opacity="0.6" />
+          <text class="hand" x="1356" y="244" font-size="42">1 day</text>
+          <text class="hand" x="1356" y="280" font-size="30" fill="#5a5650">(one spin)</text>
+          <text class="hand" x="1356" y="340" font-size="42">1 year</text>
+          <text class="hand" x="1356" y="372" font-size="30" fill="#5a5650">(one lap)</text>
+          <text id="ven-v-ed" class="marker" x="1610" y="262" font-size="56" text-anchor="middle">1</text>
+          <text id="ven-v-ey" class="marker" x="1610" y="358" font-size="56" text-anchor="middle">365</text>
+          <text id="ven-v-vd" class="marker" x="1790" y="262" font-size="56" text-anchor="middle" fill="#c45f1f">243</text>
+          <text id="ven-v-vy" class="marker" x="1790" y="358" font-size="56" text-anchor="middle" fill="#c45f1f">225</text>
+          <text class="hand" x="1356" y="414" font-size="30" fill="#5a5650">all in Earth days</text>
+          <path id="ven-ring" class="draw" pathLength="1" d="M1730 210 C 1720 190, 1860 186, 1862 214 C 1866 260, 1860 360, 1850 384 C 1830 404, 1740 402, 1724 380 C 1714 330, 1716 250, 1730 210" fill="none" stroke="#e8453c" stroke-width="6" stroke-linecap="round" />
+        </g>
+        <!-- the race: one year vs one spin -->
+        <g id="ven-race">
+          <text class="hand" x="1356" y="478" font-size="40">year</text>
+          <rect x="1460" y="448" width="400" height="40" rx="10" fill="#f3efe4" stroke="#1f1d1a" stroke-width="4" />
+          <rect id="ven-bar-year" x="1460" y="448" width="0" height="40" rx="10" fill="#f08a3c" stroke="#1f1d1a" stroke-width="4" />
+          <text class="hand" x="1356" y="548" font-size="40">day</text>
+          <rect x="1460" y="518" width="400" height="40" rx="10" fill="#f3efe4" stroke="#1f1d1a" stroke-width="4" />
+          <rect id="ven-bar-day" x="1460" y="518" width="0" height="40" rx="10" fill="#ffc832" stroke="#1f1d1a" stroke-width="4" />
+          <text id="ven-count" class="marker" x="1610" y="626" font-size="48" text-anchor="middle">day 0</text>
+          <g id="ven-done" transform="translate(1640 444)">
+            <path d="M0 0 L0 -70" stroke="#1f1d1a" stroke-width="5" stroke-linecap="round" />
+            <path d="M0 -70 L60 -58 L0 -44 Z" fill="#2fae5b" stroke="#1f1d1a" stroke-width="4" stroke-linejoin="round" />
+            <text class="marker" x="70" y="-46" font-size="36" fill="#2fae5b">done!</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- sunrise on Venus -->
+      <g transform="translate(900 520)">
+        <g id="ven-rise">
+          <rect x="-366" y="-206" width="732" height="412" rx="14" fill="#1f1d1a" opacity="0.18" />
+          <g clip-path="url(#ven-rise-clip)">
+            <rect x="-360" y="-200" width="720" height="400" fill="#f6d39b" />
+            <g id="ven-rise-sun"><circle cx="-250" cy="80" r="64" fill="#ffc832" stroke="#1f1d1a" stroke-width="5" /></g>
+            <path d="M-360 90 C -200 76, -60 104, 80 86 C 200 72, 300 96, 360 88 L360 200 L-360 200 Z" fill="#d9773a" stroke="#1f1d1a" stroke-width="5" />
+          </g>
+          <rect x="-360" y="-200" width="720" height="400" rx="12" fill="none" stroke="#1f1d1a" stroke-width="6" />
+          <text class="marker" x="-300" y="170" font-size="60" fill="#ffffff" stroke="#1f1d1a" stroke-width="2">W</text>
+          <text class="marker" x="260" y="170" font-size="60" fill="#ffffff" stroke="#1f1d1a" stroke-width="2">E</text>
+          <text class="hand" x="0" y="-150" font-size="48" text-anchor="middle">sunrise on Venus</text>
+          <path id="ven-rise-arrow" class="draw" pathLength="1" d="M-170 60 C -150 0, -150 -40, -170 -80 M-170 -80 L-184 -58 M-170 -80 L-154 -60" fill="none" stroke="#1f1d1a" stroke-width="5" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- hot enough to melt lead -->
+      <g id="ven-hot">
+        <rect x="1330" y="96" width="560" height="560" rx="16" fill="#fffdf6" stroke="#1f1d1a" stroke-width="6" />
+        <rect x="1440" y="150" width="56" height="360" rx="28" fill="#ffffff" stroke="#1f1d1a" stroke-width="6" />
+        <rect id="ven-merc" x="1454" y="164" width="28" height="350" rx="14" fill="#e8453c" />
+        <circle cx="1468" cy="540" r="50" fill="#e8453c" stroke="#1f1d1a" stroke-width="6" />
+        <path class="ink thin" d="M1496 200 l16 0 M1496 260 l16 0 M1496 320 l16 0 M1496 380 l16 0 M1496 440 l16 0" />
+        <text class="marker" x="1530" y="228" font-size="64" fill="#c62f3a">465 °C</text>
+        <g id="ven-lead">
+          <g transform="translate(1720 560)"><g id="ven-lead-bar"><rect x="-70" y="-90" width="140" height="90" rx="8" fill="#a7adb5" stroke="#1f1d1a" stroke-width="5" /><text class="marker" x="0" y="-30" font-size="44" text-anchor="middle" fill="#ffffff">lead</text></g></g>
+          <path id="ven-puddle" d="M1600 566 C 1620 548, 1700 546, 1720 552 C 1760 546, 1830 550, 1846 566 C 1820 580, 1640 582, 1600 566 Z" fill="#a7adb5" stroke="#1f1d1a" stroke-width="5" />
+        </g>
+      </g>
+
+      <!-- Specs, presenting from the corner -->
+      <g id="ven-scam">
+        <g id="ven-specs"></g>
+        <g id="ven-helmet">
+          <circle cx="0" cy="-4" r="96" fill="rgba(200,235,255,0.28)" stroke="#1f1d1a" stroke-width="6" />
+          <path d="M-60 -50 C -50 -70, -30 -82, -10 -86" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" />
+          <path d="M-70 64 Q0 96 70 64" fill="none" stroke="#1f1d1a" stroke-width="6" />
+        </g>
+        <g id="ven-note"><rect x="-38" y="-20" width="76" height="40" fill="#FFF1A8" stroke="#1f1d1a" stroke-width="4" /></g>
+        <g id="ven-sweat">
+          <path class="drop" d="M0 -14 C 6 -4, 8 0, 8 4 C 8 9, 4 12, 0 12 C -4 12, -8 9, -8 4 C -8 0, -6 -4, 0 -14 Z" fill="#bfe6ff" stroke="#1f1d1a" stroke-width="2.5" />
+          <path class="drop" d="M0 -14 C 6 -4, 8 0, 8 4 C 8 9, 4 12, 0 12 C -4 12, -8 9, -8 4 C -8 0, -6 -4, 0 -14 Z" fill="#bfe6ff" stroke="#1f1d1a" stroke-width="2.5" />
+        </g>
+        <circle id="ven-portal" cx="0" cy="0" r="22" fill="#eaf3fa" opacity="0" />
+      </g>
+
+      <!-- the question -->
+      <g id="ven-card">
+        <path class="ink" data-marker="#FFF1A8" d="M-560 -110 L560 -120 L568 114 L-568 120 Z" />
+        <text class="marker" x="0" y="28" font-size="68" text-anchor="middle">Is a day on <tspan fill="#c45f1f">Venus</tspan> longer than its year?</text>
+      </g>
+      <image href="assets/grain.png" x="0" y="0" width="1920" height="1080" />
+    </svg>
+  </div>
+  <script src="assets/data/timing.js"></script>
+  <script src="assets/data/lipsync.js"></script>
+  <script src="assets/specs.js"></script>
+  <script src="assets/kit.js"></script>
+  <script>
+    (function () {
+      const S = "venus";
+      const c = Kit.cues(S);
+      const w = c.w;
+      const $ = (q) => document.querySelector(q);
+      const $$ = (q) => Array.from(document.querySelectorAll(q));
+      const tl = gsap.timeline({ paused: true });
+      Kit.markers($("#ven-svg"));
+
+      const tReach = w("q", "jar") - 0.5;
+      const tCard = w("q", "Is a") - 0.3;
+      const tOut = c.s.space + 0.2;
+      const tRace = w("finish", "Venus") - 0.2;
+      const RACE = 2.6;
+      const tZoom = c.e.lead + 0.5;
+      const ZOOM = 1.3;
+
+      // ---------- Specs, in screen space ----------
+      const reachJar = Specs.reach("reach-l", "L", (1372 - 1500) / 0.9, (452 - 640) / 0.9, -1);
+      const rig = Specs.create($("#ven-specs"), {
+        scene: S,
+        x: 1500,
+        y: 1450,
+        s: 0.9,
+        shadow: [[0, 0]],
+        poses: [
+          [0, "float", 0],
+          [c.s.q - 0.2, "explain", 0.4],
+          [tReach, reachJar, 0.4],
+          [tReach + 0.6, "hold-up-l", 0.35, "back"],
+          [tCard + 0.3, "think", 0.4],
+          [c.s.space - 0.1, "shrug", 0.35, "back"],
+          [tOut + 0.4, "float", 0.6],
+          [c.s.day - 0.1, "present-r", 0.45],
+          [c.s.year - 0.1, "explain-r", 0.4],
+          [c.s.earth - 0.1, "present-r", 0.45],
+          [c.s.slow - 0.1, "tired", 0.5],
+          [c.s.zips - 0.1, "point-ur", 0.35, "back"],
+          [c.s.finish - 0.1, "fist-up", 0.3, "back"],
+          [tRace + RACE, "cheer", 0.35, "back"],
+          [c.s.west - 0.1, "explain-r", 0.4],
+          [w("west", "Sun rises") - 0.2, "point-ur", 0.35, "back"],
+          [c.s.lead - 0.1, "hips", 0.4],
+          [w("lead", "hot") - 0.2, "tired", 0.4],
+          [tZoom - 0.6, "push-glasses", 0.35, "back"],
+        ],
+        faces: [
+          [0, "happy", 0],
+          [c.s.q, "excited", 0.3],
+          [tCard, "thinking", 0.3],
+          [c.s.space, "grin", 0.3],
+          [c.s.day, "happy", 0.3],
+          [c.s.slow, "sleepy", 0.4],
+          [c.s.zips, "excited", 0.25],
+          [c.s.finish, "excited", 0.25],
+          [tRace + RACE, "proud", 0.3],
+          [c.s.west, "amazed", 0.3],
+          [c.s.lead, "skeptical", 0.3],
+          [w("lead", "hot"), "worried", 0.3],
+          [tZoom - 0.6, "smug", 0.3],
+        ],
+        looks: [
+          [0, 0, -0.6, 0],
+          [c.s.q, 0, 0.05, 0.3],
+          [tReach, -0.9, 0.3, 0.3],
+          [tCard, -0.6, -0.8, 0.3],
+          [c.s.space, 0, 0.05, 0.3],
+          [tOut + 0.6, 0.8, -0.6, 0.3],
+          [c.s.finish, 0.9, -0.5, 0.3],
+          [c.s.lead, 0, 0.05, 0.3],
+          [w("lead", "hot"), 0.9, -0.4, 0.3],
+          [tZoom - 0.6, 0, 0.05, 0.3],
+        ],
+        moves: [
+          [0.1, 1500, 640, 0.9, 1.5, "out"],
+          [tOut, 250, 1010, 0.6, 1.5, "inOut"],
+          [c.s.lead + 0.2, 330, 990, 0.62, 0.8],
+          [tZoom - 1.2, 960, 960, 0.85, 0.9],
+        ],
+      });
+      const scam = Kit.camera($("#ven-scam"), [[tZoom, (t) => lens[0], (t) => lens[1], 62, ZOOM, "in"]]);
+      let lens = [0, 0];
+
+      // ---------- the world camera and the planets ----------
+      const SUN = [700, 540];
+      const DIAG = [829, 572, 0.62];
+      const earthAng = Kit.track([[c.s.year + 0.3, 200 - 360, 3.2]], 200);
+      const venusAng = Kit.track(
+        [
+          [w("zips", "zips") - 0.2, 30 - 360, 2.2],
+          [tRace, 30 - 720, RACE, "linear"],
+        ],
+        30,
+      );
+      const earthSpin = Kit.track(
+        [
+          [w("day", "spin") - 0.3, -360, 2.4],
+          [c.s.year + 0.3, -360 * 8, 3.2, "linear"],
+        ],
+        0,
+      );
+      const venusSpin = Kit.track(
+        [
+          [c.s.slow + 0.4, 40, 5.5, "linear"],
+          [tRace, 40 + (360 * 225) / 243, RACE, "linear"],
+        ],
+        0,
+      );
+      const count = Kit.track([[tRace, 225, RACE, "linear"]], 0);
+      const at = (ang, r) => [SUN[0] + Math.cos((ang * Math.PI) / 180) * r, SUN[1] + Math.sin((ang * Math.PI) / 180) * r];
+      const E0 = at(200, 470);
+      const V0 = at(30, 300);
+      const cam = Kit.camera($("#ven-cam"), [
+        [tOut, DIAG[0], DIAG[1], DIAG[2], 1.6],
+        [c.s.day - 0.3, E0[0] - 22, E0[1] + 33, 1.8, 1.0],
+        [c.s.year - 0.2, DIAG[0], DIAG[1], DIAG[2], 1.0],
+        [c.s.slow - 0.3, V0[0] - 22, V0[1] + 33, 1.8, 1.0],
+        [c.s.zips - 0.3, DIAG[0], DIAG[1], DIAG[2], 0.9],
+      ], { cx: 1400, cy: 560, z: 1 });
+
+      const earth = $("#ven-earth");
+      const earthS = $("#ven-earth-spin");
+      const venus = $("#ven-venus");
+      const venusS = $("#ven-venus-spin");
+      const helmet = $("#ven-helmet");
+      const note = $("#ven-note");
+      const sweat = $$("#ven-sweat .drop");
+      const portal = $("#ven-portal");
+      const barY = $("#ven-bar-year");
+      const barD = $("#ven-bar-day");
+      const counter = $("#ven-count");
+      Kit.driver(tl, c.dur, (t) => {
+        const p = rig.render(t);
+        lens = p.lensL;
+        scam.render(t);
+        cam.render(t);
+        helmet.setAttribute("transform", `translate(${p.head[0].toFixed(1)} ${p.head[1].toFixed(1)}) rotate(${p.tilt.toFixed(1)}) scale(${p.scale})`);
+        portal.setAttribute("cx", lens[0].toFixed(2));
+        portal.setAttribute("cy", lens[1].toFixed(2));
+        portal.setAttribute("r", (22 * p.scale).toFixed(2));
+        // the note he pulls from the jar, until the card takes over
+        if (t > tReach + 0.45 && t < tCard + 0.05) {
+          const h = p.handL;
+          note.setAttribute("transform", `translate(${h[0].toFixed(1)} ${(h[1] - 14).toFixed(1)}) rotate(8)`);
+          note.setAttribute("opacity", 1);
+        } else note.setAttribute("opacity", 0);
+        const ep = at(earthAng(t), 470);
+        earth.setAttribute("transform", `translate(${ep[0].toFixed(1)} ${ep[1].toFixed(1)})`);
+        earthS.setAttribute("transform", `rotate(${earthSpin(t).toFixed(2)})`);
+        const vp = at(venusAng(t), 300);
+        venus.setAttribute("transform", `translate(${vp[0].toFixed(1)} ${vp[1].toFixed(1)})`);
+        venusS.setAttribute("transform", `rotate(${venusSpin(t).toFixed(2)})`);
+        const n = count(t);
+        barY.setAttribute("width", ((400 * n) / 225).toFixed(1));
+        barD.setAttribute("width", ((400 * n) / 243).toFixed(1));
+        counter.textContent = "day " + Math.round(n);
+        const hot = t > w("lead", "hot");
+        sweat.forEach((d, i) => {
+          const k = ((t - w("lead", "hot") + i * 0.45) % 0.9) / 0.9;
+          d.setAttribute("opacity", hot && t < tZoom ? (1 - k).toFixed(2) : 0);
+          d.setAttribute("transform", `translate(${(p.head[0] + (i ? 70 : -70) * p.scale).toFixed(1)} ${(p.head[1] - 20 * p.scale + k * 60 * p.scale).toFixed(1)}) scale(${p.scale})`);
+        });
+      });
+
+      // the jar drifts in; the card comes out of it
+      tl.fromTo("#ven-jar", { x: -900, y: 120, rotation: -20 }, { x: 0, y: 0, rotation: 6, duration: 1.6, ease: "power2.out" }, 0.2);
+      tl.fromTo("#ven-card", { x: 1150, y: 540, scale: 0.08, transformOrigin: "50% 50%", rotation: 8, opacity: 0 }, { x: 960, y: 190, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, tCard);
+      tl.to("#ven-card", { transformOrigin: "50% 50%", y: -260, rotation: 6, scale: 0.8, duration: 0.4, ease: "power3.in" }, c.s.space + 0.2);
+      tl.to("#ven-jar", { x: 1600, y: -1800, rotation: 40, duration: 2.0, ease: "power1.in" }, tOut);
+
+      // the system draws itself as the camera pulls back
+      Kit.draw(tl, ["#ven-orbit-v", "#ven-orbit-e"], tOut + 0.5, 1.2, "power2.inOut", 0.2);
+      gsap.set(["#ven-earth-arrow", "#ven-venus-arrow", "#ven-snail", "#ven-zoom", "#ven-panel", "#ven-race", "#ven-ring", "#ven-done", "#ven-rise", "#ven-hot"], { opacity: 0 });
+      Kit.pop(tl, "#ven-sun", tOut + 0.3, { dur: 0.5 });
+      Kit.pop(tl, ["#ven-earth-pop", "#ven-venus-pop"], tOut + 0.8, { dur: 0.45, stagger: 0.2 });
+      Kit.show(tl, ["#ven-earth-label", "#ven-venus-label"], tOut + 1.1, 0.3);
+      Kit.show(tl, "#ven-earth-arrow", w("day", "spin") - 0.4, 0.3);
+      Kit.hide(tl, "#ven-earth-arrow", c.s.year + 0.2, 0.3);
+
+      // the table
+      tl.fromTo("#ven-panel", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out", immediateRender: false }, c.s.earth - 0.2);
+      gsap.set(["#ven-v-ed", "#ven-v-ey", "#ven-v-vd", "#ven-v-vy"], { opacity: 0 });
+      Kit.pop(tl, "#ven-v-ed", w("earth", "once a day") - 0.1, { dur: 0.35 });
+      Kit.pop(tl, "#ven-v-ey", w("earth", "three hundred") - 0.1, { dur: 0.35 });
+      Kit.show(tl, "#ven-snail", c.s.slow + 0.6, 0.3);
+      tl.fromTo("#ven-snail", { x: 0 }, { x: 40, duration: 5, ease: "none", immediateRender: false }, c.s.slow + 0.6);
+      Kit.hide(tl, "#ven-snail", c.s.zips, 0.3);
+      Kit.pop(tl, "#ven-v-vd", w("slow", "two hundred") - 0.1, { dur: 0.35 });
+      Kit.show(tl, "#ven-zoom", w("zips", "zips") - 0.1, 0.2);
+      Kit.hide(tl, "#ven-zoom", w("zips", "zips") + 2.0, 0.3);
+      Kit.pop(tl, "#ven-v-vy", w("zips", "two hundred") - 0.1, { dur: 0.35 });
+      tl.set("#ven-ring", { opacity: 1 }, c.s.finish);
+      Kit.draw(tl, "#ven-ring", c.s.finish, 0.5);
+
+      // the race
+      Kit.show(tl, "#ven-race", tRace - 0.4, 0.3);
+      Kit.pop(tl, "#ven-done", tRace + RACE, { dur: 0.4, origin: "0% 100%" });
+
+      // backwards spin, sunrise in the west
+      Kit.hide(tl, "#ven-panel", c.s.west - 0.2, 0.3);
+      Kit.show(tl, "#ven-venus-arrow", c.s.west + 0.2, 0.3);
+      tl.fromTo("#ven-rise", { opacity: 0, scale: 0.85, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.5)", immediateRender: false }, w("west", "so on Venus") - 0.4);
+      tl.fromTo("#ven-rise-sun", { y: 120 }, { y: -90, duration: 2.0, ease: "power1.out" }, w("west", "Sun rises") - 0.3);
+      Kit.draw(tl, "#ven-rise-arrow", w("west", "rises") - 0.1, 0.5);
+      tl.to("#ven-rise", { opacity: 0, scale: 0.9, duration: 0.3, ease: "power2.in", transformOrigin: "50% 50%" }, c.s.lead - 0.2);
+
+      // hot enough to melt lead
+      Kit.show(tl, "#ven-hot", c.s.lead + 0.1, 0.3);
+      tl.fromTo("#ven-merc", { scaleY: 0.12, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 1.3, ease: "power2.out" }, c.s.lead + 0.3);
+      tl.fromTo("#ven-lead-bar", { scaleY: 1, scaleX: 1, transformOrigin: "50% 100%" }, { scaleY: 0.1, scaleX: 1.4, duration: 1.4, ease: "power2.in" }, w("lead", "melt") - 0.2);
+      tl.fromTo("#ven-puddle", { scaleX: 0.3, opacity: 0, transformOrigin: "50% 50%" }, { scaleX: 1, opacity: 1, duration: 1.2, ease: "power2.out" }, w("lead", "melt"));
+      Kit.hide(tl, "#ven-hot", tZoom - 0.4, 0.3);
+
+      // back home through his glasses
+      tl.fromTo(portal, { opacity: 0 }, { opacity: 1, duration: ZOOM * 0.45, ease: "power1.in", immediateRender: false }, tZoom + ZOOM * 0.2);
+
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

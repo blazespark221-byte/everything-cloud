@@ -4,6 +4,7 @@
 // Scene visuals key off the same timing at runtime (assets/data/timing.js), so after
 // re-running tools/voice.py, re-run this and the picture and sound stay in step.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -52,16 +53,29 @@ const music = existsSync(join(ROOT, "assets/music/bed.mp3"))
   ? `      <audio id="music" class="clip" src="assets/music/bed.mp3" data-start="0" data-duration="${r3(total)}" data-track-index="3" data-volume="1"></audio>`
   : "";
 
+// effects get their file's length as duration, and the first sound lane (4, 5, ...) free at their start
+const lengths = {};
+const fileLength = (file) =>
+  (lengths[file] ??= Number(
+    execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", join(ROOT, "assets/sfx", file)]).toString(),
+  ));
 const used = {};
+const laneEnds = [];
 const effects = sfx.cues
-  .map((c) => {
-    const [scene, at, offset, file, volume] = c;
-    const t = timing[scene].start + cueTime(scene, at) + (offset || 0);
+  .map((c) => [c, Math.max(0, timing[c[0]].start + cueTime(c[0], c[1]) + (c[2] || 0))])
+  .sort((a, b) => a[1] - b[1])
+  .map(([c, t]) => {
+    const [scene, , , file, volume] = c;
+    const dur = Math.min(fileLength(file), total - t);
+    let lane = laneEnds.findIndex((end) => end <= t);
+    if (lane < 0) lane = laneEnds.push(0) - 1;
+    laneEnds[lane] = t + dur;
     const base = file.replace(/\.[a-z0-9]+$/, "");
     used[base] = (used[base] || 0) + 1;
     const id = `sfx-${scene}-${base}-${used[base]}`;
-    return `      <audio id="${id}" class="clip" src="assets/sfx/${file}" data-start="${r3(t)}" data-track-index="4" data-volume="${volume == null ? 0.35 : volume}"></audio>`;
+    return { line: `      <audio id="${id}" class="clip" src="assets/sfx/${file}" data-start="${r3(t)}" data-duration="${r3(dur)}" data-track-index="${4 + lane}" data-volume="${volume == null ? 0.35 : volume}"></audio>` };
   })
+  .map((e) => e.line)
   .join("\n");
 
 const html = `<!doctype html>

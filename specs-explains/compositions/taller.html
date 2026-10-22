@@ -349,8 +349,8 @@
       tl.fromTo("#tal-whip", { opacity: 0.6, x: 300 }, { opacity: 0, x: -400, duration: 0.45, ease: "power2.out" }, 0);
 
       // the question
-      tl.fromTo("#tal-card", { x: 600, y: 520, scale: 0.08, rotation: 8, opacity: 0 }, { x: 1180, y: 200, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, w("q", "Are you") - 0.3);
-      tl.to("#tal-card", { y: -260, rotation: 6, scale: 0.8, duration: 0.4, ease: "power3.in" }, c.s.yes + 0.2);
+      tl.fromTo("#tal-card", { x: 600, y: 520, scale: 0.08, transformOrigin: "50% 50%", rotation: 8, opacity: 0 }, { x: 1180, y: 200, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, w("q", "Are you") - 0.3);
+      tl.to("#tal-card", { transformOrigin: "50% 50%", y: -260, rotation: 6, scale: 0.8, duration: 0.4, ease: "power3.in" }, c.s.yes + 0.2);
 
       // grow, mark, shrink, mark: one centimetre
       gsap.set(["#tal-onecm", "#tal-daylabels", "#tal-winmoon", "#tal-night"], { opacity: 0 });

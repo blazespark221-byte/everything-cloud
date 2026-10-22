@@ -325,8 +325,8 @@
       ]);
 
       // card: unfolds out of the note into the question
-      tl.fromTo("#sky-card", { x: 1240, y: 520, scale: 0.08, rotation: -10, opacity: 0 }, { x: 760, y: 250, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, tUnfold);
-      tl.to("#sky-card", { x: 520, y: -260, rotation: -12, scale: 0.7, duration: 0.4, ease: "power3.in" }, tCardOut);
+      tl.fromTo("#sky-card", { x: 1240, y: 520, scale: 0.08, transformOrigin: "50% 50%", rotation: -10, opacity: 0 }, { x: 760, y: 250, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, tUnfold);
+      tl.to("#sky-card", { transformOrigin: "50% 50%", x: 520, y: -260, rotation: -12, scale: 0.7, duration: 0.4, ease: "power3.in" }, tCardOut);
       tl.fromTo(portal, { opacity: 0 }, { opacity: 1, duration: ZOOM * 0.45, ease: "power1.in" }, tZoom + ZOOM * 0.2);
       tl.set("#sky-studio-cam", { opacity: 0 }, tSwitch);
       tl.set("#sky-world", { opacity: 1 }, tSwitch);
@@ -440,7 +440,7 @@
       $$("#sky-mols .mol > g").forEach((m, i) => {
         Kit.pop(tl, m, c.s.molecules + 0.15 + i * 0.09, { dur: 0.45 });
         const per = 1.1 + (i % 4) * 0.23;
-        const n = Math.floor((c.dur - c.s.molecules) / per);
+        const n = Math.max(0, Math.floor((c.dur - c.s.molecules) / per) - 1);
         tl.to(m, { rotation: i % 2 ? 14 : -14, duration: per, ease: "sine.inOut", repeat: n, yoyo: true, transformOrigin: "50% 50%" }, c.s.molecules + 0.7);
       });
       Kit.draw(tl, "#sky-n-label path", w("molecules", "nitrogen") - 0.2, 0.4);

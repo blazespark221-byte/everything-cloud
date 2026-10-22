@@ -384,8 +384,8 @@
       });
 
       // the question
-      tl.fromTo("#ban-card", { x: 520, y: 520, scale: 0.08, rotation: 8, opacity: 0 }, { x: 1060, y: 200, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, w("q", "Is a") - 0.25);
-      tl.to("#ban-card", { y: -260, rotation: 6, scale: 0.8, duration: 0.4, ease: "power3.in" }, c.s.botanist + 0.3);
+      tl.fromTo("#ban-card", { x: 520, y: 520, scale: 0.08, transformOrigin: "50% 50%", rotation: 8, opacity: 0 }, { x: 1060, y: 200, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, w("q", "Is a") - 0.25);
+      tl.to("#ban-card", { transformOrigin: "50% 50%", y: -260, rotation: 6, scale: 0.8, duration: 0.4, ease: "power3.in" }, c.s.botanist + 0.3);
 
       // definition, with a flower that turns into a fruit
       gsap.set(["#ban-check text", "#ban-c1", "#ban-c2", "#ban-c3"], { opacity: 0 });

@@ -450,13 +450,13 @@
       // seaweed sways (finite)
       $$("#oct-weeds .weed").forEach((p, i) => {
         const per = 1.6 + i * 0.3;
-        tl.fromTo([p.previousElementSibling, p], { skewX: -4 }, { skewX: 4, duration: per, ease: "sine.inOut", repeat: Math.floor(c.dur / per) - 1, yoyo: true, transformOrigin: "50% 100%" }, 0);
+        tl.fromTo([p.previousElementSibling, p], { skewX: -4 }, { skewX: 4, duration: per, ease: "sine.inOut", repeat: Math.max(0, Math.floor(c.dur / per) - 1), yoyo: true, transformOrigin: "50% 100%" }, 0);
       });
 
       // the bottle sinks in, and the question pops out of it
       tl.fromTo("#oct-bottle", { x: 760, y: -200, rotation: -30 }, { x: 760, y: 840, rotation: 70, duration: 2.6, ease: "power1.out" }, 0.2);
-      tl.fromTo("#oct-card", { x: 760, y: 820, scale: 0.08, rotation: 8, opacity: 0 }, { x: 960, y: 190, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, w("q", "Is it") - 0.3);
-      tl.to("#oct-card", { y: -260, rotation: 6, scale: 0.8, duration: 0.4, ease: "power3.in" }, c.s.yes + 0.6);
+      tl.fromTo("#oct-card", { x: 760, y: 820, scale: 0.08, transformOrigin: "50% 50%", rotation: 8, opacity: 0 }, { x: 960, y: 190, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, w("q", "Is it") - 0.3);
+      tl.to("#oct-card", { transformOrigin: "50% 50%", y: -260, rotation: 6, scale: 0.8, duration: 0.4, ease: "power3.in" }, c.s.yes + 0.6);
       tl.to("#oct-bottle", { opacity: 0, duration: 0.3 }, c.s.yes + 0.6);
 
       // three hearts, and Specs' one

@@ -1,7 +1,7 @@
 {
  "intro": {
   "start": 0.0,
-  "duration": 29.256,
+  "duration": 28.911,
   "lines": {
    "caught": {
     "s": 1.6,
@@ -19,35 +19,35 @@
     "text": "I'm a stick figure, I wear glasses, and I collect questions."
    },
    "jar": {
-    "s": 9.939,
-    "e": 11.802,
+    "s": 9.824,
+    "e": 11.687,
     "text": "This is my Question Jar."
    },
    "drop": {
-    "s": 12.202,
-    "e": 16.918,
+    "s": 12.087,
+    "e": 16.803,
     "text": "People drop in the things they wonder about, and I go and find the answers."
    },
    "today": {
-    "s": 17.718,
-    "e": 21.31,
+    "s": 17.488,
+    "e": 21.08,
     "text": "Today, every answer is going to sound completely made up."
    },
    "promise": {
-    "s": 21.81,
-    "e": 24.525,
+    "s": 21.58,
+    "e": 24.295,
     "text": "But I promise, every single one is true."
    },
    "ready": {
-    "s": 25.425,
-    "e": 27.456,
+    "s": 25.08,
+    "e": 27.111,
     "text": "Ready? Let's pull out the first one."
    }
   }
  },
  "sky": {
-  "start": 29.256,
-  "duration": 82.531,
+  "start": 28.911,
+  "duration": 81.841,
   "lines": {
    "q": {
     "s": 0.6,
@@ -60,85 +60,85 @@
     "text": "Ooh, good one. Let's take a closer look."
    },
    "white": {
-    "s": 6.51,
-    "e": 10.59,
+    "s": 6.395,
+    "e": 10.475,
     "text": "Sunlight looks white, but it's actually every colour mixed together."
    },
    "colours": {
-    "s": 10.99,
-    "e": 15.707,
+    "s": 10.875,
+    "e": 15.592,
     "text": "Red, orange, yellow, green, blue and violet, all travelling as one."
    },
    "crash": {
-    "s": 16.507,
-    "e": 20.028,
+    "s": 16.277,
+    "e": 19.798,
     "text": "To reach your eyes, that light has to crash through the air."
    },
    "molecules": {
-    "s": 20.428,
-    "e": 25.548,
+    "s": 20.198,
+    "e": 25.318,
     "text": "And air is packed with tiny molecules, mostly nitrogen and oxygen."
    },
    "trick": {
-    "s": 26.348,
-    "e": 31.612,
+    "s": 26.003,
+    "e": 31.267,
     "text": "Here's the trick. Those molecules bounce blue light around much more than red light."
    },
    "red": {
-    "s": 32.212,
-    "e": 36.869,
+    "s": 31.867,
+    "e": 36.524,
     "text": "Red light has long, lazy waves. It mostly slips straight past."
    },
    "blue": {
-    "s": 37.369,
-    "e": 42.149,
+    "s": 37.024,
+    "e": 41.804,
     "text": "Blue light has short, choppy waves, and it gets knocked all over the sky."
    },
    "everywhere": {
-    "s": 42.749,
-    "e": 47.158,
+    "s": 42.404,
+    "e": 46.813,
     "text": "So wherever you look up, blue light is coming at you from every direction."
    },
    "glows": {
-    "s": 47.558,
-    "e": 49.698,
+    "s": 47.213,
+    "e": 49.353,
     "text": "That's why the whole sky glows blue!"
    },
    "rayleigh": {
-    "s": 50.098,
-    "e": 52.319,
+    "s": 49.753,
+    "e": 51.974,
     "text": "Scientists call it Rayleigh scattering."
    },
    "violet": {
-    "s": 53.319,
-    "e": 58.424,
+    "s": 52.859,
+    "e": 57.964,
     "text": "But wait. Violet waves are even shorter. So why isn't the sky purple?"
    },
    "less": {
-    "s": 59.024,
-    "e": 64.122,
+    "s": 58.564,
+    "e": 63.662,
     "text": "The Sun sends us less violet, and our eyes just aren't very good at seeing it."
    },
    "sunset": {
-    "s": 65.122,
-    "e": 69.58,
+    "s": 64.547,
+    "e": 69.005,
     "text": "And at sunset, sunlight has to travel through much more air to reach you."
    },
    "scatter": {
-    "s": 69.98,
-    "e": 75.26,
+    "s": 69.405,
+    "e": 74.685,
     "text": "Most of the blue gets scattered away on the journey, leaving the reds and oranges."
    },
    "painted": {
-    "s": 76.06,
-    "e": 80.331,
+    "s": 75.37,
+    "e": 79.641,
     "text": "So the sky isn't painted blue. It's sunlight, bouncing around."
    }
   }
  },
  "octopus": {
-  "start": 111.787,
-  "duration": 64.565,
+  "start": 110.752,
+  "duration": 63.99,
   "lines": {
    "q": {
     "s": 2.4,
@@ -151,60 +151,60 @@
     "text": "Yes! Three hearts. I only have one, and honestly, I'm a little jealous."
    },
    "gills": {
-    "s": 12.691,
-    "e": 17.187,
+    "s": 12.576,
+    "e": 17.072,
     "text": "Two small hearts pump blood through the gills, where it picks up oxygen."
    },
    "body": {
-    "s": 17.587,
-    "e": 21.185,
+    "s": 17.472,
+    "e": 21.07,
     "text": "The big third heart pumps that blood around the rest of the body."
    },
    "weird": {
-    "s": 21.985,
-    "e": 27.278,
+    "s": 21.755,
+    "e": 27.048,
     "text": "And here's the weird part. When an octopus swims, that big heart stops beating."
    },
    "crawl": {
-    "s": 27.878,
-    "e": 32.889,
+    "s": 27.648,
+    "e": 32.659,
     "text": "Swimming is exhausting! That's why octopuses would usually rather crawl."
    },
    "blood": {
-    "s": 33.889,
-    "e": 35.549,
+    "s": 33.544,
+    "e": 35.204,
     "text": "Oh, and their blood is blue."
    },
    "iron": {
-    "s": 36.149,
-    "e": 40.453,
+    "s": 35.804,
+    "e": 40.108,
     "text": "Our blood uses iron to carry oxygen, and that makes it red."
    },
    "copper": {
-    "s": 40.853,
-    "e": 44.912,
+    "s": 40.508,
+    "e": 44.567,
     "text": "Octopus blood uses copper instead, and that turns it blue."
    },
    "brain": {
-    "s": 45.912,
-    "e": 51.124,
+    "s": 45.452,
+    "e": 50.664,
     "text": "Plus, most of an octopus's brain cells aren't in its head. They're in its arms!"
    },
    "arms": {
-    "s": 51.624,
-    "e": 56.332,
+    "s": 51.164,
+    "e": 55.872,
     "text": "Each arm can touch, taste, and make little decisions all by itself."
    },
    "alien": {
-    "s": 57.132,
-    "e": 62.365,
+    "s": 56.557,
+    "e": 61.79,
     "text": "Three hearts, blue blood, and thinking arms. Basically an alien. But real."
    }
   }
  },
  "banana": {
-  "start": 176.352,
-  "duration": 49.653,
+  "start": 174.742,
+  "duration": 49.423,
   "lines": {
    "q": {
     "s": 1.6,
@@ -212,65 +212,65 @@
     "text": "Ooh, this one's a classic. Is a banana a berry?"
    },
    "botanist": {
-    "s": 5.49,
-    "e": 10.863,
+    "s": 5.375,
+    "e": 10.748,
     "text": "To a botanist, a berry is a fruit that grows from one flower with a single ovary."
    },
    "inside": {
-    "s": 11.264,
-    "e": 14.394,
+    "s": 11.149,
+    "e": 14.279,
     "text": "And its seeds are tucked inside the soft, squishy part."
    },
    "fit": {
-    "s": 15.094,
-    "e": 19.408,
+    "s": 14.979,
+    "e": 19.293,
     "text": "Bananas fit perfectly. See those tiny dark specks in the middle?"
    },
    "seeds": {
-    "s": 19.708,
-    "e": 21.927,
+    "s": 19.593,
+    "e": 21.812,
     "text": "Those are seeds that never grew up."
    },
    "yes": {
-    "s": 22.627,
-    "e": 24.956,
+    "s": 22.512,
+    "e": 24.841,
     "text": "So yes. A banana is a berry!"
    },
    "club": {
-    "s": 25.556,
-    "e": 29.236,
+    "s": 25.441,
+    "e": 29.121,
     "text": "And so are grapes, tomatoes, kiwis, and even eggplants."
    },
    "straw": {
-    "s": 30.136,
-    "e": 32.473,
+    "s": 29.906,
+    "e": 32.243,
     "text": "But strawberries? Not berries at all."
    },
    "outside": {
-    "s": 33.073,
-    "e": 35.722,
+    "s": 32.843,
+    "e": 35.492,
     "text": "A strawberry wears its seeds on the outside."
    },
    "fruit": {
-    "s": 36.022,
-    "e": 40.023,
+    "s": 35.792,
+    "e": 39.793,
     "text": "And each of those little seeds is actually its own tiny fruit."
    },
    "rasp": {
-    "s": 40.723,
-    "e": 42.718,
+    "s": 40.493,
+    "e": 42.488,
     "text": "Raspberries aren't true berries either."
    },
    "lying": {
-    "s": 43.318,
-    "e": 47.453,
+    "s": 43.088,
+    "e": 47.223,
     "text": "So the berry aisle is lying to you. The banana aisle is not."
    }
   }
  },
  "honey": {
-  "start": 226.005,
-  "duration": 62.0,
+  "start": 224.165,
+  "duration": 61.54,
   "lines": {
    "q": {
     "s": 1.8,
@@ -288,55 +288,55 @@
     "text": "And it still hadn't spoiled!"
    },
    "how": {
-    "s": 14.559,
-    "e": 17.434,
+    "s": 14.444,
+    "e": 17.319,
     "text": "So how does honey pull that off? Three tricks."
    },
    "sugar": {
-    "s": 18.134,
-    "e": 21.995,
+    "s": 18.019,
+    "e": 21.88,
     "text": "Trick one. Honey is mostly sugar, with very little water."
    },
    "germs": {
-    "s": 22.395,
-    "e": 28.259,
+    "s": 22.28,
+    "e": 28.144,
     "text": "Any germ that lands in it gets the water sucked right out of it. It shrivels up and gives up."
    },
    "acid": {
-    "s": 29.059,
-    "e": 34.619,
+    "s": 28.829,
+    "e": 34.389,
     "text": "Trick two. Honey is acidic, about as acidic as orange juice. Germs hate that."
    },
    "enzyme": {
-    "s": 35.419,
-    "e": 38.052,
+    "s": 35.074,
+    "e": 37.707,
     "text": "Trick three. Bees add a special enzyme."
    },
    "peroxide": {
-    "s": 38.352,
-    "e": 44.274,
+    "s": 38.007,
+    "e": 43.929,
     "text": "When honey gets a tiny bit wet, it makes a little hydrogen peroxide. Germ zapper!"
    },
    "lid": {
-    "s": 45.174,
-    "e": 50.495,
+    "s": 44.714,
+    "e": 50.035,
     "text": "Just keep the lid on. If honey soaks up too much water, it can start to ferment."
    },
    "crystals": {
-    "s": 51.195,
-    "e": 56.746,
+    "s": 50.735,
+    "e": 56.286,
     "text": "And if your honey turns cloudy and crunchy, it hasn't gone bad. It's just crystals."
    },
    "warm": {
-    "s": 57.146,
-    "e": 60.0,
+    "s": 56.686,
+    "e": 59.54,
     "text": "Warm it up gently, and it melts right back."
    }
   }
  },
  "taller": {
-  "start": 288.005,
-  "duration": 51.815,
+  "start": 285.705,
+  "duration": 51.24,
   "lines": {
    "q": {
     "s": 1.6,
@@ -349,55 +349,55 @@
     "text": "You are! By about a centimetre. Sometimes more."
    },
    "spine": {
-    "s": 9.011,
-    "e": 14.228,
+    "s": 8.896,
+    "e": 14.113,
     "text": "Your spine is a stack of bones, with squishy cushions in between, called discs."
    },
    "gravity": {
-    "s": 14.928,
-    "e": 17.633,
+    "s": 14.813,
+    "e": 17.518,
     "text": "All day long, gravity squashes you down."
    },
    "squeeze": {
-    "s": 17.933,
-    "e": 22.815,
+    "s": 17.818,
+    "e": 22.7,
     "text": "Walking, sitting, standing. Your discs get squeezed and lose a little water."
    },
    "night": {
-    "s": 23.615,
-    "e": 26.86,
+    "s": 23.385,
+    "e": 26.63,
     "text": "Then at night, you lie down flat. The pressure's off."
    },
    "sponge": {
-    "s": 27.16,
-    "e": 30.836,
+    "s": 26.93,
+    "e": 30.606,
     "text": "And your discs soak water back up, like little sponges."
    },
    "wake": {
-    "s": 31.536,
-    "e": 35.731,
+    "s": 31.306,
+    "e": 35.501,
     "text": "So you wake up a tiny bit taller, and shrink back down by dinner."
    },
    "astro": {
-    "s": 36.631,
-    "e": 38.762,
+    "s": 36.286,
+    "e": 38.417,
     "text": "Astronauts take this to the extreme."
    },
    "space": {
-    "s": 39.062,
-    "e": 44.288,
+    "s": 38.717,
+    "e": 43.942,
     "text": "With no gravity squashing them in space, they can grow up to three percent taller!"
    },
    "me": {
-    "s": 45.088,
-    "e": 49.615,
+    "s": 44.627,
+    "e": 49.155,
     "text": "Me? I'm a stick figure. I'm exactly as tall as whoever draws me."
    }
   }
  },
  "venus": {
-  "start": 339.82,
-  "duration": 53.784,
+  "start": 336.945,
+  "duration": 53.439,
   "lines": {
    "q": {
     "s": 1.4,
@@ -410,50 +410,50 @@
     "text": "We need space for this one."
    },
    "day": {
-    "s": 9.784,
-    "e": 13.063,
+    "s": 9.669,
+    "e": 12.948,
     "text": "A day is how long a planet takes to spin around once."
    },
    "year": {
-    "s": 13.363,
-    "e": 17.273,
+    "s": 13.248,
+    "e": 17.158,
     "text": "A year is how long it takes to travel all the way around the Sun."
    },
    "earth": {
-    "s": 17.973,
-    "e": 23.361,
+    "s": 17.858,
+    "e": 23.246,
     "text": "Earth spins once a day, and circles the Sun in three hundred and sixty five days."
    },
    "slow": {
-    "s": 24.161,
-    "e": 30.407,
+    "s": 23.931,
+    "e": 30.177,
     "text": "Venus spins incredibly slowly. One turn takes two hundred and forty three Earth days."
    },
    "zips": {
-    "s": 30.907,
-    "e": 34.595,
+    "s": 30.677,
+    "e": 34.365,
     "text": "But it zips around the Sun in just two hundred and twenty five."
    },
    "finish": {
-    "s": 35.395,
-    "e": 40.397,
+    "s": 35.05,
+    "e": 40.052,
     "text": "So yes! Venus finishes a whole year before it finishes a single spin."
    },
    "west": {
-    "s": 41.097,
-    "e": 47.229,
+    "s": 40.752,
+    "e": 46.884,
     "text": "It even spins backwards compared to Earth, so on Venus, the Sun rises in the west."
    },
    "lead": {
-    "s": 47.929,
-    "e": 51.584,
+    "s": 47.584,
+    "e": 51.239,
     "text": "Just don't visit. The surface is hot enough to melt lead."
    }
   }
  },
  "outro": {
-  "start": 393.604,
-  "duration": 29.851,
+  "start": 390.384,
+  "duration": 29.621,
   "lines": {
    "empty": {
     "s": 1.0,
@@ -471,18 +471,18 @@
     "text": "Honey lasts for thousands of years, you're taller in the morning, and a day on Venus outlasts its year."
    },
    "wait": {
-    "s": 17.731,
-    "e": 19.402,
+    "s": 17.616,
+    "e": 19.287,
     "text": "Wait. There's one more note."
    },
    "next": {
-    "s": 20.202,
-    "e": 22.473,
+    "s": 19.972,
+    "e": 22.243,
     "text": "It says: What will you wonder about next?"
    },
    "bye": {
-    "s": 23.173,
-    "e": 26.051,
+    "s": 22.943,
+    "e": 25.821,
     "text": "Drop it in the jar. I'll see you next time!"
    }
   }

@@ -1,0 +1,273 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Patrick Hand";
+      src: url("assets/fonts/PatrickHand-Regular.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Permanent Marker";
+      src: url("assets/fonts/PermanentMarker-Regular.woff2") format("woff2");
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #root svg {
+      position: absolute;
+      inset: 0;
+    }
+    #root .ink {
+      fill: none;
+      stroke: #1f1d1a;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #root .thin {
+      stroke-width: 4;
+    }
+    #root .draw {
+      stroke-dasharray: 1 1.1;
+    }
+    #root .hand {
+      font-family: "Patrick Hand";
+    }
+    #root .marker {
+      font-family: "Permanent Marker";
+    }
+  </style>
+  <div id="root" data-composition-id="outro" data-width="1920" data-height="1080">
+    <svg id="out-svg" viewBox="0 0 1920 1080" width="1920" height="1080" fill="#1f1d1a">
+      <defs>
+        <g id="out-heart"><path d="M0 14 C -26 -4, -20 -26, -6 -24 C -2 -24, 0 -20, 0 -18 C 0 -20, 2 -24, 6 -24 C 20 -26, 26 -4, 0 14 Z" fill="#e8453c" stroke="#1f1d1a" stroke-width="3" /></g>
+        <g id="out-sticker"><rect x="-82" y="-82" width="164" height="164" rx="16" /></g>
+      </defs>
+      <rect x="0" y="0" width="1920" height="1080" fill="#fbf7ee" />
+      <g id="out-cam">
+        <rect x="-200" y="-200" width="2320" height="1480" fill="#fbf7ee" />
+        <image href="assets/grid.png" x="0" y="0" width="1920" height="1080" />
+        <path d="M92 472 L208 472 L330 905 L-30 905 Z" fill="rgba(255,200,50,0.16)" />
+        <path class="ink thin" d="M0 906 C 400 902, 900 910, 1920 904" />
+        <path class="ink thin" opacity="0.45" d="M120 935 l46 0 M520 956 l70 0 M1380 944 l52 0 M1690 962 l90 0 M980 975 l40 0" />
+        <path class="ink" d="M150 902 L150 470 M100 904 L200 904" />
+        <path class="ink" data-marker="#FFC832" d="M86 472 L214 472 L182 380 L118 380 Z" />
+        <path class="ink thin" d="M1585 168 L1555 130 M1585 168 L1615 130 M1555 130 L1615 130" />
+        <rect class="ink" data-marker="#ffffff" x="1460" y="168" width="250" height="190" />
+        <rect class="ink thin" x="1482" y="190" width="206" height="146" />
+        <text class="marker" x="1585" y="300" font-size="110" text-anchor="middle" fill="#FF5A4E">?</text>
+        <path class="ink" data-marker="#E2725B" d="M1690 905 L1675 820 L1795 820 L1780 905 Z" />
+        <path class="ink thin" data-marker="#7BC96F" d="M1735 820 C 1700 760, 1660 740, 1640 700 C 1690 705, 1730 740, 1735 820 Z" />
+        <path class="ink thin" data-marker="#7BC96F" d="M1738 820 C 1745 750, 1770 700, 1810 670 C 1815 730, 1780 780, 1738 820 Z" />
+        <path class="ink thin" data-marker="#7BC96F" d="M1736 820 C 1730 760, 1735 720, 1745 660 C 1765 720, 1755 770, 1736 820 Z" />
+
+        <!-- the jar, empty now -->
+        <g transform="translate(1250 905)">
+          <g id="out-jar">
+            <path d="M-100 -235 C-112 -170 -108 -60 -100 -22 Q-96 0 -70 0 L70 0 Q96 0 100 -22 C108 -60 112 -170 100 -235 Z" fill="rgba(170,215,245,0.42)" />
+            <g id="out-lastnote" transform="translate(10 -30) rotate(-8)"><rect x="-34" y="-18" width="68" height="36" fill="#FFF1A8" stroke="#1f1d1a" stroke-width="3.5" /></g>
+            <path class="ink" d="M-100 -235 C-112 -170 -108 -60 -100 -22 Q-96 0 -70 0 L70 0 Q96 0 100 -22 C108 -60 112 -170 100 -235" />
+            <path class="ink" data-marker="#FF5A4E" d="M-114 -264 L114 -264 L106 -234 L-106 -234 Z" />
+            <path d="M-80 -205 C-86 -160 -86 -110 -80 -70" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.9" />
+            <rect class="ink thin" data-marker="#ffffff" data-off="4 4" x="-88" y="-212" width="176" height="56" />
+            <text class="hand" x="0" y="-170" font-size="40" text-anchor="middle">QUESTIONS</text>
+          </g>
+        </g>
+
+        <!-- six stickers, one per answer -->
+        <g transform="translate(360 250) rotate(-6)">
+          <g id="out-s1">
+            <use href="#out-sticker" transform="translate(6 5)" fill="#79b8ef" />
+            <use href="#out-sticker" fill="#bfe0fb" stroke="#1f1d1a" stroke-width="5" />
+            <circle cx="-34" cy="-34" r="28" fill="#ffc832" stroke="#1f1d1a" stroke-width="4" />
+            <path d="M-20 30 l16 -12 l8 10 l16 -12 l8 10 l16 -12" fill="none" stroke="#2f80ed" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </g>
+        <g transform="translate(570 150) rotate(5)">
+          <g id="out-s2">
+            <use href="#out-sticker" transform="translate(6 5)" fill="#ffb38f" />
+            <use href="#out-sticker" fill="#ffffff" stroke="#1f1d1a" stroke-width="5" />
+            <path d="M-46 30 C -46 -40, 46 -40, 46 30 Z" fill="#ff8a5c" stroke="#1f1d1a" stroke-width="4" />
+            <path d="M-46 30 q -10 20 -22 26 M-24 30 q -4 22 -12 34 M0 30 q 0 22 0 36 M24 30 q 4 22 12 34 M46 30 q 10 20 22 26" fill="none" stroke="#1f1d1a" stroke-width="6" stroke-linecap="round" />
+            <use href="#out-heart" transform="translate(-22 -2) scale(0.8)" /><use href="#out-heart" transform="translate(0 -14)" /><use href="#out-heart" transform="translate(22 -2) scale(0.8)" />
+          </g>
+        </g>
+        <g transform="translate(790 230) rotate(-4)">
+          <g id="out-s3">
+            <use href="#out-sticker" transform="translate(6 5)" fill="#ffd84a" />
+            <use href="#out-sticker" fill="#ffffff" stroke="#1f1d1a" stroke-width="5" />
+            <path d="M-60 -10 C -40 50, 40 60, 64 -14 C 66 -22, 58 -26, 52 -20 C 28 22, -24 22, -46 -18 C -50 -26, -62 -22, -60 -10 Z" fill="#ffd84a" stroke="#1f1d1a" stroke-width="4" stroke-linejoin="round" />
+            <path d="M-30 -52 L-14 -36 L18 -66" fill="none" stroke="#2fae5b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </g>
+        <g transform="translate(1010 140) rotate(6)">
+          <g id="out-s4">
+            <use href="#out-sticker" transform="translate(6 5)" fill="#f2a007" />
+            <use href="#out-sticker" fill="#ffffff" stroke="#1f1d1a" stroke-width="5" />
+            <path d="M-34 -30 L34 -30 C 38 -10, 56 -4, 56 24 C 56 50, 30 60, 0 60 C -30 60, -56 50, -56 24 C -56 -4, -38 -10, -34 -30 Z" fill="#f2a007" stroke="#1f1d1a" stroke-width="4" />
+            <rect x="-42" y="-48" width="84" height="20" rx="6" fill="#c8763c" stroke="#1f1d1a" stroke-width="4" />
+            <path d="M40 -70 l5 -15 l5 15 l15 5 l-15 5 l-5 15 l-5 -15 l-15 -5 Z" fill="#fff4b8" stroke="#1f1d1a" stroke-width="2.5" />
+          </g>
+        </g>
+        <g transform="translate(1230 240) rotate(-5)">
+          <g id="out-s5">
+            <use href="#out-sticker" transform="translate(6 5)" fill="#ff8fa3" />
+            <use href="#out-sticker" fill="#ffffff" stroke="#1f1d1a" stroke-width="5" />
+            <rect x="-20" y="-60" width="40" height="122" fill="#e8c58f" stroke="#1f1d1a" stroke-width="4" />
+            <path d="M-20 -40 l12 0 M-20 -20 l18 0 M-20 0 l12 0 M-20 20 l18 0 M-20 40 l12 0" stroke="#1f1d1a" stroke-width="3" />
+            <path d="M44 40 L44 -46 M28 -28 L44 -48 L60 -28" fill="none" stroke="#e8453c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </g>
+        <g transform="translate(1440 460) rotate(4)">
+          <g id="out-s6">
+            <use href="#out-sticker" transform="translate(6 5)" fill="#c8d0f0" />
+            <use href="#out-sticker" fill="#ffffff" stroke="#1f1d1a" stroke-width="5" />
+            <circle cx="0" cy="0" r="40" fill="#f08a3c" stroke="#1f1d1a" stroke-width="4" />
+            <path d="M52 -10 A56 56 0 1 1 10 -55 M10 -55 L30 -60 M10 -55 L20 -36" fill="none" stroke="#c62f3a" stroke-width="5" stroke-linecap="round" />
+          </g>
+        </g>
+
+        <g id="out-specs"></g>
+        <g id="out-note"><rect x="-38" y="-20" width="76" height="40" fill="#FFF1A8" stroke="#1f1d1a" stroke-width="4" /></g>
+        <g id="out-card">
+          <path class="ink" data-marker="#FFF1A8" d="M-520 -118 L520 -128 L528 122 L-528 128 Z" />
+          <text class="marker" x="0" y="28" font-size="66" text-anchor="middle">What will <tspan fill="#ff5a4e">YOU</tspan> wonder about next?</text>
+        </g>
+        <circle id="out-portal" cx="0" cy="0" r="22" fill="#eaf3fa" />
+      </g>
+
+      <!-- end title -->
+      <g id="out-title">
+        <text id="out-title-main" class="marker" x="940" y="250" font-size="118" text-anchor="middle">Specs Explains</text>
+        <path id="out-title-line" class="draw" pathLength="1" d="M580 290 C 800 276, 1100 300, 1310 282" fill="none" stroke="#ff5a4e" stroke-width="12" stroke-linecap="round" />
+        <text id="out-title-sub" class="hand" x="940" y="364" font-size="60" text-anchor="middle">weird, but true. See you next time!</text>
+      </g>
+      <image href="assets/grain.png" x="0" y="0" width="1920" height="1080" />
+    </svg>
+  </div>
+  <script src="assets/data/timing.js"></script>
+  <script src="assets/data/lipsync.js"></script>
+  <script src="assets/specs.js"></script>
+  <script src="assets/kit.js"></script>
+  <script>
+    (function () {
+      const S = "outro";
+      const c = Kit.cues(S);
+      const w = c.w;
+      const $ = (q) => document.querySelector(q);
+      const $$ = (q) => Array.from(document.querySelectorAll(q));
+      const tl = gsap.timeline({ paused: true });
+      Kit.markers($("#out-svg"));
+
+      const X = 760;
+      const tPeek = c.s.wait - 0.1;
+      const tPull = w("wait", "one more") - 0.2;
+      const tCard = c.s.next - 0.1;
+      const tDrop = w("bye", "Drop") - 0.1;
+      const tTitle = c.e.bye + 0.2;
+      const peek = Specs.reach("reach-r", "R", (1250 - 1060) / 1, (650 - 905) / 1, 1);
+
+      const rig = Specs.create($("#out-specs"), {
+        scene: S,
+        x: X,
+        y: 905,
+        s: 1,
+        poses: [
+          [0, "relaxed", 0],
+          [c.s.empty - 0.1, "present-r", 0.45],
+          [w("empty", "Empty") - 0.2, "shrug", 0.35, "back"],
+          [c.s.recap1 - 0.1, "explain", 0.4],
+          [w("recap1", "Octopuses") - 0.2, "point-ul", 0.35, "back"],
+          [w("recap1", "Bananas") - 0.2, "point-ur", 0.35, "back"],
+          [c.s.recap2 - 0.1, "explain-r", 0.4],
+          [w("recap2", "taller") - 0.2, "arms-up", 0.35, "back"],
+          [w("recap2", "Venus") - 0.2, "point-r", 0.35, "back"],
+          [tPeek, "hand-ear", 0.3],
+          [tPull - 0.1, peek, 0.4],
+          [tPull + 0.6, "hold-up-r", 0.35, "back"],
+          [tCard + 0.3, "point-ul", 0.4, "back"],
+          [tDrop, "present-r", 0.4],
+          [w("bye", "see you") - 0.3, "wave", 0.4, "back"],
+        ],
+        faces: [
+          [0, "happy", 0],
+          [w("empty", "Empty"), "amazed", 0.3],
+          [c.s.recap1, "excited", 0.3],
+          [c.s.recap2, "happy", 0.3],
+          [tPeek, "surprised", 0.25],
+          [tPull + 0.6, "excited", 0.3],
+          [tCard + 0.3, "smug", 0.3],
+          [w("bye", "see you") - 0.3, "grin", 0.3],
+        ],
+        looks: [
+          [0, 0, 0.05, 0],
+          [c.s.empty, 0.8, 0.3, 0.3],
+          [c.s.recap1, -0.3, -0.8, 0.3],
+          [c.s.recap2, 0.6, -0.8, 0.3],
+          [tPeek, 0.8, 0.3, 0.3],
+          [tCard + 0.3, -0.4, -0.8, 0.3],
+          [tDrop, 0.8, 0.2, 0.3],
+          [w("bye", "see you") - 0.3, 0, 0.05, 0.3],
+        ],
+        moves: [
+          [tPeek - 0.2, 1060, 905, 1, 0.8, "walk"],
+          [tTitle - 0.2, 960, 905, 1, 0.8, "walk"],
+        ],
+      });
+
+      // start inside his lens and pull back out into the studio
+      const start = rig.render(0);
+      let lens = start.lensL;
+      const cam = Kit.camera($("#out-cam"), [[0.05, 960, 540, 1, 1.45, "out"]], { cx: lens[0], cy: lens[1], z: 62 });
+      const portal = $("#out-portal");
+      const note = $("#out-note");
+      Kit.driver(tl, c.dur, (t) => {
+        const p = rig.render(t);
+        lens = p.lensL;
+        cam.render(t);
+        portal.setAttribute("cx", lens[0].toFixed(2));
+        portal.setAttribute("cy", lens[1].toFixed(2));
+        if (t > tPull + 0.2 && t < tCard + 0.05) {
+          const h = p.handR;
+          note.setAttribute("transform", `translate(${h[0].toFixed(1)} ${(h[1] - 16).toFixed(1)}) rotate(-10)`);
+          note.setAttribute("opacity", 1);
+        } else note.setAttribute("opacity", 0);
+      });
+      tl.fromTo(portal, { opacity: 1 }, { opacity: 0, duration: 0.6, ease: "power1.out" }, 0.3);
+
+      // the jar is empty
+      tl.fromTo("#out-jar", { rotation: 0 }, { keyframes: [{ rotation: -8, duration: 0.15 }, { rotation: 7, duration: 0.15 }, { rotation: -4, duration: 0.15 }, { rotation: 0, duration: 0.15 }], transformOrigin: "50% 100%" }, w("empty", "Empty") - 0.1);
+      gsap.set("#out-lastnote", { opacity: 0 });
+
+      // stickers land as each answer is named
+      const stickers = [
+        ["#out-s1", "recap1", "sky"],
+        ["#out-s2", "recap1", "Octopuses"],
+        ["#out-s3", "recap1", "Bananas"],
+        ["#out-s4", "recap2", "Honey"],
+        ["#out-s5", "recap2", "taller"],
+        ["#out-s6", "recap2", "Venus"],
+      ];
+      stickers.forEach(([sel, k, word]) => Kit.pop(tl, sel, w(k, word) - 0.15, { from: 1.6, dur: 0.35, ease: "power3.out" }));
+      Kit.out(tl, stickers.map((s) => s[0]), c.s.wait - 0.2, { dur: 0.3, stagger: 0.04 });
+
+      // one more note: it unfolds into the last question
+      tl.set("#out-lastnote", { opacity: 1 }, tPeek);
+      tl.set("#out-lastnote", { opacity: 0 }, tPull + 0.2);
+      tl.fromTo("#out-card", { x: 1240, y: 520, scale: 0.08, transformOrigin: "50% 50%", rotation: -10, opacity: 0 }, { x: 860, y: 230, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, tCard);
+      tl.to("#out-card", { transformOrigin: "50% 50%", x: 1250, y: 680, scale: 0.05, rotation: 20, duration: 0.6, ease: "power3.in" }, tDrop + 0.3);
+      tl.to("#out-card", { opacity: 0, duration: 0.12 }, tDrop + 0.82);
+      tl.fromTo("#out-jar", { scaleY: 1 }, { scaleY: 0.92, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out", transformOrigin: "50% 100%", immediateRender: false }, tDrop + 0.9);
+
+      // end title
+      gsap.set("#out-title", { opacity: 1 });
+      const titleWords = Kit.words($("#out-title-sub"));
+      tl.fromTo("#out-title-main", { opacity: 0, scale: 0.9, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, tTitle);
+      Kit.draw(tl, "#out-title-line", tTitle + 0.3, 0.5);
+      gsap.set(titleWords, { opacity: 0 });
+      Kit.write(tl, titleWords, tTitle + 0.6, 0.08);
+
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

@@ -8,14 +8,46 @@
       "lead": 1.6,
       "tail": 1.2,
       "lines": [
-        { "k": "caught", "t": "Oh! Hi! You caught me reading.", "p": 0.7 },
-        { "k": "name", "t": "I'm Specs.", "p": 0.3 },
-        { "k": "about", "t": "I'm a stick figure, I wear glasses, and I collect questions.", "p": 0.8 },
-        { "k": "jar", "t": "This is my Question Jar.", "p": 0.4 },
-        { "k": "drop", "t": "People drop in the things they wonder about, and I go and find the answers.", "p": 0.8 },
-        { "k": "today", "t": "Today, every answer is going to sound completely made up.", "p": 0.5 },
-        { "k": "promise", "t": "But I promise, every single one is true.", "p": 0.9 },
-        { "k": "ready", "t": "Ready? Let's pull out the first one.", "p": 0.6 }
+        {
+          "k": "caught",
+          "t": "Oh! Hi! You caught me reading.",
+          "p": 0.7
+        },
+        {
+          "k": "name",
+          "t": "I'm Specs.",
+          "p": 0.3
+        },
+        {
+          "k": "about",
+          "t": "I'm a stick figure, I wear glasses, and I collect questions.",
+          "p": 0.685
+        },
+        {
+          "k": "jar",
+          "t": "This is my Question Jar.",
+          "p": 0.4
+        },
+        {
+          "k": "drop",
+          "t": "People drop in the things they wonder about, and I go and find the answers.",
+          "p": 0.685
+        },
+        {
+          "k": "today",
+          "t": "Today, every answer is going to sound completely made up.",
+          "p": 0.5
+        },
+        {
+          "k": "promise",
+          "t": "But I promise, every single one is true.",
+          "p": 0.785
+        },
+        {
+          "k": "ready",
+          "t": "Ready? Let's pull out the first one.",
+          "p": 0.6
+        }
       ]
     },
     {
@@ -23,23 +55,92 @@
       "lead": 0.6,
       "tail": 1.6,
       "lines": [
-        { "k": "q", "t": "Why is the sky blue?", "p": 0.6 },
-        { "k": "closer", "t": "Ooh, good one. Let's take a closer look.", "p": 1.4 },
-        { "k": "white", "t": "Sunlight looks white, but it's actually every colour mixed together.", "p": 0.4 },
-        { "k": "colours", "t": "Red, orange, yellow, green, blue and violet, all travelling as one.", "p": 0.8 },
-        { "k": "crash", "t": "To reach your eyes, that light has to crash through the air.", "p": 0.4 },
-        { "k": "molecules", "t": "And air is packed with tiny molecules, mostly nitrogen and oxygen.", "p": 0.8 },
-        { "k": "trick", "t": "Here's the trick. Those molecules bounce blue light around much more than red light.", "p": 0.6 },
-        { "k": "red", "t": "Red light has long, lazy waves. It mostly slips straight past.", "p": 0.5 },
-        { "k": "blue", "t": "Blue light has short, choppy waves, and it gets knocked all over the sky.", "p": 0.6 },
-        { "k": "everywhere", "t": "So wherever you look up, blue light is coming at you from every direction.", "p": 0.4 },
-        { "k": "glows", "t": "That's why the whole sky glows blue!", "p": 0.4 },
-        { "k": "rayleigh", "t": "Scientists call it Rayleigh scattering.", "say": "Scientists call it Ray-lee scattering.", "p": 1.0 },
-        { "k": "violet", "t": "But wait. Violet waves are even shorter. So why isn't the sky purple?", "p": 0.6 },
-        { "k": "less", "t": "The Sun sends us less violet, and our eyes just aren't very good at seeing it.", "p": 1.0 },
-        { "k": "sunset", "t": "And at sunset, sunlight has to travel through much more air to reach you.", "p": 0.4 },
-        { "k": "scatter", "t": "Most of the blue gets scattered away on the journey, leaving the reds and oranges.", "p": 0.8 },
-        { "k": "painted", "t": "So the sky isn't painted blue. It's sunlight, bouncing around.", "p": 0.6 }
+        {
+          "k": "q",
+          "t": "Why is the sky blue?",
+          "p": 0.6
+        },
+        {
+          "k": "closer",
+          "t": "Ooh, good one. Let's take a closer look.",
+          "p": 1.285
+        },
+        {
+          "k": "white",
+          "t": "Sunlight looks white, but it's actually every colour mixed together.",
+          "p": 0.4
+        },
+        {
+          "k": "colours",
+          "t": "Red, orange, yellow, green, blue and violet, all travelling as one.",
+          "p": 0.685
+        },
+        {
+          "k": "crash",
+          "t": "To reach your eyes, that light has to crash through the air.",
+          "p": 0.4
+        },
+        {
+          "k": "molecules",
+          "t": "And air is packed with tiny molecules, mostly nitrogen and oxygen.",
+          "p": 0.685
+        },
+        {
+          "k": "trick",
+          "t": "Here's the trick. Those molecules bounce blue light around much more than red light.",
+          "p": 0.6
+        },
+        {
+          "k": "red",
+          "t": "Red light has long, lazy waves. It mostly slips straight past.",
+          "p": 0.5
+        },
+        {
+          "k": "blue",
+          "t": "Blue light has short, choppy waves, and it gets knocked all over the sky.",
+          "p": 0.6
+        },
+        {
+          "k": "everywhere",
+          "t": "So wherever you look up, blue light is coming at you from every direction.",
+          "p": 0.4
+        },
+        {
+          "k": "glows",
+          "t": "That's why the whole sky glows blue!",
+          "p": 0.4
+        },
+        {
+          "k": "rayleigh",
+          "t": "Scientists call it Rayleigh scattering.",
+          "say": "Scientists call it Ray-lee scattering.",
+          "p": 0.885
+        },
+        {
+          "k": "violet",
+          "t": "But wait. Violet waves are even shorter. So why isn't the sky purple?",
+          "p": 0.6
+        },
+        {
+          "k": "less",
+          "t": "The Sun sends us less violet, and our eyes just aren't very good at seeing it.",
+          "p": 0.885
+        },
+        {
+          "k": "sunset",
+          "t": "And at sunset, sunlight has to travel through much more air to reach you.",
+          "p": 0.4
+        },
+        {
+          "k": "scatter",
+          "t": "Most of the blue gets scattered away on the journey, leaving the reds and oranges.",
+          "p": 0.685
+        },
+        {
+          "k": "painted",
+          "t": "So the sky isn't painted blue. It's sunlight, bouncing around.",
+          "p": 0.6
+        }
       ]
     },
     {
@@ -47,18 +148,66 @@
       "lead": 2.4,
       "tail": 1.6,
       "lines": [
-        { "k": "q", "t": "Next question! Is it true that octopuses have three hearts?", "p": 0.7 },
-        { "k": "yes", "t": "Yes! Three hearts. I only have one, and honestly, I'm a little jealous.", "p": 0.8 },
-        { "k": "gills", "t": "Two small hearts pump blood through the gills, where it picks up oxygen.", "p": 0.4 },
-        { "k": "body", "t": "The big third heart pumps that blood around the rest of the body.", "p": 0.8 },
-        { "k": "weird", "t": "And here's the weird part. When an octopus swims, that big heart stops beating.", "p": 0.6 },
-        { "k": "crawl", "t": "Swimming is exhausting! That's why octopuses would usually rather crawl.", "p": 1.0 },
-        { "k": "blood", "t": "Oh, and their blood is blue.", "p": 0.6 },
-        { "k": "iron", "t": "Our blood uses iron to carry oxygen, and that makes it red.", "p": 0.4 },
-        { "k": "copper", "t": "Octopus blood uses copper instead, and that turns it blue.", "p": 1.0 },
-        { "k": "brain", "t": "Plus, most of an octopus's brain cells aren't in its head. They're in its arms!", "p": 0.5 },
-        { "k": "arms", "t": "Each arm can touch, taste, and make little decisions all by itself.", "p": 0.8 },
-        { "k": "alien", "t": "Three hearts, blue blood, and thinking arms. Basically an alien. But real.", "p": 0.6 }
+        {
+          "k": "q",
+          "t": "Next question! Is it true that octopuses have three hearts?",
+          "p": 0.7
+        },
+        {
+          "k": "yes",
+          "t": "Yes! Three hearts. I only have one, and honestly, I'm a little jealous.",
+          "p": 0.685
+        },
+        {
+          "k": "gills",
+          "t": "Two small hearts pump blood through the gills, where it picks up oxygen.",
+          "p": 0.4
+        },
+        {
+          "k": "body",
+          "t": "The big third heart pumps that blood around the rest of the body.",
+          "p": 0.685
+        },
+        {
+          "k": "weird",
+          "t": "And here's the weird part. When an octopus swims, that big heart stops beating.",
+          "p": 0.6
+        },
+        {
+          "k": "crawl",
+          "t": "Swimming is exhausting! That's why octopuses would usually rather crawl.",
+          "p": 0.885
+        },
+        {
+          "k": "blood",
+          "t": "Oh, and their blood is blue.",
+          "p": 0.6
+        },
+        {
+          "k": "iron",
+          "t": "Our blood uses iron to carry oxygen, and that makes it red.",
+          "p": 0.4
+        },
+        {
+          "k": "copper",
+          "t": "Octopus blood uses copper instead, and that turns it blue.",
+          "p": 0.885
+        },
+        {
+          "k": "brain",
+          "t": "Plus, most of an octopus's brain cells aren't in its head. They're in its arms!",
+          "p": 0.5
+        },
+        {
+          "k": "arms",
+          "t": "Each arm can touch, taste, and make little decisions all by itself.",
+          "p": 0.685
+        },
+        {
+          "k": "alien",
+          "t": "Three hearts, blue blood, and thinking arms. Basically an alien. But real.",
+          "p": 0.6
+        }
       ]
     },
     {
@@ -66,18 +215,66 @@
       "lead": 1.6,
       "tail": 1.6,
       "lines": [
-        { "k": "q", "t": "Ooh, this one's a classic. Is a banana a berry?", "p": 0.8 },
-        { "k": "botanist", "t": "To a botanist, a berry is a fruit that grows from one flower with a single ovary.", "p": 0.4 },
-        { "k": "inside", "t": "And its seeds are tucked inside the soft, squishy part.", "p": 0.7 },
-        { "k": "fit", "t": "Bananas fit perfectly. See those tiny dark specks in the middle?", "p": 0.3 },
-        { "k": "seeds", "t": "Those are seeds that never grew up.", "p": 0.7 },
-        { "k": "yes", "t": "So yes. A banana is a berry!", "p": 0.6 },
-        { "k": "club", "t": "And so are grapes, tomatoes, kiwis, and even eggplants.", "p": 0.9 },
-        { "k": "straw", "t": "But strawberries? Not berries at all.", "p": 0.6 },
-        { "k": "outside", "t": "A strawberry wears its seeds on the outside.", "p": 0.3 },
-        { "k": "fruit", "t": "And each of those little seeds is actually its own tiny fruit.", "p": 0.7 },
-        { "k": "rasp", "t": "Raspberries aren't true berries either.", "p": 0.6 },
-        { "k": "lying", "t": "So the berry aisle is lying to you. The banana aisle is not.", "p": 0.6 }
+        {
+          "k": "q",
+          "t": "Ooh, this one's a classic. Is a banana a berry?",
+          "p": 0.685
+        },
+        {
+          "k": "botanist",
+          "t": "To a botanist, a berry is a fruit that grows from one flower with a single ovary.",
+          "p": 0.4
+        },
+        {
+          "k": "inside",
+          "t": "And its seeds are tucked inside the soft, squishy part.",
+          "p": 0.7
+        },
+        {
+          "k": "fit",
+          "t": "Bananas fit perfectly. See those tiny dark specks in the middle?",
+          "p": 0.3
+        },
+        {
+          "k": "seeds",
+          "t": "Those are seeds that never grew up.",
+          "p": 0.7
+        },
+        {
+          "k": "yes",
+          "t": "So yes. A banana is a berry!",
+          "p": 0.6
+        },
+        {
+          "k": "club",
+          "t": "And so are grapes, tomatoes, kiwis, and even eggplants.",
+          "p": 0.785
+        },
+        {
+          "k": "straw",
+          "t": "But strawberries? Not berries at all.",
+          "p": 0.6
+        },
+        {
+          "k": "outside",
+          "t": "A strawberry wears its seeds on the outside.",
+          "p": 0.3
+        },
+        {
+          "k": "fruit",
+          "t": "And each of those little seeds is actually its own tiny fruit.",
+          "p": 0.7
+        },
+        {
+          "k": "rasp",
+          "t": "Raspberries aren't true berries either.",
+          "p": 0.6
+        },
+        {
+          "k": "lying",
+          "t": "So the berry aisle is lying to you. The banana aisle is not.",
+          "p": 0.6
+        }
       ]
     },
     {
@@ -85,18 +282,66 @@
       "lead": 1.8,
       "tail": 1.4,
       "lines": [
-        { "k": "q", "t": "Next! Does honey really never go bad?", "p": 0.7 },
-        { "k": "tombs", "t": "Archaeologists exploring ancient Egyptian tombs found jars of honey thousands of years old.", "p": 0.4 },
-        { "k": "spoiled", "t": "And it still hadn't spoiled!", "p": 0.8 },
-        { "k": "how", "t": "So how does honey pull that off? Three tricks.", "p": 0.7 },
-        { "k": "sugar", "t": "Trick one. Honey is mostly sugar, with very little water.", "p": 0.4 },
-        { "k": "germs", "t": "Any germ that lands in it gets the water sucked right out of it. It shrivels up and gives up.", "p": 0.8 },
-        { "k": "acid", "t": "Trick two. Honey is acidic, about as acidic as orange juice. Germs hate that.", "p": 0.8 },
-        { "k": "enzyme", "t": "Trick three. Bees add a special enzyme.", "p": 0.3 },
-        { "k": "peroxide", "t": "When honey gets a tiny bit wet, it makes a little hydrogen peroxide. Germ zapper!", "p": 0.9 },
-        { "k": "lid", "t": "Just keep the lid on. If honey soaks up too much water, it can start to ferment.", "p": 0.7 },
-        { "k": "crystals", "t": "And if your honey turns cloudy and crunchy, it hasn't gone bad. It's just crystals.", "p": 0.4 },
-        { "k": "warm", "t": "Warm it up gently, and it melts right back.", "p": 0.6 }
+        {
+          "k": "q",
+          "t": "Next! Does honey really never go bad?",
+          "p": 0.7
+        },
+        {
+          "k": "tombs",
+          "t": "Archaeologists exploring ancient Egyptian tombs found jars of honey thousands of years old.",
+          "p": 0.4
+        },
+        {
+          "k": "spoiled",
+          "t": "And it still hadn't spoiled!",
+          "p": 0.685
+        },
+        {
+          "k": "how",
+          "t": "So how does honey pull that off? Three tricks.",
+          "p": 0.7
+        },
+        {
+          "k": "sugar",
+          "t": "Trick one. Honey is mostly sugar, with very little water.",
+          "p": 0.4
+        },
+        {
+          "k": "germs",
+          "t": "Any germ that lands in it gets the water sucked right out of it. It shrivels up and gives up.",
+          "p": 0.685
+        },
+        {
+          "k": "acid",
+          "t": "Trick two. Honey is acidic, about as acidic as orange juice. Germs hate that.",
+          "p": 0.685
+        },
+        {
+          "k": "enzyme",
+          "t": "Trick three. Bees add a special enzyme.",
+          "p": 0.3
+        },
+        {
+          "k": "peroxide",
+          "t": "When honey gets a tiny bit wet, it makes a little hydrogen peroxide. Germ zapper!",
+          "p": 0.785
+        },
+        {
+          "k": "lid",
+          "t": "Just keep the lid on. If honey soaks up too much water, it can start to ferment.",
+          "p": 0.7
+        },
+        {
+          "k": "crystals",
+          "t": "And if your honey turns cloudy and crunchy, it hasn't gone bad. It's just crystals.",
+          "p": 0.4
+        },
+        {
+          "k": "warm",
+          "t": "Warm it up gently, and it melts right back.",
+          "p": 0.6
+        }
       ]
     },
     {
@@ -104,17 +349,61 @@
       "lead": 1.6,
       "tail": 1.4,
       "lines": [
-        { "k": "q", "t": "Here's one about you. Are you taller in the morning?", "p": 0.7 },
-        { "k": "yes", "t": "You are! By about a centimetre. Sometimes more.", "p": 0.8 },
-        { "k": "spine", "t": "Your spine is a stack of bones, with squishy cushions in between, called discs.", "p": 0.7 },
-        { "k": "gravity", "t": "All day long, gravity squashes you down.", "p": 0.3 },
-        { "k": "squeeze", "t": "Walking, sitting, standing. Your discs get squeezed and lose a little water.", "p": 0.8 },
-        { "k": "night", "t": "Then at night, you lie down flat. The pressure's off.", "p": 0.3 },
-        { "k": "sponge", "t": "And your discs soak water back up, like little sponges.", "p": 0.7 },
-        { "k": "wake", "t": "So you wake up a tiny bit taller, and shrink back down by dinner.", "p": 0.9 },
-        { "k": "astro", "t": "Astronauts take this to the extreme.", "p": 0.3 },
-        { "k": "space", "t": "With no gravity squashing them in space, they can grow up to three percent taller!", "p": 0.8 },
-        { "k": "me", "t": "Me? I'm a stick figure. I'm exactly as tall as whoever draws me.", "p": 0.8 }
+        {
+          "k": "q",
+          "t": "Here's one about you. Are you taller in the morning?",
+          "p": 0.7
+        },
+        {
+          "k": "yes",
+          "t": "You are! By about a centimetre. Sometimes more.",
+          "p": 0.685
+        },
+        {
+          "k": "spine",
+          "t": "Your spine is a stack of bones, with squishy cushions in between, called discs.",
+          "p": 0.7
+        },
+        {
+          "k": "gravity",
+          "t": "All day long, gravity squashes you down.",
+          "p": 0.3
+        },
+        {
+          "k": "squeeze",
+          "t": "Walking, sitting, standing. Your discs get squeezed and lose a little water.",
+          "p": 0.685
+        },
+        {
+          "k": "night",
+          "t": "Then at night, you lie down flat. The pressure's off.",
+          "p": 0.3
+        },
+        {
+          "k": "sponge",
+          "t": "And your discs soak water back up, like little sponges.",
+          "p": 0.7
+        },
+        {
+          "k": "wake",
+          "t": "So you wake up a tiny bit taller, and shrink back down by dinner.",
+          "p": 0.785
+        },
+        {
+          "k": "astro",
+          "t": "Astronauts take this to the extreme.",
+          "p": 0.3
+        },
+        {
+          "k": "space",
+          "t": "With no gravity squashing them in space, they can grow up to three percent taller!",
+          "p": 0.685
+        },
+        {
+          "k": "me",
+          "t": "Me? I'm a stick figure. I'm exactly as tall as whoever draws me.",
+          "p": 0.685
+        }
       ]
     },
     {
@@ -122,16 +411,56 @@
       "lead": 1.4,
       "tail": 1.6,
       "lines": [
-        { "k": "q", "t": "Last question in the jar. Is a day on Venus really longer than its year?", "p": 0.7 },
-        { "k": "space", "t": "We need space for this one.", "p": 1.0 },
-        { "k": "day", "t": "A day is how long a planet takes to spin around once.", "p": 0.3 },
-        { "k": "year", "t": "A year is how long it takes to travel all the way around the Sun.", "p": 0.7 },
-        { "k": "earth", "t": "Earth spins once a day, and circles the Sun in three hundred and sixty five days.", "p": 0.8 },
-        { "k": "slow", "t": "Venus spins incredibly slowly. One turn takes two hundred and forty three Earth days.", "p": 0.5 },
-        { "k": "zips", "t": "But it zips around the Sun in just two hundred and twenty five.", "p": 0.8 },
-        { "k": "finish", "t": "So yes! Venus finishes a whole year before it finishes a single spin.", "p": 0.7 },
-        { "k": "west", "t": "It even spins backwards compared to Earth, so on Venus, the Sun rises in the west.", "p": 0.7 },
-        { "k": "lead", "t": "Just don't visit. The surface is hot enough to melt lead.", "p": 0.6 }
+        {
+          "k": "q",
+          "t": "Last question in the jar. Is a day on Venus really longer than its year?",
+          "p": 0.7
+        },
+        {
+          "k": "space",
+          "t": "We need space for this one.",
+          "p": 0.885
+        },
+        {
+          "k": "day",
+          "t": "A day is how long a planet takes to spin around once.",
+          "p": 0.3
+        },
+        {
+          "k": "year",
+          "t": "A year is how long it takes to travel all the way around the Sun.",
+          "p": 0.7
+        },
+        {
+          "k": "earth",
+          "t": "Earth spins once a day, and circles the Sun in three hundred and sixty five days.",
+          "p": 0.685
+        },
+        {
+          "k": "slow",
+          "t": "Venus spins incredibly slowly. One turn takes two hundred and forty three Earth days.",
+          "p": 0.5
+        },
+        {
+          "k": "zips",
+          "t": "But it zips around the Sun in just two hundred and twenty five.",
+          "p": 0.685
+        },
+        {
+          "k": "finish",
+          "t": "So yes! Venus finishes a whole year before it finishes a single spin.",
+          "p": 0.7
+        },
+        {
+          "k": "west",
+          "t": "It even spins backwards compared to Earth, so on Venus, the Sun rises in the west.",
+          "p": 0.7
+        },
+        {
+          "k": "lead",
+          "t": "Just don't visit. The surface is hot enough to melt lead.",
+          "p": 0.6
+        }
       ]
     },
     {
@@ -139,12 +468,36 @@
       "lead": 1.0,
       "tail": 3.4,
       "lines": [
-        { "k": "empty", "t": "And that's the whole jar! Empty.", "p": 0.6 },
-        { "k": "recap1", "t": "The sky is scattered sunlight. Octopuses have three hearts. Bananas are berries.", "p": 0.4 },
-        { "k": "recap2", "t": "Honey lasts for thousands of years, you're taller in the morning, and a day on Venus outlasts its year.", "p": 0.8 },
-        { "k": "wait", "t": "Wait. There's one more note.", "p": 0.8 },
-        { "k": "next", "t": "It says: What will you wonder about next?", "p": 0.7 },
-        { "k": "bye", "t": "Drop it in the jar. I'll see you next time!", "p": 0.4 }
+        {
+          "k": "empty",
+          "t": "And that's the whole jar! Empty.",
+          "p": 0.6
+        },
+        {
+          "k": "recap1",
+          "t": "The sky is scattered sunlight. Octopuses have three hearts. Bananas are berries.",
+          "p": 0.4
+        },
+        {
+          "k": "recap2",
+          "t": "Honey lasts for thousands of years, you're taller in the morning, and a day on Venus outlasts its year.",
+          "p": 0.685
+        },
+        {
+          "k": "wait",
+          "t": "Wait. There's one more note.",
+          "p": 0.685
+        },
+        {
+          "k": "next",
+          "t": "It says: What will you wonder about next?",
+          "p": 0.7
+        },
+        {
+          "k": "bye",
+          "t": "Drop it in the jar. I'll see you next time!",
+          "p": 0.4
+        }
       ]
     }
   ]
