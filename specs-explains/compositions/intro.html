@@ -1,0 +1,292 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Patrick Hand";
+      src: url("assets/fonts/PatrickHand-Regular.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Permanent Marker";
+      src: url("assets/fonts/PermanentMarker-Regular.woff2") format("woff2");
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #root svg {
+      position: absolute;
+      inset: 0;
+    }
+    #root .ink {
+      fill: none;
+      stroke: #1f1d1a;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #root .thin {
+      stroke-width: 4;
+    }
+    #root .draw {
+      stroke-dasharray: 1 1;
+    }
+    #root .hand {
+      font-family: "Patrick Hand";
+    }
+    #root .marker {
+      font-family: "Permanent Marker";
+    }
+  </style>
+  <div id="root" data-composition-id="intro" data-width="1920" data-height="1080">
+    <svg id="intro-svg" viewBox="0 0 1920 1080" width="1920" height="1080" fill="#1f1d1a">
+      <rect x="0" y="0" width="1920" height="1080" fill="#fbf7ee" />
+      <image href="assets/grid.png" x="0" y="0" width="1920" height="1080" />
+
+      <!-- Specs' corner of the sketchbook -->
+      <g id="intro-studio">
+        <path id="intro-cone" d="M92 472 L208 472 L330 905 L-30 905 Z" fill="rgba(255,200,50,0.16)" />
+        <path class="ink thin" d="M0 906 C 400 902, 900 910, 1920 904" />
+        <path class="ink thin" opacity="0.45" d="M120 935 l46 0 M520 956 l70 0 M1380 944 l52 0 M1690 962 l90 0 M980 975 l40 0" />
+        <path class="ink" d="M150 902 L150 470 M100 904 L200 904" />
+        <path class="ink" data-marker="#FFC832" d="M86 472 L214 472 L182 380 L118 380 Z" />
+        <path class="ink thin" d="M1585 168 L1555 130 M1585 168 L1615 130 M1555 130 L1615 130" />
+        <rect class="ink" data-marker="#ffffff" x="1460" y="168" width="250" height="190" />
+        <rect class="ink thin" x="1482" y="190" width="206" height="146" />
+        <text class="marker" x="1585" y="300" font-size="110" text-anchor="middle" fill="#FF5A4E">?</text>
+        <path class="ink" data-marker="#E2725B" d="M1690 905 L1675 820 L1795 820 L1780 905 Z" />
+        <path class="ink thin" data-marker="#7BC96F" d="M1735 820 C 1700 760, 1660 740, 1640 700 C 1690 705, 1730 740, 1735 820 Z" />
+        <path class="ink thin" data-marker="#7BC96F" d="M1738 820 C 1745 750, 1770 700, 1810 670 C 1815 730, 1780 780, 1738 820 Z" />
+        <path class="ink thin" data-marker="#7BC96F" d="M1736 820 C 1730 760, 1735 720, 1745 660 C 1765 720, 1755 770, 1736 820 Z" />
+      </g>
+
+      <!-- the Question Jar -->
+      <g transform="translate(1250 905)">
+        <g id="intro-jar">
+          <path d="M-100 -235 C-112 -170 -108 -60 -100 -22 Q-96 0 -70 0 L70 0 Q96 0 100 -22 C108 -60 112 -170 100 -235 Z" fill="rgba(170,215,245,0.42)" />
+          <g id="intro-jar-notes">
+            <g transform="translate(-52 -36) rotate(-12)"><rect x="-34" y="-18" width="68" height="36" fill="#FFC832" stroke="#1f1d1a" stroke-width="3.5" /><path d="M-34 0 L34 0" stroke="#1f1d1a" stroke-width="2" opacity="0.4" /></g>
+            <g transform="translate(18 -30) rotate(9)"><rect x="-34" y="-18" width="68" height="36" fill="#2F80ED" stroke="#1f1d1a" stroke-width="3.5" /><path d="M-34 0 L34 0" stroke="#1f1d1a" stroke-width="2" opacity="0.4" /></g>
+            <g transform="translate(62 -60) rotate(-24)"><rect x="-34" y="-18" width="68" height="36" fill="#FF5A4E" stroke="#1f1d1a" stroke-width="3.5" /><path d="M-34 0 L34 0" stroke="#1f1d1a" stroke-width="2" opacity="0.4" /></g>
+            <g transform="translate(-22 -78) rotate(20)"><rect x="-34" y="-18" width="68" height="36" fill="#18A999" stroke="#1f1d1a" stroke-width="3.5" /><path d="M-34 0 L34 0" stroke="#1f1d1a" stroke-width="2" opacity="0.4" /></g>
+            <g transform="translate(-62 -104) rotate(-6)"><rect x="-34" y="-18" width="68" height="36" fill="#F08A3C" stroke="#1f1d1a" stroke-width="3.5" /><path d="M-34 0 L34 0" stroke="#1f1d1a" stroke-width="2" opacity="0.4" /></g>
+            <g transform="translate(40 -112) rotate(14)"><rect x="-34" y="-18" width="68" height="36" fill="#B58CF0" stroke="#1f1d1a" stroke-width="3.5" /><path d="M-34 0 L34 0" stroke="#1f1d1a" stroke-width="2" opacity="0.4" /></g>
+            <g id="intro-top-note" transform="translate(-8 -142) rotate(-16)"><rect x="-34" y="-18" width="68" height="36" fill="#FFF1A8" stroke="#1f1d1a" stroke-width="3.5" /><path d="M-34 0 L34 0" stroke="#1f1d1a" stroke-width="2" opacity="0.4" /></g>
+          </g>
+          <path class="ink" d="M-100 -235 C-112 -170 -108 -60 -100 -22 Q-96 0 -70 0 L70 0 Q96 0 100 -22 C108 -60 112 -170 100 -235" />
+          <path class="ink" data-marker="#FF5A4E" d="M-114 -264 L114 -264 L106 -234 L-106 -234 Z" />
+          <path d="M-80 -205 C-86 -160 -86 -110 -80 -70" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.9" />
+          <rect class="ink thin" data-marker="#ffffff" data-off="4 4" x="-88" y="-212" width="176" height="56" />
+          <text class="hand" x="0" y="-170" font-size="40" text-anchor="middle">QUESTIONS</text>
+        </g>
+      </g>
+
+      <!-- notes people drop in -->
+      <g id="intro-fly1" opacity="0"><rect x="-32" y="-17" width="64" height="34" fill="#FF5A4E" stroke="#1f1d1a" stroke-width="3.5" /></g>
+      <g id="intro-fly2" opacity="0"><rect x="-32" y="-17" width="64" height="34" fill="#2F80ED" stroke="#1f1d1a" stroke-width="3.5" /></g>
+      <g id="intro-fly3" opacity="0"><rect x="-32" y="-17" width="64" height="34" fill="#FFC832" stroke="#1f1d1a" stroke-width="3.5" /></g>
+      <g id="intro-fly4" opacity="0"><rect x="-32" y="-17" width="64" height="34" fill="#18A999" stroke="#1f1d1a" stroke-width="3.5" /></g>
+
+      <!-- sketch notes around Specs -->
+      <g id="intro-name">
+        <path id="intro-name-arrow" class="ink draw" pathLength="1" d="M1000 392 C 960 420, 900 440, 850 452 M850 452 L874 432 M850 452 L876 468" />
+        <text id="intro-name-text" class="marker" x="1010" y="380" font-size="96">Specs</text>
+      </g>
+      <g id="intro-stick">
+        <path id="intro-stick-arrow" class="ink draw" pathLength="1" d="M520 742 C 600 760, 680 735, 730 705 M730 705 L700 708 M730 705 L716 730" />
+        <text id="intro-stick-text" class="hand" x="170" y="760" font-size="56">100% stick figure</text>
+      </g>
+      <g id="intro-glasses">
+        <path id="intro-glasses-arrow" class="ink draw" pathLength="1" d="M545 402 C 610 400, 660 430, 696 468 M696 468 L670 456 M696 468 L692 440" />
+        <text id="intro-glasses-text" class="hand" x="350" y="415" font-size="56">glasses!</text>
+      </g>
+      <g id="intro-qs">
+        <text id="intro-q1" class="marker" x="600" y="350" font-size="76" fill="#FF5A4E">?</text>
+        <text id="intro-q2" class="marker" x="905" y="330" font-size="64" fill="#2F80ED">?</text>
+        <text id="intro-q3" class="marker" x="950" y="470" font-size="70" fill="#18A999">?</text>
+        <text id="intro-q4" class="marker" x="545" y="500" font-size="58" fill="#F08A3C">?</text>
+      </g>
+      <g id="intro-claim">
+        <text id="intro-claim-text" class="marker" x="190" y="300" font-size="84">Sounds made up...</text>
+        <path id="intro-claim-scribble" class="ink draw" pathLength="1" stroke="#FF5A4E" d="M470 262 L520 300 L556 254 L600 302 L640 254 L688 300 L728 256 L780 300 L816 262" />
+      </g>
+      <g id="intro-stamp" transform="translate(640 420)">
+        <g id="intro-stamp-in">
+          <rect x="-170" y="-72" width="340" height="132" rx="14" fill="none" stroke="#FF5A4E" stroke-width="8" />
+          <rect x="-156" y="-58" width="312" height="104" rx="8" fill="none" stroke="#FF5A4E" stroke-width="3" />
+          <text class="marker" x="0" y="26" font-size="86" text-anchor="middle" fill="#FF5A4E">TRUE!</text>
+        </g>
+      </g>
+
+      <g id="intro-specs"></g>
+      <g id="intro-note" opacity="0">
+        <rect x="-38" y="-20" width="76" height="40" fill="#FFF1A8" stroke="#1f1d1a" stroke-width="4" />
+        <path d="M-38 0 L38 0" stroke="#1f1d1a" stroke-width="2.5" opacity="0.4" />
+      </g>
+
+      <!-- the book Specs is reading when we arrive -->
+      <g transform="translate(760 498)">
+        <g id="intro-book">
+          <path class="ink" data-marker="#2F80ED" d="M-128 -92 L0 -84 L128 -92 L128 92 L0 86 L-128 92 Z" />
+          <path class="ink thin" d="M0 -84 L0 86" />
+          <text class="marker" x="64" y="-8" font-size="38" text-anchor="middle" fill="#ffffff">WEIRD</text>
+          <text class="marker" x="64" y="38" font-size="38" text-anchor="middle" fill="#ffffff">FACTS</text>
+          <text class="marker" x="-64" y="18" font-size="60" text-anchor="middle" fill="#FFC832">?!</text>
+        </g>
+      </g>
+
+      <image href="assets/grain.png" x="0" y="0" width="1920" height="1080" />
+    </svg>
+  </div>
+  <script src="assets/data/timing.js"></script>
+  <script src="assets/data/lipsync.js"></script>
+  <script src="assets/specs.js"></script>
+  <script src="assets/kit.js"></script>
+  <script>
+    (function () {
+      const S = "intro";
+      const c = Kit.cues(S);
+      const $ = (q) => document.querySelector(q);
+      const tl = gsap.timeline({ paused: true });
+      Kit.markers($("#intro-svg"));
+
+      // where Specs stands and the jar he reaches into
+      const X = 760;
+      const GROUND = 905;
+      const X2 = 1112;
+      const tPull = c.w("ready", "pull") - 0.15;
+      const tReach = tPull + 0.95;
+      const tLift = tReach + 0.55;
+      const read = Object.assign(
+        {},
+        Specs.reach("idle", "L", -105, -322, 1),
+        { uR: Specs.ikArm(105, 10, -1).u, fR: Specs.ikArm(105, 10, -1).f, swing: 0, talk: 0 },
+      );
+      const startle = { uL: -62, fL: -72, uR: 62, fR: 72, hL: 1, hR: 1, swing: 0, talk: 0.2, crouch: -6 };
+      const reachJar = Specs.reach("reach-r", "R", 1250 - X2, 650 - GROUND, 1);
+
+      const rig = Specs.create($("#intro-specs"), {
+        scene: S,
+        x: X,
+        y: GROUND,
+        s: 1,
+        poses: [
+          [0, read, 0],
+          [c.s.caught + 0.05, startle, 0.22, "back"],
+          [c.w("caught", "Hi"), "wave", 0.35, "back"],
+          [c.s.name - 0.1, "hand-chest", 0.35],
+          [c.w("about", "stick") - 0.2, "explain-l", 0.4],
+          [c.w("about", "glasses") - 0.25, "push-glasses", 0.35, "back"],
+          [c.w("about", "collect") - 0.2, "explain", 0.4, "back"],
+          [c.s.jar - 0.1, "present-r", 0.45],
+          [c.w("drop", "drop") - 0.1, "explain-r", 0.4],
+          [c.w("drop", "find") - 0.25, "push-glasses", 0.35, "back"],
+          [c.e.drop + 0.2, "relaxed", 0.5],
+          [c.s.today - 0.1, "shrug", 0.45, "back"],
+          [c.s.promise - 0.1, "hand-chest", 0.4],
+          [c.w("promise", "true") - 0.2, "fist-up", 0.3, "back"],
+          [c.s.ready - 0.15, "explain", 0.4],
+          [tPull, "relaxed", 0.3],
+          [tReach - 0.2, reachJar, 0.45],
+          [tLift, "hold-up-r", 0.5, "back"],
+        ],
+        faces: [
+          [0, "neutral", 0],
+          [c.s.caught, "surprised", 0.12],
+          [c.s.caught + 0.75, "happy", 0.3],
+          [c.s.name, "grin", 0.3],
+          [c.s.about, "happy", 0.3],
+          [c.w("about", "collect"), "excited", 0.3],
+          [c.s.jar, "proud", 0.3],
+          [c.s.drop, "happy", 0.3],
+          [c.w("drop", "find"), "smug", 0.3],
+          [c.s.today, "skeptical", 0.3],
+          [c.s.promise, "happy", 0.3],
+          [c.w("promise", "true"), "proud", 0.25],
+          [c.s.ready, "excited", 0.3],
+          [tReach, "thinking", 0.3],
+          [tLift + 0.2, "excited", 0.3],
+        ],
+        looks: [
+          [0, 0, 0.1, 0],
+          [c.s.jar - 0.1, 0.8, 0.2, 0.3],
+          [c.w("drop", "drop"), 0.7, -0.4, 0.3],
+          [c.w("drop", "find") - 0.2, 0, 0.05, 0.3],
+          [c.s.today, -0.5, -0.3, 0.3],
+          [c.w("promise", "true"), 0, 0.05, 0.25],
+          [tPull, 0.8, 0.3, 0.3],
+          [tLift + 0.2, 0.3, -0.5, 0.3],
+        ],
+        moves: [[tPull, X2, GROUND, 1, 0.95, "walk"]],
+      });
+
+      // the note he pulls out rides on his hand
+      const note = $("#intro-note");
+      Kit.driver(tl, c.dur, (t) => {
+        const p = rig.render(t);
+        if (t >= tReach + 0.15) {
+          const h = p.handR;
+          note.setAttribute("transform", `translate(${h[0].toFixed(1)} ${(h[1] - 16).toFixed(1)}) rotate(-10)`);
+          note.setAttribute("opacity", 1);
+        } else {
+          note.setAttribute("opacity", 0);
+        }
+      });
+
+      // the book: a page turns, then it drops when he notices us
+      tl.fromTo("#intro-book", { rotation: 0, y: 0 }, { rotation: -2, y: -4, duration: 0.5, ease: "sine.inOut", transformOrigin: "50% 50%" }, 0.3);
+      tl.to("#intro-book", { rotation: 1.5, y: 0, duration: 0.5, ease: "sine.inOut", transformOrigin: "50% 50%" }, 0.8);
+      tl.to("#intro-book", { y: 950, rotation: 38, duration: 0.7, ease: "power2.in", transformOrigin: "50% 50%" }, c.s.caught + 0.02);
+
+      // his name
+      Kit.draw(tl, "#intro-name-arrow", c.s.name, 0.45);
+      tl.fromTo("#intro-name-text", { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, c.s.name + 0.15);
+      Kit.out(tl, "#intro-name", c.w("about", "glasses") + 0.2, { dur: 0.25 });
+
+      // sketch labels on himself
+      Kit.draw(tl, "#intro-stick-arrow", c.w("about", "stick") - 0.1, 0.45);
+      Kit.show(tl, "#intro-stick-text", c.w("about", "stick"), 0.25);
+      Kit.draw(tl, "#intro-glasses-arrow", c.w("about", "glasses") - 0.1, 0.4);
+      Kit.show(tl, "#intro-glasses-text", c.w("about", "glasses"), 0.25);
+      Kit.pop(tl, ["#intro-q1", "#intro-q2", "#intro-q3", "#intro-q4"], c.w("about", "questions") - 0.1, { stagger: 0.12 });
+      Kit.out(tl, ["#intro-stick", "#intro-glasses", "#intro-qs"], c.s.jar - 0.35, { dur: 0.25, scale: 0.95 });
+
+      // the jar drops in and lands on "Question Jar"
+      const tLand = c.w("jar", "Question") + 0.1;
+      tl.fromTo("#intro-jar", { y: -1150 }, { y: 0, duration: 0.55, ease: "power3.in" }, tLand - 0.55);
+      tl.fromTo("#intro-jar", { scaleY: 1, scaleX: 1 }, { scaleY: 0.86, scaleX: 1.08, duration: 0.08, ease: "power2.out", transformOrigin: "50% 100%" }, tLand);
+      tl.to("#intro-jar", { scaleY: 1, scaleX: 1, duration: 0.5, ease: "elastic.out(1, 0.4)", transformOrigin: "50% 100%" }, tLand + 0.08);
+
+      // people drop their questions in
+      const tFly = c.w("drop", "drop") - 0.3;
+      const starts = [
+        [2060, 260, 0],
+        [2060, 520, -90],
+        [1500, -80, 60],
+        [2060, 360, 120],
+      ];
+      starts.forEach((st, i) => {
+        const id = `#intro-fly${i + 1}`;
+        const t0 = tFly + i * 0.42;
+        tl.set(id, { opacity: 1, x: st[0], y: st[1], rotation: st[2] }, t0);
+        tl.to(id, { x: 1250 + (i - 1.5) * 18, rotation: st[2] + 300, duration: 0.95, ease: "none" }, t0);
+        tl.to(id, { keyframes: [{ y: Math.min(st[1], 300) - 140, duration: 0.45, ease: "power1.out" }, { y: 610, duration: 0.5, ease: "power2.in" }] }, t0);
+        tl.to(id, { opacity: 0, scale: 0.6, duration: 0.12 }, t0 + 0.9);
+        tl.fromTo("#intro-jar-notes", { y: 0 }, { y: 6, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out" }, t0 + 0.95);
+      });
+
+      // "sounds made up" ... "TRUE!"
+      const claimWords = Kit.words($("#intro-claim-text"));
+      Kit.write(tl, claimWords, c.w("today", "sound") - 0.1, 0.12);
+      Kit.draw(tl, "#intro-claim-scribble", c.w("promise", "promise"), 0.35, "power1.inOut");
+      const tStamp = c.w("promise", "true") - 0.08;
+      tl.fromTo("#intro-stamp-in", { scale: 2.2, opacity: 0, rotation: -14 }, { scale: 1, opacity: 1, rotation: -8, duration: 0.16, ease: "power4.in", transformOrigin: "50% 50%" }, tStamp - 0.16);
+      tl.fromTo("#intro-svg", { x: 0 }, { x: 6, duration: 0.05, yoyo: true, repeat: 3, ease: "none" }, tStamp);
+      Kit.out(tl, ["#intro-claim", "#intro-stamp"], c.s.ready - 0.3, { dur: 0.3, scale: 0.96 });
+
+      // the top note leaves the jar as he pulls it out
+      tl.to("#intro-top-note", { opacity: 0, duration: 0.05 }, tReach + 0.12);
+
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

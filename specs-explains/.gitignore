@@ -1,0 +1,4 @@
+.hyperframes/
+.voice-cache/
+node_modules/
+renders/*.tmp*
