@@ -121,7 +121,8 @@ def analyse(script):
         sf.write(wav, track, SR)
         mp3 = os.path.join(ROOT, "assets", "voice", f"{scene['id']}.mp3")
         subprocess.run(
-            ["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-ar", "44100", "-ac", "1", "-b:a", "128k", mp3],
+            ["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-af", "loudnorm=I=-17:TP=-1.5:LRA=11",
+             "-ar", "44100", "-ac", "1", "-b:a", "128k", mp3],
             check=True,
         )
         opens, shapes = envelope(track)

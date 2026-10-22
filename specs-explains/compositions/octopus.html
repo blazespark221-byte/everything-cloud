@@ -1,0 +1,542 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Patrick Hand";
+      src: url("assets/fonts/PatrickHand-Regular.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Permanent Marker";
+      src: url("assets/fonts/PermanentMarker-Regular.woff2") format("woff2");
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #root svg {
+      position: absolute;
+      inset: 0;
+    }
+    #root .ink {
+      fill: none;
+      stroke: #1f1d1a;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #root .thin {
+      stroke-width: 4;
+    }
+    #root .draw {
+      stroke-dasharray: 1 1.1;
+    }
+    #root .hand {
+      font-family: "Patrick Hand";
+    }
+    #root .marker {
+      font-family: "Permanent Marker";
+    }
+    #root .flow {
+      fill: none;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-dasharray: 14 16;
+    }
+  </style>
+  <div id="root" data-composition-id="octopus" data-width="1920" data-height="1080">
+    <svg id="oct-svg" viewBox="0 0 1920 1080" width="1920" height="1080" fill="#1f1d1a">
+      <rect x="0" y="0" width="1920" height="1080" fill="#2f8fb4" />
+      <g id="oct-cam">
+        <rect x="-2000" y="-2400" width="6000" height="5000" fill="#2f8fb4" />
+        <!-- seabed -->
+        <path class="ink" data-marker="#e9d39d" d="M-200 892 C 300 878, 700 900, 1100 886 C 1500 874, 1800 896, 2200 884 L2200 1400 L-200 1400 Z" />
+        <path class="ink thin" opacity="0.5" d="M160 960 q20 -8 40 0 M520 1010 q20 -8 40 0 M980 960 q20 -8 40 0 M1420 1000 q20 -8 40 0 M1760 950 q20 -8 40 0" />
+        <path class="ink thin" data-marker="#f6b8c8" d="M640 900 l-16 -30 l16 8 l16 -8 Z" />
+        <path class="ink" data-marker="#a7b4bd" d="M1560 892 C 1560 830, 1620 800, 1680 812 C 1740 822, 1770 860, 1760 892 Z" />
+        <g id="oct-weeds">
+          <path class="ink weed" data-marker="#5fb07a" d="M150 892 C 120 800, 190 760, 160 680 C 140 620, 170 580, 160 540 C 190 600, 200 640, 185 700 C 175 760, 205 820, 180 892 Z" />
+          <path class="ink weed" data-marker="#4a9d68" d="M240 892 C 270 820, 220 770, 250 700 C 270 650, 240 610, 260 570 C 290 620, 280 680, 270 720 C 255 780, 290 840, 270 892 Z" />
+          <path class="ink weed" data-marker="#5fb07a" d="M1820 892 C 1790 810, 1850 770, 1830 700 C 1815 650, 1840 610, 1830 560 C 1860 620, 1870 660, 1855 720 C 1845 780, 1870 840, 1850 892 Z" />
+        </g>
+
+        <!-- the question arrives in a bottle -->
+        <g id="oct-bottle">
+          <path class="ink" data-marker="#cfeee2" d="M-26 -60 L-26 40 Q-26 60 0 60 Q26 60 26 40 L26 -60 Q26 -76 12 -82 L12 -104 L-12 -104 L-12 -82 Q-26 -76 -26 -60 Z" />
+          <rect x="-14" y="-122" width="28" height="22" rx="4" fill="#c58b55" stroke="#1f1d1a" stroke-width="4" />
+          <rect x="-14" y="-30" width="28" height="60" fill="#fff1a8" stroke="#1f1d1a" stroke-width="3" />
+        </g>
+
+        <!-- the octopus -->
+        <g id="oct-octo">
+          <g id="oct-armset"></g>
+          <path id="oct-mantle" class="ink" data-marker="#ff8a5c" d="M1200 282 C 1332 282, 1392 382, 1372 500 C 1356 592, 1292 640, 1200 640 C 1108 640, 1044 592, 1028 500 C 1008 382, 1068 282, 1200 282 Z" />
+          <circle cx="1120" cy="380" r="12" fill="#f26b3d" />
+          <circle cx="1290" cy="350" r="9" fill="#f26b3d" />
+          <circle cx="1320" cy="440" r="13" fill="#f26b3d" />
+          <!-- x-ray window with the hearts -->
+          <g id="oct-xray">
+            <ellipse cx="1200" cy="455" rx="136" ry="128" fill="#ffe0cf" stroke="#1f1d1a" stroke-width="4" stroke-dasharray="12 10" />
+            <path id="oct-gill-l" class="ink thin" data-marker="#f7a3a3" d="M1092 470 C 1080 440, 1092 410, 1110 404 C 1104 430, 1122 440, 1116 470 C 1126 490, 1110 520, 1092 520 C 1098 500, 1084 490, 1092 470 Z" />
+            <path id="oct-gill-r" class="ink thin" data-marker="#f7a3a3" d="M1308 470 C 1320 440, 1308 410, 1290 404 C 1296 430, 1278 440, 1284 470 C 1274 490, 1290 520, 1308 520 C 1302 500, 1316 490, 1308 470 Z" />
+            <path id="oct-flow-gills" class="flow" stroke="#2f80ed" d="M1140 452 C 1120 440, 1104 450, 1100 470 M1260 452 C 1280 440, 1296 450, 1300 470" />
+            <path id="oct-flow-body" class="flow" stroke="#2f80ed" d="M1200 470 C 1200 540, 1150 600, 1120 640 M1200 470 C 1200 540, 1250 600, 1280 640 M1200 470 L1200 640" />
+            <g transform="translate(1146 452)"><path id="oct-h1" class="heart" d="M0 14 C -26 -4, -20 -26, -6 -24 C -2 -24, 0 -20, 0 -18 C 0 -20, 2 -24, 6 -24 C 20 -26, 26 -4, 0 14 Z" fill="#e8453c" stroke="#1f1d1a" stroke-width="4" stroke-linejoin="round" /></g>
+            <g transform="translate(1254 452)"><path id="oct-h2" class="heart" d="M0 14 C -26 -4, -20 -26, -6 -24 C -2 -24, 0 -20, 0 -18 C 0 -20, 2 -24, 6 -24 C 20 -26, 26 -4, 0 14 Z" fill="#e8453c" stroke="#1f1d1a" stroke-width="4" stroke-linejoin="round" /></g>
+            <g transform="translate(1200 418) scale(1.9)"><path id="oct-h3" class="heart" d="M0 14 C -26 -4, -20 -26, -6 -24 C -2 -24, 0 -20, 0 -18 C 0 -20, 2 -24, 6 -24 C 20 -26, 26 -4, 0 14 Z" style="fill: #e8453c" stroke="#1f1d1a" stroke-width="2.2" stroke-linejoin="round" /></g>
+            <g id="oct-brain" transform="translate(1200 330)">
+              <path d="M-34 6 C -44 -14, -26 -30, -10 -24 C -4 -36, 16 -36, 20 -24 C 38 -28, 46 -8, 34 6 C 38 20, 20 28, 8 22 C 0 30, -20 30, -24 20 C -38 22, -42 12, -34 6 Z" fill="#f7a8c4" stroke="#1f1d1a" stroke-width="4" />
+              <path d="M-14 -16 C -6 -6, -16 4, -6 12 M10 -18 C 18 -6, 8 4, 18 12" fill="none" stroke="#1f1d1a" stroke-width="3" stroke-linecap="round" />
+            </g>
+          </g>
+          <!-- face -->
+          <circle cx="1146" cy="572" r="28" fill="#ffffff" stroke="#1f1d1a" stroke-width="5" />
+          <circle cx="1254" cy="572" r="28" fill="#ffffff" stroke="#1f1d1a" stroke-width="5" />
+          <circle id="oct-pupil-l" cx="1146" cy="576" r="12" fill="#1f1d1a" />
+          <circle id="oct-pupil-r" cx="1254" cy="576" r="12" fill="#1f1d1a" />
+          <path id="oct-lid" d="" fill="#ff8a5c" stroke="#1f1d1a" stroke-width="4" />
+          <path id="oct-smile" class="ink thin" d="M1180 616 Q1200 630 1220 616" />
+          <g id="oct-sweat" opacity="0">
+            <path d="M1385 330 C 1378 345, 1376 352, 1385 358 C 1394 352, 1392 345, 1385 330 Z" fill="#bfe6ff" stroke="#1f1d1a" stroke-width="3" />
+            <path d="M1405 380 C 1398 395, 1396 402, 1405 408 C 1414 402, 1412 395, 1405 380 Z" fill="#bfe6ff" stroke="#1f1d1a" stroke-width="3" />
+          </g>
+          <g id="oct-antennae">
+            <path class="ink" d="M1160 290 C 1150 240, 1130 220, 1120 200 M1240 290 C 1250 240, 1270 220, 1280 200" />
+            <circle cx="1118" cy="194" r="14" fill="#7be07b" stroke="#1f1d1a" stroke-width="4" />
+            <circle cx="1282" cy="194" r="14" fill="#7be07b" stroke="#1f1d1a" stroke-width="4" />
+          </g>
+          <g id="oct-specs">
+            <circle cx="1146" cy="572" r="36" fill="rgba(150,205,255,0.25)" stroke="#1f1d1a" stroke-width="6" />
+            <circle cx="1254" cy="572" r="36" fill="rgba(150,205,255,0.25)" stroke="#1f1d1a" stroke-width="6" />
+            <path class="ink" d="M1182 566 Q1200 556 1218 566" />
+          </g>
+        </g>
+        <g id="oct-labels">
+          <g id="oct-lab-gill">
+            <path class="ink thin draw" pathLength="1" d="M960 380 C 1020 390, 1070 420, 1100 440" />
+            <text class="hand" x="740" y="380" font-size="50">gill hearts</text>
+          </g>
+          <g id="oct-lab-body">
+            <path class="ink thin draw" pathLength="1" d="M1480 300 C 1400 310, 1300 360, 1250 400" />
+            <text class="hand" x="1490" y="300" font-size="50">body heart</text>
+          </g>
+          <g id="oct-o2">
+            <text class="hand" x="1004" y="500" font-size="40" fill="#ffffff">O<tspan font-size="28" dy="8">2</tspan></text>
+            <text class="hand" x="1350" y="500" font-size="40" fill="#ffffff">O<tspan font-size="28" dy="8">2</tspan></text>
+          </g>
+          <g id="oct-lab-brain">
+            <path class="ink thin draw" pathLength="1" d="M1560 640 C 1500 660, 1440 700, 1400 740" />
+            <text class="hand" x="1520" y="630" font-size="50">brain cells!</text>
+          </g>
+        </g>
+        <g id="oct-sparks"></g>
+
+        <!-- heartbeat strip -->
+        <g id="oct-ecg">
+          <rect x="1440" y="120" width="380" height="150" rx="12" fill="#fffdf6" stroke="#1f1d1a" stroke-width="5" />
+          <path id="oct-ecg-beat" class="draw" pathLength="1" d="M1460 200 L1520 200 L1535 160 L1550 236 L1565 200 L1620 200 L1635 160 L1650 236 L1665 200 L1720 200 L1735 160 L1750 236 L1765 200 L1800 200" fill="none" stroke="#e8453c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" />
+          <path id="oct-ecg-flat" class="draw" pathLength="1" d="M1460 200 L1800 200" fill="none" stroke="#e8453c" stroke-width="6" stroke-linecap="round" />
+          <text class="hand" x="1630" y="258" font-size="40" text-anchor="middle">big heart</text>
+        </g>
+
+        <!-- red blood, blue blood -->
+        <g id="oct-drops">
+          <g id="oct-drop-red" transform="translate(640 310)">
+            <path d="M0 -90 C 30 -40, 62 -6, 62 30 C 62 66, 34 88, 0 88 C -34 88, -62 66, -62 30 C -62 -6, -30 -40, 0 -90 Z" fill="#e8453c" stroke="#1f1d1a" stroke-width="6" />
+            <text class="marker" x="0" y="52" font-size="54" text-anchor="middle" fill="#ffffff">Fe</text>
+            <text class="hand" x="0" y="148" font-size="48" text-anchor="middle">iron</text>
+          </g>
+          <g id="oct-drop-blue" transform="translate(850 310)">
+            <path d="M0 -90 C 30 -40, 62 -6, 62 30 C 62 66, 34 88, 0 88 C -34 88, -62 66, -62 30 C -62 -6, -30 -40, 0 -90 Z" fill="#2f80ed" stroke="#1f1d1a" stroke-width="6" />
+            <text class="marker" x="0" y="52" font-size="54" text-anchor="middle" fill="#ffffff">Cu</text>
+            <text class="hand" x="0" y="148" font-size="48" text-anchor="middle">copper</text>
+          </g>
+        </g>
+
+        <!-- each arm does its own thing -->
+        <g id="oct-bub1" transform="translate(830 640)">
+          <path class="ink thin" data-marker="#ffffff" data-off="4 4" d="M-90 -40 Q-90 -76 -50 -76 L50 -76 Q90 -76 90 -40 Q90 -4 50 -4 L-10 -4 L-30 18 L-26 -4 L-50 -4 Q-90 -4 -90 -40 Z" />
+          <text class="hand" x="0" y="-26" font-size="44" text-anchor="middle">touch!</text>
+        </g>
+        <g id="oct-bub2" transform="translate(1520 690)">
+          <path class="ink thin" data-marker="#ffffff" data-off="4 4" d="M-90 -40 Q-90 -76 -50 -76 L50 -76 Q90 -76 90 -40 Q90 -4 50 -4 L30 -4 L26 18 L10 -4 L-50 -4 Q-90 -4 -90 -40 Z" />
+          <text class="hand" x="0" y="-26" font-size="44" text-anchor="middle">taste!</text>
+        </g>
+        <g id="oct-bub3" transform="translate(1000 800)">
+          <path class="ink thin" data-marker="#ffffff" data-off="4 4" d="M-100 -40 Q-100 -76 -60 -76 L60 -76 Q100 -76 100 -40 Q100 -4 60 -4 L0 -4 L-20 18 L-16 -4 L-60 -4 Q-100 -4 -100 -40 Z" />
+          <text class="hand" x="0" y="-26" font-size="44" text-anchor="middle">decide!</text>
+        </g>
+
+        <g id="oct-specs-g"></g>
+        <g id="oct-snorkel">
+          <path d="M60 14 Q86 14 86 -16 L86 -128" fill="none" stroke="#1f1d1a" stroke-width="20" stroke-linecap="round" />
+          <path d="M60 14 Q86 14 86 -16 L86 -128" fill="none" stroke="#ffc832" stroke-width="10" stroke-linecap="round" />
+        </g>
+        <g id="oct-myheart" opacity="0"><path d="M0 14 C -26 -4, -20 -26, -6 -24 C -2 -24, 0 -20, 0 -18 C 0 -20, 2 -24, 6 -24 C 20 -26, 26 -4, 0 14 Z" fill="#e8453c" stroke="#1f1d1a" stroke-width="4" /></g>
+        <g id="oct-bubbles">
+          <circle class="bb ink thin" r="10" />
+          <circle class="bb ink thin" r="7" />
+          <circle class="bb ink thin" r="12" />
+          <circle class="bb ink thin" r="8" />
+          <circle class="bb ink thin" r="10" />
+          <circle class="bb ink thin" r="6" />
+        </g>
+        <!-- the ink cloud that ends the chapter -->
+        <g id="oct-ink" transform="translate(1250 600)">
+          <g id="oct-ink-in">
+            <circle cx="0" cy="0" r="60" fill="#22252d" />
+            <circle cx="-50" cy="-30" r="44" fill="#22252d" />
+            <circle cx="46" cy="-40" r="40" fill="#22252d" />
+            <circle cx="40" cy="38" r="46" fill="#22252d" />
+            <circle cx="-44" cy="40" r="38" fill="#22252d" />
+            <circle cx="0" cy="-70" r="30" fill="#22252d" />
+          </g>
+        </g>
+      </g>
+      <!-- the question card -->
+      <g id="oct-card">
+        <path class="ink" data-marker="#FFF1A8" d="M-540 -112 L540 -122 L548 116 L-548 122 Z" />
+        <text class="marker" x="0" y="28" font-size="74" text-anchor="middle">Do octopuses have <tspan fill="#e8453c">3 hearts</tspan>?</text>
+      </g>
+      <image href="assets/grain.png" x="0" y="0" width="1920" height="1080" />
+    </svg>
+  </div>
+  <script src="assets/data/timing.js"></script>
+  <script src="assets/data/lipsync.js"></script>
+  <script src="assets/specs.js"></script>
+  <script src="assets/kit.js"></script>
+  <script>
+    (function () {
+      const S = "octopus";
+      const c = Kit.cues(S);
+      const w = c.w;
+      const $ = (q) => document.querySelector(q);
+      const $$ = (q) => Array.from(document.querySelectorAll(q));
+      const tl = gsap.timeline({ paused: true });
+      const NS = "http://www.w3.org/2000/svg";
+      Kit.markers($("#oct-svg"));
+
+      // ---------- the octopus rig: eight tapered arms drawn from time ----------
+      const tSwim = w("weird", "swims") - 0.35;
+      const tSink = c.s.crawl + 0.2;
+      const tCrawl = w("crawl", "rather") - 0.4;
+      const tCrawlEnd = c.e.crawl + 0.6;
+      const tInk = c.e.alien + 0.25;
+      const arms = [];
+      for (let i = 0; i < 8; i++) {
+        const back = document.createElementNS(NS, "path");
+        back.setAttribute("fill", "#ff8a5c");
+        back.setAttribute("stroke", "#1f1d1a");
+        back.setAttribute("stroke-width", "5");
+        back.setAttribute("stroke-linejoin", "round");
+        $("#oct-armset").appendChild(back);
+        arms.push(back);
+      }
+      // body offset over time (relative to its drawn position)
+      const bodyKeys = [
+        [0, 0, 0],
+        [tSwim, 0, 0],
+        [tSwim + 0.9, -40, -330],
+        [tSink, -40, -330],
+        [tSink + 1.4, 0, 0],
+        [tCrawl, 0, 0],
+        [tCrawlEnd, 70, 0],
+      ];
+      const ease = Specs.EASE.inOut;
+      function bodyAt(t) {
+        let cur = [0, 0];
+        for (let i = 1; i < bodyKeys.length; i++) {
+          const a = bodyKeys[i - 1];
+          const b = bodyKeys[i];
+          if (t <= a[0]) break;
+          const p = Math.min(1, (t - a[0]) / Math.max(0.001, b[0] - a[0]));
+          const e = i === 2 ? Specs.EASE.out(p) : ease(p);
+          cur = [a[1] + (b[1] - a[1]) * e, a[2] + (b[2] - a[2]) * e];
+        }
+        return cur;
+      }
+      const ramp = (t, a, b) => Math.max(0, Math.min(1, (t - a) / (b - a)));
+      function modeAt(t) {
+        // weights: swim (arms trailing) and crawl (stepping)
+        const swim = ramp(t, tSwim - 0.1, tSwim + 0.3) * (1 - ramp(t, tSink + 0.6, tSink + 1.4));
+        const crawl = ramp(t, tCrawl - 0.2, tCrawl + 0.3) * (1 - ramp(t, tCrawlEnd - 0.3, tCrawlEnd + 0.2));
+        return { swim, crawl };
+      }
+      const sparkT = w("brain", "arms") - 0.3;
+      const sparkDots = [];
+      for (let i = 0; i < 8; i++) {
+        for (let k = 0; k < 4; k++) {
+          const d = document.createElementNS(NS, "circle");
+          d.setAttribute("r", "7");
+          d.setAttribute("fill", "#ffe14d");
+          d.setAttribute("stroke", "#1f1d1a");
+          d.setAttribute("stroke-width", "2.5");
+          d.setAttribute("opacity", "0");
+          $("#oct-sparks").appendChild(d);
+          sparkDots.push({ el: d, arm: i, u: 0.22 + k * 0.2, t0: sparkT + k * 0.14 + (i % 4) * 0.05 });
+        }
+      }
+      function drawOcto(t) {
+        const [bx, by] = bodyAt(t);
+        $("#oct-octo").setAttribute("transform", `translate(${bx.toFixed(1)} ${by.toFixed(1)})`);
+        const m = modeAt(t);
+        const centre = [];
+        for (let i = 0; i < 8; i++) {
+          const side = i < 4 ? -1 : 1;
+          const k = i - 3.5;
+          const restA = k * 21;
+          const swimA = k * 3.5 + Math.sin(t * 3 + i) * 4;
+          const crawlA = k * 24 + Math.sin(t * 7 + i * 1.7) * 14;
+          let a = restA * (1 - m.swim - m.crawl) + swimA * m.swim + crawlA * m.crawl;
+          const curl = side * (70 * (1 - m.swim) + 10 * m.swim);
+          const wig = 7 + 5 * m.swim;
+          const L = 255 + 70 * m.swim;
+          const N = 22;
+          let p = [1200 + k * 26, 626];
+          let th = a;
+          const pts = [p];
+          for (let j = 1; j <= N; j++) {
+            const u = j / N;
+            th = a + curl * u * u + wig * Math.sin(u * 6.5 - t * 2.2 + i * 0.9);
+            const d = (L / N) * (Math.PI / 180);
+            p = [p[0] + Math.sin(th * (Math.PI / 180)) * (L / N), p[1] + Math.cos(th * (Math.PI / 180)) * (L / N)];
+            // keep resting arms on the seabed
+            if (m.swim < 0.5 && p[1] > 880 - by) p[1] = 880 - by + (p[1] - (880 - by)) * 0.2;
+            pts.push(p);
+          }
+          centre.push(pts);
+          const left = [];
+          const right = [];
+          for (let j = 0; j <= N; j++) {
+            const q = pts[j];
+            const n0 = pts[Math.max(0, j - 1)];
+            const n1 = pts[Math.min(N, j + 1)];
+            const dx = n1[0] - n0[0];
+            const dy = n1[1] - n0[1];
+            const len = Math.hypot(dx, dy) || 1;
+            const half = (30 * (1 - j / N) + 5) / 2;
+            left.push([q[0] - (dy / len) * half, q[1] + (dx / len) * half]);
+            right.push([q[0] + (dy / len) * half, q[1] - (dx / len) * half]);
+          }
+          const f = (v) => v[0].toFixed(1) + " " + v[1].toFixed(1);
+          let d = "M" + f(left[0]);
+          for (let j = 1; j <= N; j++) d += " L" + f(left[j]);
+          d += " Q" + f([pts[N][0] + (pts[N][0] - pts[N - 1][0]) * 0.8, pts[N][1] + (pts[N][1] - pts[N - 1][1]) * 0.8]) + " " + f(right[N]);
+          for (let j = N - 1; j >= 0; j--) d += " L" + f(right[j]);
+          arms[i].setAttribute("d", d + " Z");
+        }
+        // neuron sparks ride the arms
+        for (const s of sparkDots) {
+          const pts = centre[s.arm];
+          const q = pts[Math.round(s.u * (pts.length - 1))];
+          s.el.setAttribute("cx", (q[0] + bx).toFixed(1));
+          s.el.setAttribute("cy", (q[1] + by).toFixed(1));
+          const on = t >= s.t0 && t < tInk;
+          const pulse = on ? 0.75 + 0.25 * Math.sin((t - s.t0) * 6 + s.arm) : 0;
+          s.el.setAttribute("opacity", on ? Math.min(1, (t - s.t0) * 6).toFixed(2) : 0);
+          s.el.setAttribute("r", (7 * (on ? pulse + 0.25 : 1)).toFixed(1));
+        }
+        // eyes: look at Specs, blink now and then, droop when tired
+        const look = t < sparkT ? -1 : 0;
+        $("#oct-pupil-l").setAttribute("cx", (1146 + look * 9).toFixed(1));
+        $("#oct-pupil-r").setAttribute("cx", (1254 + look * 9).toFixed(1));
+        const blink = [5.2, 13.4, 19.9, 31.0, 38.6, 47.2, 55.1].some((b) => t > b && t < b + 0.16);
+        const tired = ramp(t, tSink, tSink + 0.4) * (1 - ramp(t, tCrawlEnd, tCrawlEnd + 0.4));
+        const lid = blink ? 1 : tired * 0.45;
+        if (lid > 0.02) {
+          const yl = 544 + lid * 56;
+          $("#oct-lid").setAttribute("d", `M1118 ${yl} L1118 560 A28 28 0 0 1 1174 560 L1174 ${yl} Z M1226 ${yl} L1226 560 A28 28 0 0 1 1282 560 L1282 ${yl} Z`);
+        } else $("#oct-lid").setAttribute("d", "");
+      }
+
+      // ---------- Specs, snorkel and all ----------
+      const SX = 400;
+      const rig = Specs.create($("#oct-specs-g"), {
+        scene: S,
+        x: SX,
+        y: 900,
+        s: 0.85,
+        poses: [
+          [0, "relaxed", 0],
+          [c.s.q - 0.1, "point-r", 0.4, "back"],
+          [w("q", "Is it") - 0.1, "think", 0.4],
+          [c.s.yes - 0.1, "fist-up", 0.3, "back"],
+          [w("yes", "Three") - 0.1, "present-r", 0.4],
+          [w("yes", "I only") - 0.1, "hand-chest", 0.4],
+          [w("yes", "jealous") - 0.3, "jealous", 0.4],
+          [c.s.gills - 0.1, "present-r", 0.45],
+          [c.s.body - 0.1, "explain-r", 0.4],
+          [c.s.weird - 0.1, "relaxed", 0.4],
+          [w("weird", "swims") - 0.2, "point-ur", 0.4, "back"],
+          [w("weird", "stops") - 0.2, "shrug", 0.4],
+          [c.s.crawl - 0.1, "tired", 0.5],
+          [w("crawl", "rather") - 0.1, "point-r", 0.4],
+          [c.s.blood - 0.1, "arms-up", 0.35, "back"],
+          [c.s.iron - 0.2, "point-ur", 0.4, "back"],
+          [w("iron", "red") - 0.4, "hand-chest", 0.35],
+          [c.s.copper - 0.2, "point-ur", 0.4, "back"],
+          [c.s.brain - 0.1, "explain-r", 0.4],
+          [w("brain", "arms") - 0.3, "arms-up", 0.35, "back"],
+          [c.s.arms - 0.1, "explain", 0.4],
+          [c.s.alien - 0.1, "explain-r", 0.4],
+          [w("alien", "alien") - 0.3, "shrug", 0.35, "back"],
+          [w("alien", "But real") - 0.2, "present-r", 0.4, "back"],
+          [tInk - 0.1, "arms-up", 0.25, "back"],
+        ],
+        faces: [
+          [0, "happy", 0],
+          [w("q", "Is it"), "thinking", 0.3],
+          [c.s.yes, "excited", 0.25],
+          [w("yes", "jealous") - 0.3, "jealous", 0.35],
+          [c.s.gills, "happy", 0.3],
+          [c.s.weird, "skeptical", 0.3],
+          [w("weird", "stops"), "shocked", 0.25],
+          [c.s.crawl, "sleepy", 0.4],
+          [w("crawl", "rather"), "happy", 0.3],
+          [c.s.blood, "surprised", 0.2],
+          [c.s.iron, "happy", 0.3],
+          [c.s.copper, "amazed", 0.3],
+          [c.s.brain, "thinking", 0.3],
+          [w("brain", "arms"), "shocked", 0.25],
+          [c.s.arms, "excited", 0.3],
+          [w("alien", "alien"), "grin", 0.3],
+          [w("alien", "But real"), "proud", 0.3],
+          [tInk, "shocked", 0.15],
+        ],
+        looks: [
+          [0, 0.4, -0.4, 0],
+          [c.s.q, 0.6, -0.8, 0.3],
+          [c.s.yes, 0, 0.05, 0.3],
+          [w("yes", "Three"), 0.8, -0.3, 0.3],
+          [w("yes", "I only"), 0, 0.05, 0.3],
+          [c.s.gills, 0.8, -0.3, 0.3],
+          [w("weird", "swims"), 0.7, -0.8, 0.3],
+          [c.s.crawl, 0.8, 0, 0.3],
+          [c.s.blood, 0, 0.05, 0.25],
+          [c.s.iron, 0.6, -0.8, 0.3],
+          [c.s.copper, 0.9, -0.8, 0.3],
+          [c.s.brain, 0.8, -0.2, 0.3],
+          [c.s.alien, 0.8, -0.3, 0.3],
+          [w("alien", "alien"), 0, 0.05, 0.3],
+          [tInk, 0.9, -0.2, 0.15],
+        ],
+      });
+
+      const cam = Kit.camera($("#oct-cam"), [[0.15, 960, 540, 1, 2.0, "inOut"], [c.s.brain - 0.3, 1180, 600, 1.3, 1.1], [c.e.arms + 0.2, 960, 540, 1, 1.0]], { cx: 960, cy: -620, z: 1 });
+      const snork = $("#oct-snorkel");
+      const myHeart = $("#oct-myheart");
+      const tMine = w("yes", "I only") + 0.2;
+      // bubbles rise from Specs' snorkel after he speaks a line
+      const bubbleTimes = [c.e.q, c.e.yes, c.e.body, c.e.crawl, c.e.copper, c.e.arms];
+      const bubbles = $$("#oct-bubbles .bb");
+      Kit.driver(tl, c.dur, (t) => {
+        const p = rig.render(t);
+        drawOcto(t);
+        cam.render(t);
+        const h = p.head;
+        snork.setAttribute("transform", `translate(${h[0].toFixed(1)} ${h[1].toFixed(1)}) rotate(${p.tilt.toFixed(1)}) scale(${p.scale})`);
+        const n = p.neck;
+        myHeart.setAttribute("transform", `translate(${n[0].toFixed(1)} ${(n[1] + 40 * p.scale).toFixed(1)}) scale(${(0.9 + (t > tMine ? 0.12 * Math.max(0, Math.sin((t - tMine) * 7)) : 0)).toFixed(3)})`);
+        bubbles.forEach((b, i) => {
+          const t0 = bubbleTimes[i];
+          const k = t - t0;
+          if (k > 0 && k < 2.6) {
+            b.setAttribute("cx", (SX + 73 + Math.sin(k * 4 + i) * 10).toFixed(1));
+            b.setAttribute("cy", (430 - k * 150).toFixed(1));
+            b.setAttribute("opacity", 1);
+          } else b.setAttribute("opacity", 0);
+        });
+      });
+
+      // seaweed sways (finite)
+      $$("#oct-weeds .weed").forEach((p, i) => {
+        const per = 1.6 + i * 0.3;
+        tl.fromTo([p.previousElementSibling, p], { skewX: -4 }, { skewX: 4, duration: per, ease: "sine.inOut", repeat: Math.floor(c.dur / per) - 1, yoyo: true, transformOrigin: "50% 100%" }, 0);
+      });
+
+      // the bottle sinks in, and the question pops out of it
+      tl.fromTo("#oct-bottle", { x: 760, y: -200, rotation: -30 }, { x: 760, y: 840, rotation: 70, duration: 2.6, ease: "power1.out" }, 0.2);
+      tl.fromTo("#oct-card", { x: 760, y: 820, scale: 0.08, rotation: 8, opacity: 0 }, { x: 960, y: 190, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, w("q", "Is it") - 0.3);
+      tl.to("#oct-card", { y: -260, rotation: 6, scale: 0.8, duration: 0.4, ease: "power3.in" }, c.s.yes + 0.6);
+      tl.to("#oct-bottle", { opacity: 0, duration: 0.3 }, c.s.yes + 0.6);
+
+      // three hearts, and Specs' one
+      gsap.set("#oct-xray", { opacity: 0 });
+      Kit.show(tl, "#oct-xray", c.s.yes - 0.2, 0.3);
+      ["#oct-h1", "#oct-h2", "#oct-h3"].forEach((h, i) => Kit.pop(tl, h, w("yes", "Three") - 0.15 + i * 0.22, { dur: 0.4 }));
+      Kit.pop(tl, "#oct-myheart", tMine - 0.1, { dur: 0.35 });
+      tl.to("#oct-myheart", { opacity: 0, duration: 0.3 }, c.s.gills);
+      const beatEnd = tSwim + 0.4;
+      Kit.pulse(tl, ["#oct-h1", "#oct-h2"], c.s.gills, tInk, 0.62, 1.22);
+      Kit.pulse(tl, "#oct-h3", c.s.body, beatEnd, 0.8, 1.16);
+      Kit.pulse(tl, "#oct-h3", tCrawl + 0.3, tInk, 0.8, 1.16);
+      tl.to("#oct-h3", { fill: "#b9b3ad", duration: 0.4 }, beatEnd);
+      tl.to("#oct-h3", { fill: "#e8453c", duration: 0.4 }, tCrawl + 0.2);
+
+      // blood flows: gills, then body
+      gsap.set(["#oct-flow-gills", "#oct-flow-body", "#oct-o2"], { opacity: 0 });
+      Kit.show(tl, "#oct-flow-gills", w("gills", "through") - 0.2, 0.3);
+      tl.fromTo("#oct-flow-gills", { strokeDashoffset: 0 }, { strokeDashoffset: -300, duration: tInk - c.s.gills, ease: "none" }, c.s.gills);
+      Kit.pop(tl, "#oct-o2 text", w("gills", "oxygen") - 0.2, { stagger: 0.15 });
+      gsap.set("#oct-o2", { opacity: 1 });
+      Kit.show(tl, "#oct-flow-body", w("body", "pumps") - 0.1, 0.3);
+      tl.fromTo("#oct-flow-body", { strokeDashoffset: 0 }, { strokeDashoffset: -300, duration: beatEnd - c.s.body, ease: "none" }, c.s.body);
+      tl.to("#oct-flow-body", { opacity: 0.25, duration: 0.3 }, beatEnd);
+      tl.to("#oct-flow-body", { opacity: 1, duration: 0.3 }, tCrawl + 0.2);
+      tl.fromTo("#oct-flow-body", { strokeDashoffset: -300 }, { strokeDashoffset: -600, duration: tInk - tCrawl, ease: "none", immediateRender: false }, tCrawl + 0.2);
+      Kit.draw(tl, "#oct-lab-gill path", w("gills", "Two small") - 0.1, 0.4);
+      Kit.show(tl, "#oct-lab-gill text", w("gills", "Two small"), 0.25);
+      Kit.draw(tl, "#oct-lab-body path", w("body", "big third") - 0.1, 0.4);
+      Kit.show(tl, "#oct-lab-body text", w("body", "big third"), 0.25);
+      Kit.hide(tl, ["#oct-lab-gill", "#oct-lab-body", "#oct-o2"], c.s.weird, 0.3);
+
+      // swimming stops the big heart: the strip goes flat
+      gsap.set("#oct-ecg", { opacity: 0 });
+      Kit.show(tl, "#oct-ecg", c.s.weird + 0.2, 0.3);
+      Kit.draw(tl, "#oct-ecg-beat", c.s.weird + 0.3, 1.4, "none");
+      tl.to("#oct-ecg-beat", { opacity: 0, duration: 0.15 }, beatEnd);
+      Kit.draw(tl, "#oct-ecg-flat", beatEnd, 0.9, "none");
+      tl.to("#oct-ecg-flat", { opacity: 0, duration: 0.15 }, tCrawl + 0.2);
+      tl.to("#oct-ecg-beat", { opacity: 1, duration: 0.15 }, tCrawl + 0.2);
+      tl.fromTo("#oct-ecg-beat", { strokeDashoffset: 1.05 }, { strokeDashoffset: 0, duration: 1.4, ease: "none", immediateRender: false }, tCrawl + 0.2);
+      Kit.hide(tl, "#oct-ecg", c.s.blood - 0.2, 0.3);
+      Kit.show(tl, "#oct-sweat", tSink + 0.3, 0.3);
+      Kit.hide(tl, "#oct-sweat", tCrawlEnd, 0.3);
+
+      // red blood vs blue blood
+      Kit.pop(tl, "#oct-drop-blue", w("blood", "blue") - 0.15, { dur: 0.45 });
+      tl.to("#oct-drop-blue", { opacity: 0.25, duration: 0.3 }, c.s.iron);
+      Kit.pop(tl, "#oct-drop-red", w("iron", "iron") - 0.15, { dur: 0.45 });
+      tl.to("#oct-drop-blue", { opacity: 1, scale: 1.12, duration: 0.3, ease: "back.out(2)", transformOrigin: "50% 50%" }, w("copper", "copper") - 0.15);
+      tl.to("#oct-drop-blue", { scale: 1, duration: 0.3 }, w("copper", "copper") + 0.3);
+      Kit.out(tl, "#oct-drops", c.s.brain - 0.2, { dur: 0.3 });
+
+      // a small brain in the head, most brain cells in the arms
+      gsap.set("#oct-brain", { opacity: 0 });
+      Kit.pop(tl, "#oct-brain", w("brain", "head") - 0.25, { dur: 0.4 });
+      tl.to(["#oct-h1", "#oct-h2", "#oct-h3"], { opacity: 0.35, duration: 0.3 }, w("brain", "head") - 0.3);
+      Kit.draw(tl, "#oct-lab-brain path", sparkT + 0.2, 0.4);
+      Kit.show(tl, "#oct-lab-brain text", sparkT + 0.3, 0.25);
+      Kit.hide(tl, "#oct-lab-brain", c.s.arms, 0.3);
+      Kit.pop(tl, "#oct-bub1", w("arms", "touch") - 0.15, { dur: 0.4 });
+      Kit.pop(tl, "#oct-bub2", w("arms", "taste") - 0.15, { dur: 0.4 });
+      Kit.pop(tl, "#oct-bub3", w("arms", "decisions") - 0.2, { dur: 0.4 });
+      Kit.out(tl, ["#oct-bub1", "#oct-bub2", "#oct-bub3"], c.s.alien - 0.1, { dur: 0.25 });
+
+      // basically an alien. But real.
+      gsap.set(["#oct-antennae", "#oct-specs"], { opacity: 0 });
+      Kit.pop(tl, "#oct-antennae", w("alien", "alien") - 0.2, { dur: 0.4, origin: "50% 100%" });
+      tl.to("#oct-antennae", { y: -80, opacity: 0, rotation: 20, duration: 0.35, ease: "power2.in", transformOrigin: "50% 100%" }, w("alien", "But real") - 0.2);
+      tl.fromTo("#oct-specs", { y: -140, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "bounce.out" }, w("alien", "But real"));
+      tl.to(["#oct-h1", "#oct-h2", "#oct-h3"], { opacity: 1, duration: 0.25 }, w("alien", "Three hearts"));
+      tl.to(["#oct-h1", "#oct-h2", "#oct-h3", "#oct-brain"], { opacity: 0, duration: 0.3 }, w("alien", "Basically") - 0.2);
+      tl.to("#oct-xray", { opacity: 0, duration: 0.3 }, w("alien", "Basically"));
+
+      // ink!
+      gsap.set("#oct-ink", { opacity: 0 });
+      tl.set("#oct-ink", { opacity: 1 }, tInk);
+      tl.fromTo("#oct-ink-in", { scale: 0.05, rotation: 0 }, { scale: 26, rotation: 25, duration: 1.1, ease: "power2.in", transformOrigin: "50% 50%" }, tInk);
+
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

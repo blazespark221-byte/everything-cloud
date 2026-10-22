@@ -87,10 +87,11 @@
     return node.querySelectorAll(".w");
   };
 
-  // Stroke draw-on; shapes need pathLength="1" and stroke-dasharray: 1 1.
+  // Stroke draw-on; shapes need pathLength="1" and stroke-dasharray: 1 1.1 (the gap is a little
+  // longer than the path so no round cap peeks out at either end while hidden).
   K.draw = (tl, sel, t, dur, ease, stagger) =>
-    tl.fromTo(sel, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: dur || 0.6, ease: ease || "power2.inOut", stagger: stagger || 0 }, t);
-  K.undraw = (tl, sel, t, dur) => tl.to(sel, { strokeDashoffset: -1, duration: dur || 0.4, ease: "power2.in" }, t);
+    tl.fromTo(sel, { strokeDashoffset: 1.05 }, { strokeDashoffset: 0, duration: dur || 0.6, ease: ease || "power2.inOut", stagger: stagger || 0 }, t);
+  K.undraw = (tl, sel, t, dur) => tl.to(sel, { strokeDashoffset: -1.05, duration: dur || 0.4, ease: "power2.in" }, t);
 
   K.show = (tl, sel, t, dur) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: dur || 0.3, ease: "power1.out" }, t);
   K.hide = (tl, sel, t, dur) => tl.to(sel, { opacity: 0, duration: dur || 0.25, ease: "power1.in" }, t);

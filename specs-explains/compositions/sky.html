@@ -1,0 +1,519 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Patrick Hand";
+      src: url("assets/fonts/PatrickHand-Regular.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Permanent Marker";
+      src: url("assets/fonts/PermanentMarker-Regular.woff2") format("woff2");
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #root svg {
+      position: absolute;
+      inset: 0;
+    }
+    #root .ink {
+      fill: none;
+      stroke: #1f1d1a;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #root .thin {
+      stroke-width: 4;
+    }
+    #root .draw {
+      stroke-dasharray: 1 1.1;
+    }
+    #root .hand {
+      font-family: "Patrick Hand";
+    }
+    #root .marker {
+      font-family: "Permanent Marker";
+    }
+    #root .strand {
+      fill: none;
+      stroke-width: 7;
+      stroke-linecap: round;
+    }
+  </style>
+  <div id="root" data-composition-id="sky" data-width="1920" data-height="1080">
+    <svg id="sky-svg" viewBox="0 0 1920 1080" width="1920" height="1080" fill="#1f1d1a">
+      <defs>
+        <linearGradient id="sky-dusk-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffd27a" stop-opacity="0" />
+          <stop offset="1" stop-color="#ffd27a" stop-opacity="0.95" />
+        </linearGradient>
+        <clipPath id="sky-card-clip">
+          <rect x="-410" y="-215" width="820" height="430" rx="10" />
+        </clipPath>
+      </defs>
+
+      <!-- ===== the sky world, seen through Specs' glasses ===== -->
+      <g id="sky-world" opacity="0">
+        <g id="sky-wcam">
+          <rect id="sky-bg" x="-3000" y="-2000" width="8000" height="6000" style="fill: #eaf3fa" />
+          <rect id="sky-dusk" x="-3000" y="420" width="8000" height="480" fill="url(#sky-dusk-grad)" opacity="0" />
+
+          <g transform="translate(300 230)">
+            <g id="sky-sun">
+              <g id="sky-rays">
+                <path class="ink" d="M0 -128 L0 -160 M0 128 L0 160 M-128 0 L-160 0 M128 0 L160 0 M90 -90 L113 -113 M-90 90 L-113 113 M90 90 L113 113 M-90 -90 L-113 -113 M49 -118 L61 -148 M-49 118 L-61 148 M118 49 L148 61 M-118 -49 L-148 -61" />
+              </g>
+              <circle id="sky-sun-fill" cx="6" cy="5" r="104" style="fill: #ffc832" />
+              <circle class="ink" cx="0" cy="0" r="104" />
+              <path class="ink thin" d="M-34 -10 Q-28 -18 -20 -10 M20 -10 Q28 -18 34 -10 M-24 24 Q0 44 24 24" />
+            </g>
+          </g>
+
+          <!-- sea, deep water below it, and the hill Specs stands on -->
+          <rect id="sky-sea" x="-3000" y="900" width="8000" height="2600" style="fill: #3d9cc0" />
+          <path class="ink thin" d="M-200 900 C 100 893, 500 907, 1200 900" />
+          <path class="ink thin" opacity="0.5" d="M120 950 q30 -10 60 0 M480 990 q30 -10 60 0 M820 940 q30 -10 60 0 M260 1060 q30 -10 60 0 M640 1120 q30 -10 60 0" />
+          <path id="sky-land" class="ink" data-marker="#8ccb6b" d="M1150 905 C 1260 860, 1380 846, 1560 868 C 1700 884, 1820 852, 2400 840 L2400 1400 L1300 1400 C 1240 1200, 1200 1000, 1150 905 Z" />
+          <path class="ink thin" d="M1300 870 l-6 -18 M1310 868 l4 -18 M1700 878 l-6 -16 M1712 876 l4 -18 M1860 858 l2 -18" />
+          <g id="sky-bubbles" opacity="0">
+            <circle class="ink thin" cx="420" cy="1520" r="14" />
+            <circle class="ink thin" cx="470" cy="1600" r="9" />
+            <circle class="ink thin" cx="560" cy="1460" r="11" />
+            <circle class="ink thin" cx="380" cy="1700" r="18" />
+            <circle class="ink thin" cx="640" cy="1650" r="8" />
+          </g>
+
+          <!-- sunlight travelling along one line, in its own frame -->
+          <g transform="translate(300 230) rotate(14.04)">
+            <g id="sky-beam-a">
+              <path class="draw" pathLength="1" d="M112 0 L430 0" stroke="#1f1d1a" stroke-width="38" stroke-linecap="round" fill="none" />
+              <path class="draw" pathLength="1" d="M112 0 L430 0" stroke="#ffffff" stroke-width="26" stroke-linecap="round" fill="none" />
+            </g>
+            <g id="sky-strands">
+              <path id="sky-s-red" class="strand draw" pathLength="1" stroke="#e8453c" d="M120 -26 C 160 -40, 200 -12, 240 -26 S 320 -40, 360 -26 S 420 -18, 430 -22" />
+              <path id="sky-s-orange" class="strand draw" pathLength="1" stroke="#f5902e" d="M120 -16 C 160 -30, 200 -2, 240 -16 S 320 -30, 360 -16 S 420 -12, 430 -13" />
+              <path id="sky-s-yellow" class="strand draw" pathLength="1" stroke="#e8b81c" d="M120 -5 C 160 -19, 200 9, 240 -5 S 320 -19, 360 -5 S 420 -4, 430 -4" />
+              <path id="sky-s-green" class="strand draw" pathLength="1" stroke="#43b05c" d="M120 5 C 160 -9, 200 19, 240 5 S 320 -9, 360 5 S 420 4, 430 4" />
+              <path id="sky-s-blue" class="strand draw" pathLength="1" stroke="#2f80ed" d="M120 16 C 160 2, 200 30, 240 16 S 320 2, 360 16 S 420 12, 430 13" />
+              <path id="sky-s-violet" class="strand draw" pathLength="1" stroke="#8b5cf6" d="M120 26 C 160 12, 200 40, 240 26 S 320 12, 360 26 S 420 18, 430 22" />
+            </g>
+            <g id="sky-beam-b" opacity="0.85">
+              <path class="draw" pathLength="1" d="M430 0 L690 0" stroke="#1f1d1a" stroke-width="38" stroke-linecap="round" fill="none" />
+              <path class="draw" pathLength="1" d="M430 0 L690 0" stroke="#ffffff" stroke-width="26" stroke-linecap="round" fill="none" />
+            </g>
+            <!-- the two waves meeting one molecule at x = 720 -->
+            <g id="sky-red-wave">
+              <path class="draw" pathLength="1" d="M300 0 C 365 -70, 430 70, 495 0 S 625 -70, 690 0 S 820 70, 885 0 S 1015 -70, 1080 0 S 1210 70, 1275 0" stroke="#e8453c" stroke-width="10" stroke-linecap="round" fill="none" />
+            </g>
+            <text id="sky-red-label" class="hand" x="330" y="-100" font-size="46" fill="#c2312a">long wave</text>
+            <g id="sky-blue-wave">
+              <path class="draw" pathLength="1" d="M330 0 c 16 -40, 32 40, 48 0 s 32 40, 48 0 s 32 40, 48 0 s 32 40, 48 0 s 32 40, 48 0 s 32 40, 48 0 s 32 40, 48 0 s 32 40, 48 0" stroke="#2f80ed" stroke-width="10" stroke-linecap="round" fill="none" />
+            </g>
+            <text id="sky-blue-label" class="hand" x="360" y="92" font-size="46" fill="#1d63c4">short wave</text>
+          </g>
+
+          <!-- air molecules: nitrogen (white) and oxygen (pink) -->
+          <g id="sky-mols">
+            <g class="mol" transform="translate(999 404)"><g id="sky-mstar"><circle cx="-16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /><circle cx="16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /></g></g>
+            <g class="mol" transform="translate(700 262) rotate(30)"><g><circle cx="-16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /><circle cx="16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /></g></g>
+            <g class="mol" transform="translate(830 540) rotate(-20)"><g><circle cx="-16" cy="0" r="21" fill="#ffb3a7" stroke="#1f1d1a" stroke-width="4.5" /><circle cx="16" cy="0" r="21" fill="#ffb3a7" stroke="#1f1d1a" stroke-width="4.5" /></g></g>
+            <g class="mol" transform="translate(880 280) rotate(70)"><g><circle cx="-16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /><circle cx="16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /></g></g>
+            <g class="mol" transform="translate(1140 236) rotate(-40)"><g><circle cx="-16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /><circle cx="16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /></g></g>
+            <g class="mol" transform="translate(1190 580) rotate(15)"><g><circle cx="-16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /><circle cx="16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /></g></g>
+            <g class="mol" transform="translate(1320 360) rotate(60)"><g><circle cx="-16" cy="0" r="21" fill="#ffb3a7" stroke="#1f1d1a" stroke-width="4.5" /><circle cx="16" cy="0" r="21" fill="#ffb3a7" stroke="#1f1d1a" stroke-width="4.5" /></g></g>
+            <g class="mol" transform="translate(1060 640) rotate(-60)"><g><circle cx="-16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /><circle cx="16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /></g></g>
+            <g class="mol" transform="translate(640 470) rotate(10)"><g><circle cx="-16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /><circle cx="16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /></g></g>
+            <g class="mol" transform="translate(1420 200) rotate(-15)"><g><circle cx="-16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /><circle cx="16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /></g></g>
+            <g class="mol" transform="translate(960 170) rotate(45)"><g><circle cx="-16" cy="0" r="21" fill="#ffb3a7" stroke="#1f1d1a" stroke-width="4.5" /><circle cx="16" cy="0" r="21" fill="#ffb3a7" stroke="#1f1d1a" stroke-width="4.5" /></g></g>
+            <g class="mol" transform="translate(1260 470) rotate(-75)"><g><circle cx="-16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /><circle cx="16" cy="0" r="21" fill="#ffffff" stroke="#1f1d1a" stroke-width="4.5" /></g></g>
+          </g>
+          <g id="sky-n-label">
+            <path class="ink thin draw" pathLength="1" d="M560 190 C 610 200, 660 220, 684 246" />
+            <text class="hand" x="380" y="186" font-size="50">nitrogen</text>
+          </g>
+          <g id="sky-o-label">
+            <path class="ink thin draw" pathLength="1" d="M700 640 C 740 620, 790 590, 814 558" />
+            <text class="hand" x="560" y="680" font-size="50">oxygen</text>
+          </g>
+
+          <!-- blue light knocked all over -->
+          <g id="sky-burst">
+            <path class="draw" pathLength="1" d="M1025 390 l40 -30 l10 20 l40 -30 l10 20 l40 -30" />
+            <path class="draw" pathLength="1" d="M1020 425 l45 20 l-5 22 l45 20 l-5 22 l45 20" />
+            <path class="draw" pathLength="1" d="M995 378 l-10 -45 l22 -4 l-10 -45 l22 -4 l-10 -45" />
+            <path class="draw" pathLength="1" d="M975 420 l-40 30 l-10 -20 l-40 30 l-10 -20 l-40 30" />
+            <path class="draw" pathLength="1" d="M1000 430 l12 45 l-22 4 l12 45 l-22 4 l12 45" />
+            <path class="draw" pathLength="1" d="M972 390 l-45 -18 l6 -22 l-45 -18 l6 -22 l-45 -18" />
+          </g>
+          <g id="sky-zig">
+            <path class="draw" pathLength="1" d="M705 262 l40 30 l12 -18 l40 30 l12 -18 l40 30 l12 -18 l18 18" />
+            <path class="draw" pathLength="1" d="M880 280 l40 -10 l4 20 l40 -10 l4 20 l40 -10 l4 20 l40 -10 l4 20 l44 -30" />
+            <path class="draw" pathLength="1" d="M1140 236 l24 40 l18 -10 l24 40 l18 -10 l24 40 l18 -10 l24 40" />
+            <path class="draw" pathLength="1" d="M830 540 l50 -10 l4 20 l50 -10 l4 20 l50 -10 l4 20 l50 -10" />
+            <path class="draw" pathLength="1" d="M640 470 l14 -44 l20 8 l14 -44 l20 8 l14 -44 l20 8 l14 -44" />
+            <path class="draw" pathLength="1" d="M1190 580 l30 -40 l16 12 l30 -40 l16 12 l30 -40 l16 12" />
+            <path class="draw" pathLength="1" d="M960 170 l50 16 l-6 20 l50 16 l-6 20 l50 16" />
+            <path class="draw" pathLength="1" d="M1060 640 l-40 -30 l12 -16 l-40 -30 l12 -16 l-40 -30" />
+          </g>
+          <g id="sky-arrows">
+            <path class="draw" pathLength="1" d="M1420 200 l20 40 l16 -8 l20 40 l16 -8 l20 40 l12 60 M1524 404 l-2 -24 M1524 404 l-20 -14" />
+            <path class="draw" pathLength="1" d="M1320 360 l40 20 l-8 16 l40 20 l-8 16 l40 20 l36 6 M1480 478 l-18 -16 M1480 478 l-24 4" />
+            <path class="draw" pathLength="1" d="M1760 180 l-10 44 l18 4 l-10 44 l18 4 l-10 44 l-40 120 M1726 440 l2 -24 M1726 440 l14 -20" />
+            <path class="draw" pathLength="1" d="M1880 420 l-40 10 l4 18 l-40 10 l4 18 l-40 10 l-50 0 M1698 506 l20 -14 M1698 506 l20 14" />
+          </g>
+
+          <g id="sky-violet">
+            <path class="draw" pathLength="1" d="M640 150 c 10 -26, 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0 s 20 26, 30 0" stroke="#8b5cf6" stroke-width="9" stroke-linecap="round" fill="none" />
+            <text id="sky-violet-q" class="marker" x="1150" y="300" font-size="140" fill="#6d3fd6">?</text>
+          </g>
+
+          <!-- how much of each colour the Sun sends -->
+          <g id="sky-chart">
+            <path class="ink thin draw" pathLength="1" d="M470 344 L790 344" />
+            <rect class="bar" x="482" y="227" width="40" height="117" fill="#e8453c" stroke="#1f1d1a" stroke-width="4" />
+            <rect class="bar" x="532" y="209" width="40" height="135" fill="#f5902e" stroke="#1f1d1a" stroke-width="4" />
+            <rect class="bar" x="582" y="194" width="40" height="150" fill="#f7cb2d" stroke="#1f1d1a" stroke-width="4" />
+            <rect class="bar" x="632" y="198" width="40" height="146" fill="#43b05c" stroke="#1f1d1a" stroke-width="4" />
+            <rect class="bar" x="682" y="216" width="40" height="128" fill="#2f80ed" stroke="#1f1d1a" stroke-width="4" />
+            <rect class="bar" x="732" y="281" width="40" height="63" fill="#8b5cf6" stroke="#1f1d1a" stroke-width="4" />
+            <g id="sky-less">
+              <path class="ink thin draw" pathLength="1" d="M800 236 C 790 250, 772 262, 760 272 M760 272 L782 270 M760 272 L766 252" />
+              <text class="hand" x="790" y="228" font-size="48" fill="#6d3fd6">less!</text>
+            </g>
+          </g>
+
+          <text id="sky-rayleigh" class="marker" x="960" y="140" font-size="78" text-anchor="middle">Rayleigh scattering</text>
+          <path id="sky-rayleigh-line" class="draw" pathLength="1" d="M560 166 C 800 156, 1100 172, 1360 160" stroke="#ffffff" stroke-width="10" stroke-linecap="round" fill="none" />
+
+          <g id="sky-specs"></g>
+        </g>
+      </g>
+
+      <!-- sunset diagram on a card, in screen space -->
+      <g transform="translate(940 330)">
+        <g id="sky-inset" opacity="0">
+          <rect x="-410" y="-215" width="820" height="430" rx="10" fill="#fffdf6" stroke="#1f1d1a" stroke-width="6" />
+          <g clip-path="url(#sky-card-clip)">
+            <circle id="sky-atmo" cx="0" cy="335" r="330" fill="#bcdff7" stroke="#1f1d1a" stroke-width="3" stroke-dasharray="10 10" />
+            <circle id="sky-earth" cx="0" cy="335" r="230" fill="#8ccb6b" stroke="#1f1d1a" stroke-width="5" />
+            <circle cx="0" cy="96" r="9" fill="#1f1d1a" />
+            <g id="sky-noon">
+              <circle cx="0" cy="-168" r="24" fill="#ffc832" stroke="#1f1d1a" stroke-width="4" />
+              <path class="draw" pathLength="1" d="M0 -138 L0 84" stroke="#e8a80c" stroke-width="9" stroke-linecap="round" fill="none" />
+              <text class="hand" x="36" y="-158" font-size="42">noon</text>
+            </g>
+            <g id="sky-dusksun">
+              <circle cx="-372" cy="96" r="24" fill="#ff7a45" stroke="#1f1d1a" stroke-width="4" />
+              <path id="sky-longray" class="draw" pathLength="1" d="M-342 96 L-14 96" style="stroke: #f2e9c9" stroke-width="11" stroke-linecap="round" fill="none" />
+              <text class="hand" x="-396" y="56" font-size="42">sunset</text>
+            </g>
+            <g id="sky-moreair">
+              <path class="ink thin" d="M-230 132 Q-230 150 -200 150 L-140 150 Q-115 150 -112 172 Q-109 150 -84 150 L-24 150 Q-6 150 -6 132" />
+              <text class="hand" x="-112" y="206" font-size="42" text-anchor="middle">lots more air</text>
+            </g>
+            <g id="sky-peel">
+              <path class="draw" pathLength="1" d="M-260 90 l10 -20 l12 10 l10 -20 l12 10 l10 -20" stroke="#2f80ed" stroke-width="5" fill="none" stroke-linecap="round" />
+              <path class="draw" pathLength="1" d="M-200 102 l10 20 l12 -10 l10 20 l12 -10 l10 20" stroke="#2f80ed" stroke-width="5" fill="none" stroke-linecap="round" />
+              <path class="draw" pathLength="1" d="M-150 90 l10 -20 l12 10 l10 -20 l12 10 l10 -20" stroke="#2f80ed" stroke-width="5" fill="none" stroke-linecap="round" />
+              <path class="draw" pathLength="1" d="M-100 102 l10 20 l12 -10 l10 20 l12 -10 l10 20" stroke="#2f80ed" stroke-width="5" fill="none" stroke-linecap="round" />
+            </g>
+          </g>
+        </g>
+      </g>
+
+      <!-- ===== the studio, where the question is read ===== -->
+      <g id="sky-studio-cam">
+        <g id="sky-studio">
+          <rect x="-200" y="-200" width="2320" height="1480" fill="#fbf7ee" />
+          <image href="assets/grid.png" x="0" y="0" width="1920" height="1080" />
+          <path d="M92 472 L208 472 L330 905 L-30 905 Z" fill="rgba(255,200,50,0.16)" />
+          <path class="ink thin" d="M0 906 C 400 902, 900 910, 1920 904" />
+          <path class="ink thin" opacity="0.45" d="M120 935 l46 0 M520 956 l70 0 M1380 944 l52 0 M1690 962 l90 0 M980 975 l40 0" />
+          <path class="ink" d="M150 902 L150 470 M100 904 L200 904" />
+          <path class="ink" data-marker="#FFC832" d="M86 472 L214 472 L182 380 L118 380 Z" />
+          <path class="ink thin" d="M1585 168 L1555 130 M1585 168 L1615 130 M1555 130 L1615 130" />
+          <rect class="ink" data-marker="#ffffff" x="1460" y="168" width="250" height="190" />
+          <rect class="ink thin" x="1482" y="190" width="206" height="146" />
+          <text class="marker" x="1585" y="300" font-size="110" text-anchor="middle" fill="#FF5A4E">?</text>
+          <path class="ink" data-marker="#E2725B" d="M1690 905 L1675 820 L1795 820 L1780 905 Z" />
+          <path class="ink thin" data-marker="#7BC96F" d="M1735 820 C 1700 760, 1660 740, 1640 700 C 1690 705, 1730 740, 1735 820 Z" />
+          <path class="ink thin" data-marker="#7BC96F" d="M1738 820 C 1745 750, 1770 700, 1810 670 C 1815 730, 1780 780, 1738 820 Z" />
+          <path class="ink thin" data-marker="#7BC96F" d="M1736 820 C 1730 760, 1735 720, 1745 660 C 1765 720, 1755 770, 1736 820 Z" />
+          <g transform="translate(1250 905)">
+            <path d="M-100 -235 C-112 -170 -108 -60 -100 -22 Q-96 0 -70 0 L70 0 Q96 0 100 -22 C108 -60 112 -170 100 -235 Z" fill="rgba(170,215,245,0.42)" />
+            <g transform="translate(-52 -36) rotate(-12)"><rect x="-34" y="-18" width="68" height="36" fill="#FFC832" stroke="#1f1d1a" stroke-width="3.5" /></g>
+            <g transform="translate(18 -30) rotate(9)"><rect x="-34" y="-18" width="68" height="36" fill="#2F80ED" stroke="#1f1d1a" stroke-width="3.5" /></g>
+            <g transform="translate(62 -60) rotate(-24)"><rect x="-34" y="-18" width="68" height="36" fill="#FF5A4E" stroke="#1f1d1a" stroke-width="3.5" /></g>
+            <g transform="translate(-22 -78) rotate(20)"><rect x="-34" y="-18" width="68" height="36" fill="#18A999" stroke="#1f1d1a" stroke-width="3.5" /></g>
+            <g transform="translate(-62 -104) rotate(-6)"><rect x="-34" y="-18" width="68" height="36" fill="#F08A3C" stroke="#1f1d1a" stroke-width="3.5" /></g>
+            <g transform="translate(40 -112) rotate(14)"><rect x="-34" y="-18" width="68" height="36" fill="#B58CF0" stroke="#1f1d1a" stroke-width="3.5" /></g>
+            <path class="ink" d="M-100 -235 C-112 -170 -108 -60 -100 -22 Q-96 0 -70 0 L70 0 Q96 0 100 -22 C108 -60 112 -170 100 -235" />
+            <path class="ink" data-marker="#FF5A4E" d="M-114 -264 L114 -264 L106 -234 L-106 -234 Z" />
+            <path d="M-80 -205 C-86 -160 -86 -110 -80 -70" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.9" />
+            <rect class="ink thin" data-marker="#ffffff" data-off="4 4" x="-88" y="-212" width="176" height="56" />
+            <text class="hand" x="0" y="-170" font-size="40" text-anchor="middle">QUESTIONS</text>
+          </g>
+          <g id="sky-studio-specs"></g>
+          <g id="sky-note">
+            <rect x="-38" y="-20" width="76" height="40" fill="#FFF1A8" stroke="#1f1d1a" stroke-width="4" />
+            <path d="M-38 0 L38 0" stroke="#1f1d1a" stroke-width="2.5" opacity="0.4" />
+          </g>
+          <g id="sky-card">
+            <path class="ink" data-marker="#FFF1A8" d="M-470 -118 L470 -128 L478 122 L-478 128 Z" />
+            <path d="M-472 0 L472 -4" stroke="#1f1d1a" stroke-width="2.5" opacity="0.25" />
+            <text class="marker" x="0" y="32" font-size="92" text-anchor="middle">Why is the sky <tspan fill="#2F80ED">blue</tspan>?</text>
+          </g>
+        </g>
+        <circle id="sky-portal" cx="0" cy="0" r="22" style="fill: #eaf3fa" opacity="0" />
+      </g>
+
+      <image href="assets/grain.png" x="0" y="0" width="1920" height="1080" />
+    </svg>
+  </div>
+  <script src="assets/data/timing.js"></script>
+  <script src="assets/data/lipsync.js"></script>
+  <script src="assets/specs.js"></script>
+  <script src="assets/kit.js"></script>
+  <script>
+    (function () {
+      const S = "sky";
+      const c = Kit.cues(S);
+      const w = c.w;
+      const $ = (q) => document.querySelector(q);
+      const $$ = (q) => Array.from(document.querySelectorAll(q));
+      const tl = gsap.timeline({ paused: true });
+      Kit.markers($("#sky-svg"));
+
+      // ---------- part 1: the studio, reading the note, diving into the lens ----------
+      const tUnfold = c.s.q - 0.35;
+      const tCardOut = w("closer", "Let's") - 0.1;
+      const tPush = w("closer", "closer") - 0.35;
+      const tZoom = w("closer", "look") - 0.15;
+      const ZOOM = 1.35;
+      const tSwitch = tZoom + ZOOM;
+
+      const studio = Specs.create($("#sky-studio-specs"), {
+        scene: S,
+        x: 1112,
+        y: 905,
+        s: 1,
+        poses: [
+          [0, "hold-up-r", 0],
+          [tUnfold + 0.1, "explain-l", 0.4],
+          [w("closer", "Ooh") - 0.1, "fist-up", 0.3, "back"],
+          [tPush, "push-glasses", 0.35, "back"],
+        ],
+        faces: [
+          [0, "excited", 0],
+          [c.s.q, "thinking", 0.3],
+          [w("closer", "Ooh"), "excited", 0.25],
+          [tPush + 0.3, "smug", 0.3],
+        ],
+        looks: [
+          [0, 0.3, -0.5, 0],
+          [tUnfold, -0.8, -0.6, 0.3],
+          [w("closer", "Ooh"), 0, 0.05, 0.3],
+        ],
+      });
+      const note = $("#sky-note");
+      const portal = $("#sky-portal");
+      let lens = [0, 0];
+      const scam = Kit.camera($("#sky-studio-cam"), [
+        [tZoom, (t) => lens[0], (t) => lens[1], 62, ZOOM, "in"],
+      ]);
+
+      // card: unfolds out of the note into the question
+      tl.fromTo("#sky-card", { x: 1240, y: 520, scale: 0.08, rotation: -10, opacity: 0 }, { x: 760, y: 250, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, tUnfold);
+      tl.to("#sky-card", { x: 520, y: -260, rotation: -12, scale: 0.7, duration: 0.4, ease: "power3.in" }, tCardOut);
+      tl.fromTo(portal, { opacity: 0 }, { opacity: 1, duration: ZOOM * 0.45, ease: "power1.in" }, tZoom + ZOOM * 0.2);
+      tl.set("#sky-studio-cam", { opacity: 0 }, tSwitch);
+      tl.set("#sky-world", { opacity: 1 }, tSwitch);
+
+      // ---------- part 2: the sky world ----------
+      const SX = 1560;
+      const SY = 868;
+      const sky = Specs.create($("#sky-specs"), {
+        scene: S,
+        x: SX,
+        y: SY,
+        s: 0.78,
+        poses: [
+          [0, "relaxed", 0],
+          [c.s.white - 0.2, "point-ul", 0.4, "back"],
+          [c.s.colours - 0.2, "explain-l", 0.4],
+          [c.s.crash - 0.2, "point-l", 0.4, "back"],
+          [c.s.molecules - 0.1, "present-l", 0.45],
+          [c.s.trick - 0.1, "think", 0.4],
+          [c.s.everywhere - 0.2, "relaxed", 0.4],
+          [w("everywhere", "every direction") - 0.3, "arms-up", 0.45, "back"],
+          [c.s.glows - 0.1, "cheer", 0.35, "back"],
+          [c.s.rayleigh - 0.15, "point-ul", 0.4, "back"],
+          [c.s.violet - 0.1, "scratch-head", 0.4],
+          [w("violet", "So why") - 0.1, "shrug", 0.35, "back"],
+          [c.s.less - 0.1, "explain", 0.4],
+          [w("less", "our eyes") - 0.2, "push-glasses", 0.35, "back"],
+          [c.s.sunset - 0.2, "present-l", 0.45],
+          [c.s.scatter - 0.1, "explain-l", 0.4],
+          [c.s.painted - 0.1, "hand-chest", 0.4],
+          [w("painted", "sunlight") - 0.2, "present-l", 0.45],
+        ],
+        faces: [
+          [0, "happy", 0],
+          [c.s.colours, "excited", 0.3],
+          [c.s.crash, "happy", 0.3],
+          [c.s.trick, "thinking", 0.3],
+          [w("everywhere", "every direction"), "amazed", 0.3],
+          [c.s.glows, "excited", 0.25],
+          [c.s.rayleigh, "smug", 0.3],
+          [c.s.violet, "thinking", 0.3],
+          [w("violet", "So why"), "shocked", 0.2],
+          [c.s.less, "happy", 0.3],
+          [w("less", "our eyes"), "wince", 0.25],
+          [c.e.less, "happy", 0.3],
+          [c.s.sunset, "thinking", 0.3],
+          [c.s.painted, "proud", 0.3],
+        ],
+        looks: [
+          [0, -0.7, -0.5, 0],
+          [c.s.colours, -0.8, -0.4, 0.3],
+          [c.s.everywhere, -0.6, -0.8, 0.3],
+          [w("everywhere", "every direction"), 0.7, -0.7, 0.35],
+          [w("everywhere", "every direction") + 0.6, -0.7, -0.7, 0.35],
+          [c.s.glows, 0, -0.3, 0.3],
+          [c.s.rayleigh, -0.6, -0.8, 0.3],
+          [c.s.violet, -0.4, -0.6, 0.3],
+          [w("violet", "So why"), 0, 0.05, 0.25],
+          [c.s.less, -0.8, -0.5, 0.3],
+          [w("less", "our eyes"), 0, 0.05, 0.25],
+          [c.s.sunset, -0.8, -0.6, 0.3],
+          [c.s.painted, 0, 0.05, 0.3],
+          [w("painted", "sunlight"), -0.9, 0.1, 0.35],
+        ],
+      });
+
+      const tDive = c.e.painted + 0.35;
+      const wcam = Kit.camera($("#sky-wcam"), [
+        [c.s.colours - 0.5, 540, 300, 1.75, 0.9],
+        [c.s.crash - 0.3, 960, 540, 1, 1.0],
+        [w("trick", "Those") - 0.4, 1000, 405, 2.1, 1.2],
+        [c.s.everywhere - 0.3, 960, 540, 1, 1.1],
+        [tDive, 520, 1640, 1.5, 1.9, "inOut"],
+      ]);
+
+      Kit.driver(tl, c.dur, (t) => {
+        if (t < tSwitch) {
+          const p = studio.render(t);
+          lens = p.lensL;
+          scam.render(t);
+          portal.setAttribute("cx", lens[0].toFixed(2));
+          portal.setAttribute("cy", lens[1].toFixed(2));
+          if (t < tUnfold + 0.05) {
+            const h = p.handR;
+            note.setAttribute("transform", `translate(${h[0].toFixed(1)} ${(h[1] - 16).toFixed(1)}) rotate(-10)`);
+            note.setAttribute("opacity", 1);
+          } else note.setAttribute("opacity", 0);
+        } else {
+          sky.render(t);
+          wcam.render(t);
+        }
+      });
+
+      // the world draws itself in
+      Kit.pop(tl, "#sky-sun", tSwitch + 0.05, { dur: 0.6 });
+      tl.fromTo("#sky-rays", { rotation: 0 }, { rotation: 40, duration: c.dur - tSwitch, ease: "none", transformOrigin: "50% 50%" }, tSwitch);
+      tl.fromTo("#sky-land", { opacity: 0 }, { opacity: 1, duration: 0.3 }, tSwitch);
+      tl.fromTo("#sky-specs", { opacity: 0 }, { opacity: 1, duration: 0.3 }, tSwitch + 0.1);
+
+      // white light, then its six colours as each is named
+      Kit.draw(tl, "#sky-beam-a path", c.s.white + 0.4, 0.9, "power2.out");
+      const strands = ["red", "orange", "yellow", "green", "blue", "violet"];
+      strands.forEach((k) => Kit.draw(tl, `#sky-s-${k}`, w("colours", k) - 0.1, 0.45, "power2.out"));
+      tl.to("#sky-beam-a", { opacity: 0, duration: 0.3 }, w("colours", "red") - 0.2);
+      tl.to("#sky-strands", { scaleY: 0.25, transformOrigin: "50% 50%", duration: 0.5, ease: "power2.inOut" }, w("colours", "all travelling"));
+      tl.to("#sky-beam-a", { opacity: 1, duration: 0.4 }, w("colours", "as one"));
+      tl.to("#sky-strands", { opacity: 0, duration: 0.3 }, w("colours", "as one") + 0.3);
+
+      // the beam crashes on into the air
+      Kit.draw(tl, "#sky-beam-b path", w("crash", "crash") - 0.2, 0.7, "power2.in");
+      $$("#sky-mols .mol > g").forEach((m, i) => {
+        Kit.pop(tl, m, c.s.molecules + 0.15 + i * 0.09, { dur: 0.45 });
+        const per = 1.1 + (i % 4) * 0.23;
+        const n = Math.floor((c.dur - c.s.molecules) / per);
+        tl.to(m, { rotation: i % 2 ? 14 : -14, duration: per, ease: "sine.inOut", repeat: n, yoyo: true, transformOrigin: "50% 50%" }, c.s.molecules + 0.7);
+      });
+      Kit.draw(tl, "#sky-n-label path", w("molecules", "nitrogen") - 0.2, 0.4);
+      Kit.show(tl, "#sky-n-label text", w("molecules", "nitrogen"), 0.25);
+      Kit.draw(tl, "#sky-o-label path", w("molecules", "oxygen") - 0.2, 0.4);
+      Kit.show(tl, "#sky-o-label text", w("molecules", "oxygen"), 0.25);
+      Kit.hide(tl, ["#sky-n-label", "#sky-o-label"], c.s.trick + 0.2, 0.3);
+      tl.to("#sky-beam-a, #sky-beam-b", { opacity: 0.25, duration: 0.5 }, c.s.trick);
+
+      // red: long and lazy, slips past
+      Kit.draw(tl, "#sky-red-wave path", w("red", "Red") - 0.1, 2.2, "none");
+      Kit.show(tl, "#sky-red-label", w("red", "long"), 0.25);
+      tl.to("#sky-red-wave path", { strokeDashoffset: -1.05, duration: 1.6, ease: "power1.in" }, w("red", "slips") + 0.2);
+      Kit.hide(tl, "#sky-red-label", c.e.red - 0.3, 0.25);
+
+      // blue: short and choppy, gets knocked everywhere
+      tl.fromTo("#sky-blue-wave path", { strokeDashoffset: 1.05 }, { strokeDashoffset: 0, duration: 1.3, ease: "none" }, w("blue", "Blue") - 0.1);
+      Kit.show(tl, "#sky-blue-label", w("blue", "short"), 0.25);
+      const tHit = w("blue", "knocked") - 0.1;
+      tl.to("#sky-blue-wave path", { strokeDashoffset: -1.05, duration: 0.35, ease: "power2.in" }, tHit - 0.2);
+      tl.fromTo("#sky-mstar", { x: 0 }, { x: 7, duration: 0.05, repeat: 5, yoyo: true, ease: "none" }, tHit);
+      gsap.set("#sky-burst path", { attr: { fill: "none", stroke: "#2f80ed", "stroke-width": 8, "stroke-linecap": "round", "stroke-linejoin": "round" } });
+      Kit.draw(tl, "#sky-burst path", tHit, 0.5, "power2.out", 0.04);
+      Kit.hide(tl, "#sky-blue-label", c.e.blue, 0.25);
+
+      // ... from every direction
+      gsap.set("#sky-zig path, #sky-arrows path", { attr: { fill: "none", stroke: "#2f80ed", "stroke-width": 7, "stroke-linecap": "round", "stroke-linejoin": "round" } });
+      Kit.draw(tl, "#sky-zig path", c.s.everywhere + 0.4, 0.6, "power2.out", 0.18);
+      Kit.draw(tl, "#sky-arrows path", w("everywhere", "coming") - 0.2, 0.6, "power2.out", 0.2);
+
+      // the whole sky glows blue
+      tl.to("#sky-bg", { fill: "#79b8ef", duration: 0.7, ease: "power2.inOut" }, c.s.glows + 0.1);
+      Kit.hide(tl, ["#sky-zig", "#sky-arrows", "#sky-burst"], c.s.glows + 0.3, 0.5);
+      tl.fromTo("#sky-rayleigh", { opacity: 0, scale: 0.9, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, w("rayleigh", "Rayleigh") - 0.1);
+      Kit.draw(tl, "#sky-rayleigh-line", w("rayleigh", "scattering"), 0.45);
+      Kit.hide(tl, ["#sky-rayleigh", "#sky-rayleigh-line"], c.s.violet + 0.6, 0.3);
+
+      // violet: even shorter. Why not purple?
+      Kit.draw(tl, "#sky-violet path", w("violet", "Violet") - 0.1, 1.0, "none");
+      tl.to("#sky-bg", { fill: "#a98bf0", duration: 0.35, ease: "power2.out" }, w("violet", "purple") - 0.25);
+      Kit.pop(tl, "#sky-violet-q", w("violet", "purple") - 0.1, { dur: 0.45 });
+      tl.to("#sky-bg", { fill: "#79b8ef", duration: 0.5, ease: "power2.inOut" }, c.s.less + 0.1);
+      Kit.hide(tl, "#sky-violet", c.s.less, 0.3);
+
+      // the Sun sends less violet; our eyes barely see it
+      Kit.draw(tl, "#sky-chart > path", c.s.less + 0.1, 0.4);
+      tl.fromTo("#sky-chart .bar", { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.45, ease: "back.out(1.6)", stagger: 0.08 }, c.s.less + 0.3);
+      Kit.draw(tl, "#sky-less path", w("less", "less violet") + 0.1, 0.35);
+      Kit.show(tl, "#sky-less text", w("less", "less violet") + 0.2, 0.25);
+      Kit.hide(tl, "#sky-chart", c.s.sunset - 0.2, 0.3);
+      Kit.hide(tl, ["#sky-mols", "#sky-beam-a", "#sky-beam-b"], c.s.sunset, 0.5);
+
+      // sunset: the long way through the air
+      tl.fromTo("#sky-inset", { opacity: 0, scale: 0.85, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.5)" }, c.s.sunset + 0.1);
+      Kit.draw(tl, "#sky-noon path", c.s.sunset + 0.6, 0.5);
+      Kit.draw(tl, "#sky-longray", w("sunset", "travel") - 0.1, 1.2, "power1.inOut");
+      Kit.show(tl, "#sky-moreair", w("sunset", "much more air"), 0.3);
+      Kit.draw(tl, "#sky-peel path", w("scatter", "blue") - 0.2, 0.4, "power2.out", 0.15);
+      tl.to("#sky-peel", { y: -30, opacity: 0, duration: 1.0, ease: "power1.in" }, w("scatter", "scattered") + 0.3);
+      tl.to("#sky-longray", { stroke: "#ff6a3d", duration: 1.2, ease: "power1.inOut" }, w("scatter", "scattered"));
+      tl.to("#sky-bg", { fill: "#f4a06e", duration: 1.6, ease: "power2.inOut" }, w("scatter", "leaving") - 0.4);
+      tl.to("#sky-dusk", { opacity: 1, duration: 1.6, ease: "power2.inOut" }, w("scatter", "leaving") - 0.4);
+      tl.to("#sky-sun", { x: 60, y: 640, scale: 1.25, duration: 4.5, ease: "power1.inOut", transformOrigin: "50% 50%" }, w("scatter", "scattered"));
+      tl.to("#sky-sun-fill", { fill: "#ff7a45", duration: 2.5 }, w("scatter", "leaving"));
+      tl.to("#sky-inset", { opacity: 0, scale: 0.9, duration: 0.3, ease: "power2.in", transformOrigin: "50% 50%" }, c.s.painted - 0.1);
+
+      // the sun sinks into the sea and we follow it down
+      tl.to("#sky-sun", { y: 900, duration: 1.4, ease: "power2.in", transformOrigin: "50% 50%" }, tDive - 0.4);
+      tl.to("#sky-sea", { fill: "#2f8fb4", duration: 1.6 }, tDive);
+      Kit.show(tl, "#sky-bubbles", tDive + 0.8, 0.5);
+      tl.fromTo("#sky-bubbles circle", { y: 0 }, { y: -160, duration: 1.4, ease: "none", stagger: 0.1 }, tDive + 0.6);
+
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,467 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Patrick Hand";
+      src: url("assets/fonts/PatrickHand-Regular.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Permanent Marker";
+      src: url("assets/fonts/PermanentMarker-Regular.woff2") format("woff2");
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #root svg {
+      position: absolute;
+      inset: 0;
+    }
+    #root .ink {
+      fill: none;
+      stroke: #1f1d1a;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #root .thin {
+      stroke-width: 4;
+    }
+    #root .draw {
+      stroke-dasharray: 1 1.1;
+    }
+    #root .hand {
+      font-family: "Patrick Hand";
+    }
+    #root .marker {
+      font-family: "Permanent Marker";
+    }
+  </style>
+  <div id="root" data-composition-id="banana" data-width="1920" data-height="1080">
+    <svg id="ban-svg" viewBox="0 0 1920 1080" width="1920" height="1080" fill="#1f1d1a">
+      <defs>
+        <g id="ban-face">
+          <circle cx="-14" cy="0" r="5" fill="#1f1d1a" />
+          <circle cx="14" cy="0" r="5" fill="#1f1d1a" />
+          <path d="M-10 14 Q0 22 10 14" fill="none" stroke="#1f1d1a" stroke-width="3.5" stroke-linecap="round" />
+        </g>
+        <g id="ban-sad">
+          <circle cx="-14" cy="0" r="5" fill="#1f1d1a" />
+          <circle cx="14" cy="0" r="5" fill="#1f1d1a" />
+          <path d="M-10 20 Q0 12 10 20" fill="none" stroke="#1f1d1a" stroke-width="3.5" stroke-linecap="round" />
+        </g>
+        <g id="ban-banana-shape">
+          <path d="M-110 -50 C -80 40, 70 64, 118 -26 C 122 -36, 110 -44, 102 -36 C 56 18, -44 18, -88 -58 C -94 -68, -112 -64, -110 -50 Z" />
+        </g>
+      </defs>
+      <rect x="0" y="0" width="1920" height="1080" fill="#fbf7ee" />
+      <g id="ban-cam">
+        <rect x="-1000" y="-1000" width="3920" height="3080" fill="#fbf7ee" />
+        <image href="assets/grid.png" x="0" y="0" width="1920" height="1080" />
+        <image href="assets/grid.png" x="1920" y="0" width="1920" height="1080" />
+        <path class="ink thin" d="M-200 906 C 400 902, 900 910, 2200 904" />
+        <path class="ink thin" opacity="0.45" d="M120 935 l46 0 M520 956 l70 0 M1380 944 l52 0 M1690 962 l90 0 M980 975 l40 0" />
+
+        <!-- the definition, as a checklist -->
+        <g id="ban-check">
+          <text class="marker" x="1190" y="190" font-size="56">A berry has:</text>
+          <g id="ban-c1"><rect class="ink thin" x="1196" y="226" width="44" height="44" rx="6" /><text class="hand" x="1262" y="264" font-size="52">one flower</text></g>
+          <g id="ban-c2"><rect class="ink thin" x="1196" y="296" width="44" height="44" rx="6" /><text class="hand" x="1262" y="334" font-size="52">one ovary</text></g>
+          <g id="ban-c3"><rect class="ink thin" x="1196" y="366" width="44" height="44" rx="6" /><text class="hand" x="1262" y="404" font-size="52">seeds inside</text></g>
+          <path id="ban-t1" class="draw" pathLength="1" d="M1202 248 L1216 264 L1246 222" fill="none" stroke="#2fae5b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+          <path id="ban-t2" class="draw" pathLength="1" d="M1202 318 L1216 334 L1246 292" fill="none" stroke="#2fae5b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+          <path id="ban-t3" class="draw" pathLength="1" d="M1202 388 L1216 404 L1246 362" fill="none" stroke="#2fae5b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+
+        <!-- one flower with one ovary, which grows into a fruit -->
+        <g id="ban-flower">
+          <path id="ban-stem" class="ink draw" pathLength="1" d="M900 900 C 896 800, 908 700, 900 600" />
+          <path id="ban-leaf" class="ink thin" data-marker="#7bc96f" d="M902 760 C 940 730, 980 730, 1000 750 C 970 780, 930 784, 902 760 Z" />
+          <g id="ban-ovary" transform="translate(900 572)">
+            <g id="ban-ovary-in">
+              <ellipse class="ink thin" data-marker="#8ccb6b" cx="0" cy="0" rx="34" ry="28" />
+              <g id="ban-seeds">
+                <ellipse cx="-12" cy="-6" rx="5" ry="7" fill="#5a3d2b" />
+                <ellipse cx="10" cy="-8" rx="5" ry="7" fill="#5a3d2b" />
+                <ellipse cx="0" cy="9" rx="5" ry="7" fill="#5a3d2b" />
+              </g>
+            </g>
+          </g>
+          <g id="ban-petals" transform="translate(900 512)">
+            <ellipse class="ink thin petal" data-marker="#ff8fb1" cx="0" cy="-54" rx="26" ry="40" />
+            <ellipse class="ink thin petal" data-marker="#ff8fb1" cx="0" cy="-54" rx="26" ry="40" transform="rotate(72)" />
+            <ellipse class="ink thin petal" data-marker="#ff8fb1" cx="0" cy="-54" rx="26" ry="40" transform="rotate(144)" />
+            <ellipse class="ink thin petal" data-marker="#ff8fb1" cx="0" cy="-54" rx="26" ry="40" transform="rotate(216)" />
+            <ellipse class="ink thin petal" data-marker="#ff8fb1" cx="0" cy="-54" rx="26" ry="40" transform="rotate(288)" />
+            <circle class="ink thin" data-marker="#ffc832" cx="0" cy="0" r="22" />
+          </g>
+        </g>
+
+        <!-- the banana test -->
+        <g id="ban-slice" transform="translate(1460 650)">
+          <circle cx="0" cy="0" r="138" fill="#ffd84a" stroke="#1f1d1a" stroke-width="6" />
+          <circle cx="0" cy="0" r="114" fill="#fff6d8" stroke="#1f1d1a" stroke-width="3" />
+          <path d="M0 0 L0 -60 M0 0 L52 30 M0 0 L-52 30" stroke="#e6cf8a" stroke-width="6" stroke-linecap="round" />
+          <circle cx="-14" cy="-20" r="5" fill="#3a2a20" />
+          <circle cx="16" cy="-14" r="5" fill="#3a2a20" />
+          <circle cx="20" cy="16" r="5" fill="#3a2a20" />
+          <circle cx="-4" cy="22" r="5" fill="#3a2a20" />
+          <circle cx="-22" cy="8" r="5" fill="#3a2a20" />
+          <circle cx="2" cy="-2" r="5" fill="#3a2a20" />
+          <path id="ban-ring" class="draw" pathLength="1" d="M-46 -6 C -44 -50, 40 -56, 48 -4 C 54 44, -30 56, -44 12 C -48 0, -48 -4, -46 -10" fill="none" stroke="#e8453c" stroke-width="7" stroke-linecap="round" />
+          <g id="ban-baby">
+            <path class="ink thin draw" pathLength="1" d="M150 -150 C 110 -120, 80 -90, 54 -54 M54 -54 L58 -80 M54 -54 L80 -62" />
+            <text class="hand" x="120" y="-166" font-size="52">baby seeds</text>
+          </g>
+        </g>
+        <g id="ban-stamp" transform="translate(900 630)">
+          <g id="ban-stamp-in">
+            <rect x="-180" y="-62" width="360" height="124" rx="14" fill="none" stroke="#2fae5b" stroke-width="8" />
+            <text class="marker" x="0" y="30" font-size="90" text-anchor="middle" fill="#2fae5b">BERRY!</text>
+          </g>
+        </g>
+
+        <!-- the berry club -->
+        <g id="ban-banner">
+          <path class="ink" data-marker="#ffc832" d="M760 170 L1480 160 L1460 214 L1490 262 L770 270 L790 218 Z" />
+          <text class="marker" x="1125" y="240" font-size="66" text-anchor="middle">BERRY CLUB</text>
+        </g>
+        <g id="ban-post">
+          <path class="ink" d="M1598 900 L1598 700 M1568 902 L1628 902" />
+          <circle class="ink thin" data-marker="#d4a017" cx="1598" cy="690" r="16" />
+        </g>
+        <g id="ban-members">
+          <g id="ban-m-banana" transform="translate(860 890)">
+            <g id="ban-m-banana-in">
+              <g transform="translate(0 -70) rotate(-12) scale(1.05)">
+                <use href="#ban-banana-shape" transform="translate(6 5)" fill="#ffd84a" />
+                <use href="#ban-banana-shape" fill="none" stroke="#1f1d1a" stroke-width="6" stroke-linejoin="round" />
+                <path d="M112 -30 L130 -48" stroke="#1f1d1a" stroke-width="10" stroke-linecap="round" />
+              </g>
+              <use href="#ban-face" transform="translate(-10 -54)" />
+            </g>
+          </g>
+          <g id="ban-m-grapes" transform="translate(1040 890)">
+            <g>
+              <path d="M0 -150 C 6 -170, 20 -180, 30 -184" class="ink thin" />
+              <path class="ink thin" data-marker="#7bc96f" d="M6 -160 C 30 -190, 60 -180, 66 -164 C 44 -150, 22 -150, 6 -160 Z" />
+              <circle cx="-52" cy="-118" r="28" fill="#8e5bd6" stroke="#1f1d1a" stroke-width="4.5" />
+              <circle cx="0" cy="-122" r="28" fill="#8e5bd6" stroke="#1f1d1a" stroke-width="4.5" />
+              <circle cx="52" cy="-118" r="28" fill="#8e5bd6" stroke="#1f1d1a" stroke-width="4.5" />
+              <circle cx="-26" cy="-74" r="28" fill="#8e5bd6" stroke="#1f1d1a" stroke-width="4.5" />
+              <circle cx="26" cy="-74" r="28" fill="#8e5bd6" stroke="#1f1d1a" stroke-width="4.5" />
+              <circle cx="0" cy="-30" r="28" fill="#8e5bd6" stroke="#1f1d1a" stroke-width="4.5" />
+              <use href="#ban-face" transform="translate(0 -84) scale(0.9)" style="fill: #ffffff" />
+            </g>
+          </g>
+          <g id="ban-m-tomato" transform="translate(1210 890)">
+            <g>
+              <circle class="ink" data-marker="#e8453c" cx="0" cy="-66" r="64" />
+              <path class="ink thin" data-marker="#5fb07a" d="M0 -128 L-30 -140 L-12 -122 L-36 -110 L-6 -116 L0 -96 L8 -116 L36 -110 L14 -124 L30 -142 Z" />
+              <use href="#ban-face" transform="translate(0 -62)" />
+            </g>
+          </g>
+          <g id="ban-m-kiwi" transform="translate(1360 890)">
+            <g>
+              <circle cx="0" cy="-60" r="60" fill="#8a6a3e" stroke="#1f1d1a" stroke-width="6" />
+              <circle cx="0" cy="-60" r="48" fill="#8bc34a" />
+              <circle cx="0" cy="-60" r="16" fill="#f4f1d6" />
+              <g fill="#1f1d1a"><circle cx="0" cy="-86" r="3.5" /><circle cx="22" cy="-74" r="3.5" /><circle cx="24" cy="-48" r="3.5" /><circle cx="0" cy="-34" r="3.5" /><circle cx="-24" cy="-48" r="3.5" /><circle cx="-22" cy="-74" r="3.5" /></g>
+              <use href="#ban-face" transform="translate(0 -64) scale(0.8)" />
+            </g>
+          </g>
+          <g id="ban-m-egg" transform="translate(1500 890)">
+            <g>
+              <path class="ink" data-marker="#7a4bb0" d="M0 -190 C 40 -190, 56 -130, 58 -80 C 60 -26, 32 0, 0 0 C -32 0, -60 -26, -58 -80 C -56 -130, -40 -190, 0 -190 Z" />
+              <path class="ink thin" data-marker="#5fb07a" d="M-34 -176 C -20 -200, 20 -200, 34 -176 C 14 -168, -14 -168, -34 -176 Z M0 -196 L0 -222" />
+              <use href="#ban-face" transform="translate(0 -110)" style="fill: #ffffff" />
+            </g>
+          </g>
+        </g>
+        <!-- outsiders -->
+        <g id="ban-straw" transform="translate(1700 890)">
+          <g id="ban-straw-in">
+            <path class="ink" data-marker="#e8453c" d="M0 0 C -40 -20, -76 -80, -70 -116 C -64 -150, -30 -158, 0 -146 C 30 -158, 64 -150, 70 -116 C 76 -80, 40 -20, 0 0 Z" />
+            <path class="ink thin" data-marker="#5fb07a" d="M0 -146 L-40 -168 L-16 -150 L-30 -132 L-4 -142 L0 -124 L6 -142 L32 -134 L16 -150 L40 -170 Z" />
+            <g id="ban-straw-seeds" fill="#ffd84a" stroke="#1f1d1a" stroke-width="2">
+              <ellipse cx="-40" cy="-100" rx="4" ry="6" /><ellipse cx="-14" cy="-110" rx="4" ry="6" /><ellipse cx="16" cy="-112" rx="4" ry="6" /><ellipse cx="42" cy="-98" rx="4" ry="6" />
+              <ellipse cx="-30" cy="-66" rx="4" ry="6" /><ellipse cx="0" cy="-74" rx="4" ry="6" /><ellipse cx="30" cy="-64" rx="4" ry="6" />
+              <ellipse cx="-14" cy="-36" rx="4" ry="6" /><ellipse cx="14" cy="-38" rx="4" ry="6" /><ellipse cx="0" cy="-16" rx="4" ry="6" />
+            </g>
+            <use id="ban-straw-face" href="#ban-sad" transform="translate(0 -88) scale(0.9)" />
+          </g>
+        </g>
+        <g id="ban-rasp" transform="translate(1830 890)">
+          <g id="ban-rasp-in">
+            <g fill="#e2416e" stroke="#1f1d1a" stroke-width="3.5">
+              <circle cx="-30" cy="-30" r="18" /><circle cx="0" cy="-24" r="18" /><circle cx="30" cy="-30" r="18" />
+              <circle cx="-38" cy="-62" r="18" /><circle cx="-10" cy="-58" r="18" /><circle cx="18" cy="-58" r="18" /><circle cx="40" cy="-64" r="18" />
+              <circle cx="-26" cy="-92" r="18" /><circle cx="2" cy="-92" r="18" /><circle cx="28" cy="-94" r="18" />
+              <circle cx="-8" cy="-118" r="16" /><circle cx="16" cy="-118" r="16" />
+            </g>
+            <path class="ink thin" data-marker="#5fb07a" d="M-20 -132 L4 -150 L28 -132 L4 -138 Z" />
+            <use href="#ban-sad" transform="translate(2 -70) scale(0.85)" />
+          </g>
+        </g>
+        <g id="ban-x1" transform="translate(1700 810)"><path d="M-46 -46 L46 46 M46 -46 L-46 46" stroke="#e8453c" stroke-width="16" stroke-linecap="round" /></g>
+        <g id="ban-x2" transform="translate(1830 820)"><path d="M-40 -40 L40 40 M40 -40 L-40 40" stroke="#e8453c" stroke-width="14" stroke-linecap="round" /></g>
+        <!-- one strawberry "seed", magnified -->
+        <g id="ban-loupe" transform="translate(1850 660)">
+          <circle cx="0" cy="0" r="92" fill="#fffdf6" stroke="#1f1d1a" stroke-width="7" />
+          <path d="M-66 66 L-104 104" stroke="#1f1d1a" stroke-width="14" stroke-linecap="round" />
+          <path d="M0 -60 C 34 -30, 40 24, 0 52 C -40 24, -34 -30, 0 -60 Z" fill="#ffd84a" stroke="#1f1d1a" stroke-width="4" />
+          <ellipse cx="0" cy="6" rx="12" ry="18" fill="#a8742c" stroke="#1f1d1a" stroke-width="3" />
+          <text class="hand" x="0" y="-140" font-size="30" text-anchor="middle">a tiny fruit,</text>
+          <text class="hand" x="0" y="-108" font-size="30" text-anchor="middle">seed inside!</text>
+        </g>
+        <path id="ban-seedring" class="draw" pathLength="1" d="M1650 820 C 1640 760, 1700 730, 1750 760 C 1790 790, 1770 860, 1720 870 C 1680 878, 1652 850, 1650 820" fill="none" stroke="#2f80ed" stroke-width="4" stroke-linecap="round" />
+
+        <!-- supermarket signs -->
+        <g transform="translate(1765 0)">
+          <g id="ban-sign-berry">
+            <path class="ink thin" d="M-60 0 L-60 330 M60 0 L60 330" />
+            <rect class="ink" data-marker="#ff8fb1" x="-120" y="330" width="240" height="96" rx="10" />
+            <text class="marker" x="0" y="396" font-size="52" text-anchor="middle">BERRIES</text>
+            <path id="ban-sign-x" class="draw" pathLength="1" d="M-104 352 L104 410 M104 352 L-104 410" fill="none" stroke="#e8453c" stroke-width="10" stroke-linecap="round" />
+          </g>
+        </g>
+        <g transform="translate(860 0)">
+          <g id="ban-sign-ban">
+            <path class="ink thin" d="M-80 0 L-80 300 M80 0 L80 300" />
+            <rect class="ink" data-marker="#ffd84a" x="-150" y="300" width="300" height="96" rx="10" />
+            <text class="marker" x="0" y="366" font-size="52" text-anchor="middle">BANANAS</text>
+            <text id="ban-sign-note" class="hand" x="0" y="450" font-size="48" text-anchor="middle" fill="#2fae5b">(berries!)</text>
+          </g>
+        </g>
+
+        <g id="ban-specs"></g>
+        <g id="ban-held">
+          <g transform="rotate(-70) scale(0.55)">
+            <use href="#ban-banana-shape" transform="translate(6 5)" fill="#ffd84a" />
+            <use href="#ban-banana-shape" fill="none" stroke="#1f1d1a" stroke-width="7" stroke-linejoin="round" />
+            <path d="M112 -30 L130 -48" stroke="#1f1d1a" stroke-width="12" stroke-linecap="round" />
+          </g>
+        </g>
+        <g id="ban-bonk"><path class="ink thin" d="M-40 -20 L-60 -40 M0 -36 L0 -64 M40 -20 L60 -40" /></g>
+      </g>
+
+      <!-- question card -->
+      <g id="ban-card">
+        <path class="ink" data-marker="#FFF1A8" d="M-450 -110 L450 -120 L458 114 L-458 120 Z" />
+        <text class="marker" x="0" y="28" font-size="80" text-anchor="middle">Is a <tspan fill="#d9a400">banana</tspan> a berry?</text>
+      </g>
+
+      <!-- honey drips in at the end -->
+      <g id="ban-honey">
+        <path id="ban-drip" d="M820 -10 L1100 -10 L1100 40 C 1100 90, 1060 110, 1040 150 C 1020 190, 1030 240, 990 250 C 950 260, 940 210, 950 170 C 958 130, 930 100, 900 90 C 860 76, 820 70, 820 40 Z" fill="#f2a007" stroke="#1f1d1a" stroke-width="6" />
+        <rect id="ban-flood" x="-20" y="-20" width="1960" height="1120" fill="#f2a007" />
+      </g>
+
+      <!-- ink from the octopus, clearing -->
+      <g id="ban-inkcover">
+        <rect id="ban-inkrect" x="0" y="0" width="1920" height="1080" fill="#22252d" />
+        <circle class="blob" cx="300" cy="250" r="420" fill="#22252d" />
+        <circle class="blob" cx="960" cy="200" r="460" fill="#22252d" />
+        <circle class="blob" cx="1650" cy="280" r="430" fill="#22252d" />
+        <circle class="blob" cx="420" cy="840" r="440" fill="#22252d" />
+        <circle class="blob" cx="1100" cy="860" r="470" fill="#22252d" />
+        <circle class="blob" cx="1700" cy="860" r="420" fill="#22252d" />
+        <circle class="blob" cx="960" cy="540" r="380" fill="#22252d" />
+      </g>
+      <image href="assets/grain.png" x="0" y="0" width="1920" height="1080" />
+    </svg>
+  </div>
+  <script src="assets/data/timing.js"></script>
+  <script src="assets/data/lipsync.js"></script>
+  <script src="assets/specs.js"></script>
+  <script src="assets/kit.js"></script>
+  <script>
+    (function () {
+      const S = "banana";
+      const c = Kit.cues(S);
+      const w = c.w;
+      const $ = (q) => document.querySelector(q);
+      const $$ = (q) => Array.from(document.querySelectorAll(q));
+      const tl = gsap.timeline({ paused: true });
+      Kit.markers($("#ban-svg"));
+
+      // the ink clears, blob by blob
+      tl.set("#ban-inkrect", { opacity: 0 }, 0.05);
+      $$("#ban-inkcover .blob").forEach((b, i) => {
+        tl.fromTo(b, { scale: 1, transformOrigin: "50% 50%" }, { scale: 0, duration: 0.7, ease: "power2.in" }, 0.05 + ((i * 3) % 7) * 0.07);
+      });
+
+      const SX = 330;
+      const tBonk = 1.15;
+      const tCatch = 1.45;
+      const tToss = c.s.fit - 0.55;
+      const rig = Specs.create($("#ban-specs"), {
+        scene: S,
+        x: SX,
+        y: 900,
+        s: 0.9,
+        poses: [
+          [0, "relaxed", 0],
+          [tBonk, "crouch", 0.12],
+          [tCatch, "hold-up-r", 0.3, "back"],
+          [w("q", "Is a") - 0.2, "hold-r", 0.35],
+          [c.s.botanist - 0.1, "explain-r", 0.4],
+          [w("botanist", "one flower") - 0.2, "point-r", 0.35, "back"],
+          [w("botanist", "single ovary") - 0.2, "point-dr", 0.35],
+          [c.s.inside - 0.1, "present-r", 0.4],
+          [tToss - 0.25, "hold-up-r", 0.25],
+          [tToss, "point-r", 0.25, "back"],
+          [w("fit", "See") - 0.3, "push-glasses", 0.35, "back"],
+          [c.s.seeds - 0.1, "explain-r", 0.4],
+          [c.s.yes - 0.1, "fist-up", 0.3, "back"],
+          [c.s.club - 0.1, "present-r", 0.45],
+          [c.s.straw - 0.1, "shrug", 0.35],
+          [w("straw", "Not") - 0.2, "hips", 0.35, "back"],
+          [c.s.outside - 0.1, "explain-r", 0.4],
+          [c.s.fruit - 0.1, "point-r", 0.35, "back"],
+          [c.s.rasp - 0.1, "hips", 0.35],
+          [c.s.lying - 0.1, "explain", 0.4],
+          [w("lying", "The banana") - 0.2, "present-r", 0.4, "back"],
+          [c.e.lying + 0.4, "arms-up", 0.3, "back"],
+        ],
+        faces: [
+          [0, "neutral", 0],
+          [tBonk, "wince", 0.08],
+          [tCatch + 0.2, "surprised", 0.2],
+          [c.s.q, "excited", 0.3],
+          [w("q", "Is a"), "thinking", 0.3],
+          [c.s.botanist, "smug", 0.3],
+          [c.s.fit, "happy", 0.3],
+          [w("fit", "See"), "thinking", 0.3],
+          [c.s.seeds, "happy", 0.3],
+          [c.s.yes, "excited", 0.25],
+          [c.s.club, "grin", 0.3],
+          [c.s.straw, "skeptical", 0.3],
+          [c.s.fruit, "amazed", 0.3],
+          [c.s.rasp, "skeptical", 0.3],
+          [c.s.lying, "smug", 0.3],
+          [w("lying", "The banana"), "proud", 0.3],
+          [c.e.lying + 0.4, "surprised", 0.2],
+        ],
+        looks: [
+          [0, 0, -0.9, 0],
+          [tCatch, 0.6, -0.4, 0.2],
+          [c.s.q, 0, 0.05, 0.3],
+          [c.s.botanist, 0.8, -0.5, 0.3],
+          [c.s.club, 0.8, -0.1, 0.3],
+          [c.s.straw, 0.9, 0, 0.3],
+          [c.s.lying, 0, 0.05, 0.3],
+          [w("lying", "The banana"), 0.8, -0.4, 0.3],
+          [c.e.lying + 0.4, 0.5, -0.9, 0.2],
+        ],
+      });
+
+      const cam = Kit.camera($("#ban-cam"), [
+        [c.s.outside - 0.3, 1660, 760, 2.1, 1.0],
+        [c.s.rasp - 0.4, 960, 540, 1, 1.0],
+      ]);
+      const held = $("#ban-held");
+      const bonk = $("#ban-bonk");
+      Kit.driver(tl, c.dur, (t) => {
+        const p = rig.render(t);
+        cam.render(t);
+        // a banana falls on his head, he catches it, later tosses it into the diagram
+        if (t < tCatch) {
+          const h = p.head;
+          const k = Math.min(1, t / tBonk);
+          const y = -200 + (h[1] - 70 + 200) * k * k;
+          const bounce = t > tBonk ? Math.sin(((t - tBonk) / (tCatch - tBonk)) * Math.PI) * 40 : 0;
+          held.setAttribute("transform", `translate(${(h[0] + (t > tBonk ? (t - tBonk) * 200 : 0)).toFixed(1)} ${(y - bounce).toFixed(1)}) rotate(${(t * 220).toFixed(1)})`);
+          held.setAttribute("opacity", 1);
+        } else if (t < tToss) {
+          const hd = p.handR;
+          held.setAttribute("transform", `translate(${hd[0].toFixed(1)} ${(hd[1] - 30).toFixed(1)}) rotate(10)`);
+          held.setAttribute("opacity", 1);
+        } else held.setAttribute("opacity", 0);
+        const showBonk = t > tBonk && t < tBonk + 0.45;
+        bonk.setAttribute("opacity", showBonk ? 1 : 0);
+        if (showBonk) bonk.setAttribute("transform", `translate(${p.head[0].toFixed(1)} ${(p.head[1] - 70).toFixed(1)})`);
+      });
+
+      // the question
+      tl.fromTo("#ban-card", { x: 520, y: 520, scale: 0.08, rotation: 8, opacity: 0 }, { x: 1060, y: 200, scale: 1, rotation: -2, opacity: 1, duration: 0.55, ease: "back.out(1.6)" }, w("q", "Is a") - 0.25);
+      tl.to("#ban-card", { y: -260, rotation: 6, scale: 0.8, duration: 0.4, ease: "power3.in" }, c.s.botanist + 0.3);
+
+      // definition, with a flower that turns into a fruit
+      gsap.set(["#ban-check text", "#ban-c1", "#ban-c2", "#ban-c3"], { opacity: 0 });
+      Kit.show(tl, "#ban-check > text", c.s.botanist + 0.4, 0.3);
+      Kit.draw(tl, "#ban-stem", w("botanist", "fruit") - 0.3, 0.6);
+      tl.fromTo("#ban-flower .mk-fill, #ban-leaf", { opacity: 0 }, { opacity: 1, duration: 0.3 }, w("botanist", "fruit"));
+      Kit.pop(tl, "#ban-petals", w("botanist", "one flower") - 0.15, { dur: 0.5 });
+      Kit.show(tl, "#ban-c1", w("botanist", "one flower"), 0.25);
+      Kit.show(tl, "#ban-c1 text", w("botanist", "one flower"), 0.25);
+      gsap.set("#ban-ovary-in", { opacity: 0 });
+      Kit.pop(tl, "#ban-ovary-in", w("botanist", "single ovary") - 0.2, { dur: 0.45 });
+      Kit.show(tl, "#ban-c2", w("botanist", "single ovary"), 0.25);
+      Kit.show(tl, "#ban-c2 text", w("botanist", "single ovary"), 0.25);
+      gsap.set("#ban-seeds", { opacity: 0 });
+      tl.to("#ban-petals .petal, #ban-petals .mk-fill", { y: 380, rotation: 80, opacity: 0, duration: 0.9, ease: "power2.in", stagger: 0.05 }, c.s.inside - 0.2);
+      tl.to("#ban-ovary-in", { scale: 3.3, y: -10, duration: 0.8, ease: "back.out(1.4)", transformOrigin: "50% 50%" }, c.s.inside + 0.2);
+      Kit.show(tl, "#ban-seeds", w("inside", "seeds") - 0.1, 0.3);
+      Kit.show(tl, "#ban-c3", w("inside", "seeds"), 0.25);
+      Kit.show(tl, "#ban-c3 text", w("inside", "seeds"), 0.25);
+      Kit.out(tl, "#ban-flower", tToss - 0.1, { dur: 0.3 });
+
+      // the banana flies in and gets sliced open
+      tl.fromTo("#ban-m-banana-in", { x: -440, y: -380, rotation: -200, opacity: 0 }, { x: 40, y: -180, rotation: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, tToss);
+      gsap.set("#ban-m-banana use[href='#ban-face']", { opacity: 0 });
+      Kit.pop(tl, "#ban-slice", w("fit", "See") - 0.1, { dur: 0.5 });
+      Kit.draw(tl, "#ban-ring", w("fit", "specks") - 0.1, 0.5);
+      Kit.draw(tl, "#ban-baby path", c.s.seeds, 0.35);
+      Kit.show(tl, "#ban-baby text", c.s.seeds + 0.1, 0.25);
+      Kit.draw(tl, ["#ban-t1", "#ban-t2", "#ban-t3"], w("fit", "perfectly") - 0.1, 0.25, "power2.out", 0.22);
+      tl.fromTo("#ban-stamp-in", { scale: 2.2, opacity: 0, rotation: -16 }, { scale: 1, opacity: 1, rotation: -8, duration: 0.16, ease: "power4.in", transformOrigin: "50% 50%" }, w("yes", "berry") - 0.2);
+      Kit.out(tl, ["#ban-check", "#ban-slice", "#ban-stamp"], c.s.club - 0.35, { dur: 0.3 });
+
+      // banana walks to the head of the club line, members join as named
+      tl.to("#ban-m-banana-in", { x: 0, y: 0, duration: 0.5, ease: "power2.inOut" }, c.s.club - 0.3);
+      tl.to("#ban-m-banana use[href='#ban-face']", { opacity: 1, duration: 0.2 }, c.s.club);
+      gsap.set("#ban-banner", { opacity: 0 });
+      tl.fromTo("#ban-banner", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, c.s.club - 0.2);
+      [
+        ["#ban-m-grapes > g", "grapes"],
+        ["#ban-m-tomato > g", "tomatoes"],
+        ["#ban-m-kiwi > g", "kiwis"],
+        ["#ban-m-egg > g", "eggplants"],
+      ].forEach(([sel, word]) => {
+        tl.fromTo(sel, { y: -500, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "bounce.out" }, w("club", word) - 0.35);
+      });
+
+      // strawberry and raspberry are turned away
+      gsap.set("#ban-post", { opacity: 0 });
+      Kit.show(tl, "#ban-post", c.s.straw - 0.3, 0.3);
+      tl.fromTo("#ban-straw-in", { x: 400 }, { x: 0, duration: 0.8, ease: "power2.out" }, c.s.straw - 0.2);
+      tl.fromTo("#ban-straw-in", { y: 0 }, { keyframes: [{ y: -40, duration: 0.2 }, { y: 0, duration: 0.2 }, { y: -40, duration: 0.2 }, { y: 0, duration: 0.2 }] }, c.s.straw - 0.2);
+      tl.fromTo("#ban-x1", { scale: 2.4, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.18, ease: "power4.in" }, w("straw", "Not") - 0.05);
+      tl.to("#ban-x1", { opacity: 0, duration: 0.25 }, c.s.outside - 0.2);
+      Kit.draw(tl, "#ban-seedring", w("outside", "seeds") - 0.2, 0.5);
+      tl.to("#ban-straw-seeds", { scale: 1.06, duration: 0.2, yoyo: true, repeat: 3, transformOrigin: "50% 50%" }, w("outside", "outside"));
+      gsap.set("#ban-loupe", { opacity: 0 });
+      Kit.pop(tl, "#ban-loupe", w("fruit", "little seeds") - 0.2, { dur: 0.5 });
+      Kit.out(tl, ["#ban-loupe", "#ban-seedring"], c.s.rasp - 0.4, { dur: 0.3 });
+      tl.fromTo("#ban-rasp-in", { x: 300 }, { x: 0, duration: 0.7, ease: "power2.out" }, c.s.rasp - 0.3);
+      tl.fromTo("#ban-x2", { scale: 2.4, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.18, ease: "power4.in" }, w("rasp", "aren't") - 0.05);
+      tl.to("#ban-x2", { opacity: 0, duration: 0.25 }, c.s.lying);
+
+      // the signs
+      tl.to("#ban-banner", { y: -320, duration: 0.45, ease: "power2.in" }, c.s.lying - 0.4);
+      tl.fromTo("#ban-sign-berry", { y: -480 }, { y: 0, duration: 0.6, ease: "bounce.out" }, c.s.lying - 0.3);
+      Kit.draw(tl, "#ban-sign-x", w("lying", "lying") - 0.1, 0.35);
+      tl.fromTo("#ban-sign-ban", { y: -480 }, { y: 0, duration: 0.6, ease: "bounce.out" }, w("lying", "The banana") - 0.4);
+      gsap.set("#ban-sign-note", { opacity: 0 });
+      tl.fromTo("#ban-sign-note", { opacity: 0, scale: 0.8, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, w("lying", "is not") - 0.1);
+
+      // honey drips in and floods the page
+      const tDrip = c.e.lying + 0.35;
+      tl.fromTo("#ban-drip", { y: -270 }, { y: 0, duration: 0.9, ease: "power2.out" }, tDrip);
+      tl.fromTo("#ban-flood", { scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 1, duration: 0.8, ease: "power2.in" }, tDrip + 0.75);
+
+      window.__timelines[S] = tl;
+    })();
+  </script>
+</template>
