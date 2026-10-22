@@ -1,4 +1,6 @@
 .hyperframes/
 .voice-cache/
 node_modules/
-renders/*.tmp*
+# render scratch (segments, work dirs, transactions); the finished MP4 is committed
+renders/*
+!renders/specs-explains.mp4
