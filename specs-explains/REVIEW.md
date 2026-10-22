@@ -34,6 +34,10 @@
   compression (about 1 cm a day) and astronauts growing up to 3%; Venus at 243 days per rotation, 225 per
   orbit, retrograde spin, and a surface above lead's melting point.
 
+- The rendered film: 420.0 s, 1920 x 1080 at 30 fps. Integrated loudness is -16.4 LUFS, loudness range
+  2.8 LU and true peak -1.5 dBFS, with no gap quieter than -45 dB longer than 2 s. Fourteen frames pulled
+  from the MP4 match the previews.
+
 ## What nobody checked
 
 - **The sound was measured, not heard.** Voice, music and effects levels were measured; nobody listened

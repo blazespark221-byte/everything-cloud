@@ -15,7 +15,9 @@ coral bow tie, who pulls questions out of his Question Jar and answers six facts
 | 5:36 | `venus` | Is a day on Venus longer than its year? |
 | 6:30 | `outro` | Recap and the last note |
 
-The rendered film is `renders/specs-explains.mp4` (1920 x 1080, 30 fps, H.264 + AAC).
+The rendered film is `renders/specs-explains.mp4` (7:00, 1920 x 1080, 30 fps, H.264 + AAC, mixed to about
+-16 LUFS). It is a CRF 23 re-encode of the HyperFrames master render, which is 127 MB and too big for
+GitHub; `npm run render` rebuilds the master.
 
 ## Preview and render
 
