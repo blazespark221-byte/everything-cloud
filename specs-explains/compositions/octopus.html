@@ -192,6 +192,10 @@
           </g>
         </g>
       </g>
+      <!-- bubbles carried over from the dive -->
+      <g id="oct-divebub" fill="none" stroke="#1f1d1a" stroke-width="6">
+        <circle cx="798" cy="180" r="21" /><circle cx="1007" cy="125" r="13" /><circle cx="873" cy="320" r="16" /><circle cx="738" cy="505" r="27" /><circle cx="1127" cy="445" r="12" />
+      </g>
       <!-- the question card -->
       <g id="oct-card">
         <path class="ink" data-marker="#FFF1A8" d="M-540 -112 L540 -122 L548 116 L-548 122 Z" />
@@ -452,6 +456,8 @@
         const per = 1.6 + i * 0.3;
         tl.fromTo([p.previousElementSibling, p], { skewX: -4 }, { skewX: 4, duration: per, ease: "sine.inOut", repeat: Math.max(0, Math.floor(c.dur / per) - 1), yoyo: true, transformOrigin: "50% 100%" }, 0);
       });
+
+      tl.fromTo("#oct-divebub circle", { y: 0, opacity: 1 }, { y: -260, opacity: 0, duration: 1.2, ease: "power1.in", stagger: 0.05 }, 0);
 
       // the bottle sinks in, and the question pops out of it
       tl.fromTo("#oct-bottle", { x: 760, y: -200, rotation: -30 }, { x: 760, y: 840, rotation: 70, duration: 2.6, ease: "power1.out" }, 0.2);
